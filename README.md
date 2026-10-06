@@ -9,6 +9,9 @@ B2B·B2C 리테일 기업의 AX(AI Transformation) 실무자를 위한 6단계 �
 5. 실행 계획 수립 (과제 카드, KPI, 일정, Tableau + MCP + LLM 적용 예시)
 6. ROI 계산기
 
+- 웹사이트: https://axtransitiion.vercel.app
+- 문서 버전: [AX_가이드북_리테일.md](AX_가이드북_리테일.md) (웹사이트와 같은 내용을 Markdown으로 정리, 노션 가져오기 가능)
+
 빌드 과정이 없는 정적 HTML 한 페이지(`index.html`)입니다. Vercel에서 프레임워크 프리셋 "Other"로 배포합니다.
 
 Created by Nathan Kim
