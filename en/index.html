@@ -1,0 +1,1083 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="A six-step playbook for retail teams leading AI transformation in B2B and B2C. Run a 25-question AI readiness assessment, set how far AI should go, pick your first use cases, plan the rollout, and calculate ROI on one page.">
+<meta name="author" content="Nathan Kim">
+<link rel="canonical" href="https://axtransitiion.vercel.app/en/">
+<link rel="alternate" hreflang="ko" href="https://axtransitiion.vercel.app/">
+<link rel="alternate" hreflang="en" href="https://axtransitiion.vercel.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://axtransitiion.vercel.app/en/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Retail AX Playbook">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:url" content="https://axtransitiion.vercel.app/en/">
+<meta property="og:title" content="Retail AX Playbook | Where should your AI transformation start?">
+<meta property="og:description" content="A six-step playbook for retail teams leading AI transformation in B2B and B2C. Run a 25-question AI readiness assessment, set how far AI should go, pick your first use cases, plan the rollout, and calculate ROI on one page.">
+<meta property="og:image" content="https://axtransitiion.vercel.app/og-image-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Retail AX Playbook: Where should your AI transformation start? A six-step roadmap">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Retail AX Playbook">
+<meta name="twitter:description" content="A six-step playbook for retail teams leading AI transformation in B2B and B2C. Run a 25-question AI readiness assessment, set how far AI should go, pick your first use cases, plan the rollout, and calculate ROI on one page.">
+<meta name="twitter:image" content="https://axtransitiion.vercel.app/og-image-en.png">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Retail AX Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<style>
+:root{
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+body{word-break:normal}
+h1,h2,h3,.flow h4,.plv h4,.gate h4,.lvname .l,.verdict .state,.fde h4{font-weight:700;letter-spacing:-.015em}
+.hero h1{letter-spacing:-.025em}
+h2{font-size:clamp(28px,3.6vw,36px)}
+.route .t{font-size:14.5px}
+.ladder div{font-size:10.5px;hyphens:auto;-webkit-hyphens:auto}
+.bar{grid-template-columns:78px minmax(0,1fr) 34px}
+.axis{grid-template-columns:78px minmax(0,1fr) 34px}
+</style>
+</head>
+<body>
+<div class="shell">
+  <nav class="toc" aria-label="Contents">
+    <div class="brand">Retail AX Playbook</div>
+    <a href="#top"><span class="n">00</span>Start here</a>
+    <a href="#s1"><span class="n">01</span>Readiness assessment</a>
+    <a href="#s2"><span class="n">02</span>Automation level</a>
+    <a href="#s3"><span class="n">03</span>First use cases</a>
+    <a href="#s4"><span class="n">04</span>Method &amp; delivery</a>
+    <a href="#s5"><span class="n">05</span>Execution plan</a>
+    <a href="#s6"><span class="n">06</span>ROI</a>
+    <a href="#appendix"><span class="n">+</span>Appendix</a>
+  </nav>
+
+  <main>
+    <header class="hero" id="top">
+      <div class="topbar"><span class="author">Created by <b>Nathan Kim</b></span><nav class="lang" aria-label="Language"><a href="/" lang="ko" data-lang="ko">한국어</a><a href="/en/" lang="en" data-lang="en" aria-current="true">English</a></nav></div>
+      <span class="eyebrow">A field guide for AI transformation leads · B2B &amp; B2C retail</span>
+      <h1>Your company's AI transformation:<br><em>where do you start?</em></h1>
+      <p class="lede">This playbook answers three questions in order. How ready is your company today? Which work should you start with? What will you get back for what you put in? It focuses on work you can start this month with the AI tools you already have, no custom development required.</p>
+      <div class="facts">
+        <div class="fact"><b>6 steps</b> in order</div>
+        <div class="fact">First project live in <b class="num">3–4 weeks</b></div>
+        <div class="fact">Built-in assessment, scorecard, and ROI calculator</div>
+      </div>
+      <div class="route" aria-label="Six-step roadmap">
+        <a href="#s1"><span class="shelftag">STEP 1</span><span class="t">Readiness assessment</span><span class="q">How ready are we for AI?</span><span class="d">15 min each</span></a>
+        <a href="#s2"><span class="shelftag">STEP 2</span><span class="t">Automation level</span><span class="q">How much can we hand off to AI?</span><span class="d">Workshop 1</span></a>
+        <a href="#s3"><span class="shelftag">STEP 3</span><span class="t">First use cases</span><span class="q">Which work do we start with?</span><span class="d">Workshop 2</span></a>
+        <a href="#s4"><span class="shelftag">STEP 4</span><span class="t">Method &amp; delivery</span><span class="q">Who builds it, and how?</span><span class="d">1 week</span></a>
+        <a href="#s5"><span class="shelftag">STEP 5</span><span class="t">Execution plan</span><span class="q">Targets, owners, timeline?</span><span class="d">1 week</span></a>
+        <a href="#s6"><span class="shelftag">STEP 6</span><span class="t">ROI</span><span class="q">What's the payback?</span><span class="d">1 week</span></a>
+      </div>
+      <div class="sub">
+        <h3>Running this for the first time? Here's the cadence</h3>
+        <div class="plan">
+          <div><span class="when">BEFORE THE WORKSHOPS · ON YOUR OWN</span><b>Take the Step 1 assessment</b><p>Each participant takes the assessment on this page and sends the copied results to the AX lead.</p></div>
+          <div><span class="when">WORKSHOP 1 · HALF DAY</span><b>Agree on Steps 1–2</b><p>Pool the results, settle on the company's maturity level, and decide how far each department can hand work to AI.</p></div>
+          <div><span class="when">WORKSHOP 2 · HALF DAY</span><b>Pick three first projects</b><p>Shortlist candidate work for each department within those limits, then use the scorecard to pick your first three.</p></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- STEP 1 -->
+    <section class="step" id="s1">
+      <div class="step-head">
+        <span class="shelftag">STEP 1 <span class="dur">· 15 MIN EACH</span></span>
+        <h2>AI readiness assessment</h2>
+        <p class="intro">Score 25 questions across five areas from 1 to 5. Each question shows what a 1, 3, and 5 look like, so pick whichever is closest to your company today. Scores update as you go and feed straight into Step 2.</p>
+      </div>
+      <div class="io">
+        <div><span>WHO TAKES IT</span>
+          <ul>
+            <li>AX lead (runs the assessment, pools results)</li>
+            <li>Strategy / corporate planning</li>
+            <li>IT and data</li>
+            <li>Department heads: sales, marketing, merchandising, customer service, supply chain, store ops</li>
+          </ul>
+          Everyone takes it separately. One person is enough to get a result.</div>
+        <div><span>WHAT IT COVERS</span>Strategy &amp; leadership, data, technology, people &amp; culture, governance &amp; security<br>5 areas × 5 questions = 25 questions</div>
+        <div><span>WHAT YOU GET</span>Overall score and maturity level (L1–L5), area scores, your bottleneck, and the recommended automation level (P1–P4)</div>
+      </div>
+
+      <div class="tool">
+        <div class="panel">
+          <div class="tabs" role="tablist" id="areaTabs"></div>
+          <div class="qs" id="qList"></div>
+          <div class="scale-key"><span><b>1</b> Not in place / individuals only</span><span><b>2</b> Some teams trying</span><span><b>3</b> Formal, in some departments</span><span><b>4</b> Company-wide standard, measured</span><span><b>5</b> Tied to business results</span></div>
+        </div>
+        <div class="panel result" aria-live="polite">
+          <div>
+            <div class="eyebrow">Overall score</div>
+            <div class="bigscore" id="total">0.0<small> / 5</small></div>
+          </div>
+          <div class="lvname"><div class="l" id="lvName">—</div><div class="d" id="lvDesc"></div></div>
+          <div class="bars" id="bars"></div>
+          <div class="axis"><span></span><span class="ticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></span><span></span></div>
+          <div class="ladder" id="ladder"></div>
+          <div class="callout cap" id="capNote" hidden></div>
+          <div class="callout" id="bottleneck"></div>
+          <div class="row-actions">
+            <label class="role" for="roleSel">My role
+              <select id="roleSel">
+                <option>AX lead</option><option>Strategy / planning</option><option>IT / data</option><option>Department head</option><option>Other</option>
+              </select>
+            </label>
+            <button class="linkbtn primary" id="copyDiag" type="button">Copy results</button>
+          </div>
+          <div class="row-actions">
+            <span class="example-flag" id="exFlag"></span>
+            <button class="linkbtn" id="resetDiag" type="button">Reset to sample scores</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub">
+        <h3>How to use the assessment</h3>
+        <div class="guide">
+          <div>
+            <h4>Steps</h4>
+            <ol>
+              <li>Open tabs A through E and read the <b>rule of thumb</b> at the top of each.</li>
+              <li>Score each question using the 1, 3, and 5 examples. If you're in between, pick 2 or 4.</li>
+              <li>Check your level and bottleneck on the right.</li>
+              <li>Pick your role, click <b>Copy results</b>, and send them to the AX lead by email or chat.</li>
+            </ol>
+          </div>
+          <div>
+            <h4>Scoring rules</h4>
+            <ul>
+              <li><b>Only count what you can show.</b> If you can't point to a document, a budget line, or a screen, score it one level lower.</li>
+              <li><b>Score today, not the plan.</b> "We're doing it next year" is a 1.</li>
+              <li><b>Not sure?</b> Give it a 2 and flag it for the AX lead to confirm.</li>
+              <li>Score <b>the whole company</b>, not just your department.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Reading the results</h4>
+            <ul>
+              <li><b>Your level</b> is the overall score rounded. 2.5–3.4 means L3.</li>
+              <li><b>Your level can't be more than one step above your weakest area.</b> If the average says L4 but governance sits at L2, you land at L3.</li>
+              <li><b>A bottleneck</b> is any area at least 0.5 points below the rest. Fix it before you scale.</li>
+              <li>If people's scores differ by <b>1.5 points or more</b> on a question, put it on the Workshop 1 agenda.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="step" id="s2">
+      <div class="step-head">
+        <span class="shelftag">STEP 2 <span class="dur">· WORKSHOP 1</span></span>
+        <h2>Set how far AI should go, by maturity</h2>
+        <p class="intro">There are four levels of handing work to AI. Your company's maturity sets the ceiling. Within that ceiling, the nature of each task decides the actual level.</p>
+      </div>
+
+      <div class="plevels" id="plevels"></div>
+
+      <div class="sub">
+        <h3>Maturity × automation level <span class="k" id="mapNote"></span></h3>
+        <div class="tw"><table id="mapTable">
+          <thead><tr><th>Maturity</th><th>Recommended</th><th>Ceiling</th><th>Do now</th><th>Don't do yet</th></tr></thead>
+          <tbody></tbody>
+        </table></div>
+      </div>
+
+      <div class="sub">
+        <h3>Set the level for each task</h3>
+        <p>Pick one task in a department and answer the questions below from the top. <b>The level right before your first "no"</b> is that task's level.</p>
+        <div class="ladderq">
+          <div><span class="p">P1</span><span class="qq">Can the person doing this task get help from an AI tool with drafts, summaries, or translation?<small>Most office work qualifies.</small></span><span class="yes"><b>Yes</b> → P1 is fine</span></div>
+          <div><span class="p">P2</span><span class="qq">Does the team repeat this task the same way, and can you give the AI the material it needs?<small>Examples: a weekly report, proposals built from a standard template</small></span><span class="yes"><b>Yes</b> → P2 is fine</span></div>
+          <div><span class="p">P3</span><span class="qq">Are the rules clear, and if the AI gets it wrong, is the damage small or easy for a person to catch?<small>Examples: routing customer tickets, keying in invoice data. Pricing, contracts, and performance reviews don't qualify.</small></span><span class="yes"><b>Yes</b> → P3 is fine</span></div>
+          <div><span class="p">P4</span><span class="qq">Are your data connections and controls strong enough to let AI make decisions across systems?<small>Example: AI places replenishment orders based on its own demand forecast</small></span><span class="yes"><b>Yes</b> → P4 is fine</span></div>
+        </div>
+        <div class="note"><span><b>Then check your company's ceiling.</b> Even if a task qualifies for P3, a company at L2 should stop at P2 for now. Without usage policies, IT support, and monitoring, there's no way to catch and fix errors once automation is running. When the company moves up a level, move the task up with it.</span></div>
+      </div>
+
+      <div class="sub">
+        <h3>Example by department <span class="k" id="deptNote"></span></h3>
+        <div class="tw"><table>
+          <thead><tr><th>Department</th><th>Typical task</th><th>Task qualifies for</th><th>Use now</th><th>Why</th></tr></thead>
+          <tbody id="deptBody"></tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="step" id="s3">
+      <div class="step-head">
+        <span class="shelftag">STEP 3 <span class="dur">· WORKSHOP 2</span></span>
+        <h2>Pick your first use cases</h2>
+        <p class="intro">Cast a wide net, then use the scorecard to pick your first three. Good candidates happen at least weekly, take someone two or more hours a week, already have the material on hand, and produce output a person can review.</p>
+      </div>
+
+      <div class="sub">
+        <h3>Five types of work, by what the AI actually does</h3>
+        <p>Grouping work by what the AI does tells you which tool and prompt to use, and how fast you can get started.</p>
+        <div class="ptypes">
+          <div class="ptype"><span class="pill pt-write">Draft</span><h4>Writes a first draft</h4><p>Product copy, proposals, replies, emails</p><div class="goal">Goal: save time</div></div>
+          <div class="ptype"><span class="pill pt-search">Summarize &amp; search</span><h4>Finds and condenses</h4><p>Policy Q&amp;A, meeting notes, industry briefings</p><div class="goal">Goal: save time</div></div>
+          <div class="ptype"><span class="pill pt-extract">Classify &amp; extract</span><h4>Sorts and pulls out data</h4><p>Ticket routing, invoice data, product attribute tagging</p><div class="goal">Goal: cut manual work</div></div>
+          <div class="ptype"><span class="pill pt-analyze">Analyze</span><h4>Finds patterns and reasons</h4><p>Reviews and VoC, sales swings, competitor comparisons</p><div class="goal">Goal: surface insights</div></div>
+          <div class="ptype"><span class="pill pt-predict">Predict</span><h4>Forecasts numbers</h4><p>Demand forecasting, account churn, stockout risk</p><div class="goal">Goal: better decisions · needs its own model</div></div>
+        </div>
+        <div class="note"><span><b>Start with drafting, summarizing, classifying, and analysis.</b> Off-the-shelf AI tools handle them today. Prediction needs a machine learning model trained on your history, which means data cleanup and development time, so save it for your second wave.</span></div>
+      </div>
+
+      <div class="sub">
+        <h3>Candidate work by department</h3>
+        <div class="filters">
+          <div class="chips" id="deptChips" aria-label="Department filter"></div>
+          <div class="chips" id="typeChips" aria-label="Type filter"></div>
+          <span class="count" id="ucCount"></span>
+        </div>
+        <div class="tw"><table>
+          <thead><tr><th>Department</th><th>Task</th><th>Type</th><th>Effort</th><th>Expected impact</th><th>Time</th></tr></thead>
+          <tbody id="ucBody"></tbody>
+        </table></div>
+        <p class="count">Effort: ★ AI tool only · ★★ needs an automation tool · ★★★ needs development or an outside partner</p>
+      </div>
+
+      <div class="sub">
+        <h3>Use case scorecard</h3>
+        <p>Score each candidate. From those at 3.5 or higher, take the top three as your first wave.</p>
+        <div class="score-tool">
+          <div class="panel" id="crits"></div>
+          <div class="panel verdict" aria-live="polite">
+            <div class="eyebrow">Weighted score</div>
+            <div class="bigscore" id="scTotal">0.0<small> / 5</small></div>
+            <div class="state" id="scState"></div>
+            <p class="muted" style="font-size:13.5px" id="scMsg"></p>
+            <p class="example-flag">Pre-filled with sample scores for "weekly review and VoC insights report."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub">
+        <h3>Three starter projects by department</h3>
+        <div class="starter-head">
+          <p class="muted">Pick a department to see three projects you can start with the AI tools you already have. No development needed.</p>
+          <label class="role" for="starterSel">Department
+            <select id="starterSel"></select>
+          </label>
+        </div>
+        <div class="starter" id="starterCards" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section class="step" id="s4">
+      <div class="step-head">
+        <span class="shelftag">STEP 4 <span class="dur">· 1 WEEK</span></span>
+        <h2>Method and delivery</h2>
+        <p class="intro">The overall flow follows the four phases of AWS's AI adoption framework, and governance draws on NIST. Each phase shows which step of this playbook it maps to.</p>
+      </div>
+
+      <div class="sub">
+        <h3>Four-phase method <span class="k">Based on AWS CAF for AI</span></h3>
+        <div class="flow">
+          <div><span class="en">Phase 1</span><h4>Envision</h4><span class="aws">Identify AI opportunities tied to business goals, and map the data and stakeholders involved</span><ul><li>Readiness assessment</li><li>Set automation levels</li><li>Find and pick use cases</li></ul><div class="map">This playbook: <b>Steps 1–3</b></div></div>
+          <div><span class="en">Phase 2</span><h4>Align</h4><span class="aws">Build cross-functional agreement, resolve dependencies, and get the organization ready</span><ul><li>Choose delivery approach and owners</li><li>Minimum governance</li><li>Agree on targets, KPIs, owners</li></ul><div class="map">This playbook: <b>Steps 4–5</b></div></div>
+          <div><span class="en">Phase 3</span><h4>Launch</h4><span class="aws">Prove value with pilots or proofs of concept, learn from the results, and refine</span><ul><li>Measure the baseline</li><li>PoC → pilot</li><li>Validate ROI</li></ul><div class="map">This playbook: <b>Steps 5–6</b></div></div>
+          <div><span class="en">Phase 4</span><h4>Scale</h4><span class="aws">Expand successful pilots across the organization for technical and business impact</span><ul><li>Standard templates and playbooks</li><li>Roll out to other teams</li><li>Reassess every quarter</li></ul><div class="map">Restart at <b>Step 1</b> each quarter</div></div>
+        </div>
+        <p class="src">Source: AWS, <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-caf-for-ai/your-ai-transformation-journey.html" target="_blank" rel="noopener">AWS Cloud Adoption Framework for Artificial Intelligence, Machine Learning, and Generative AI</a> · Phase descriptions are summarized.</p>
+      </div>
+
+      <div class="sub">
+        <h3>Other frameworks worth knowing</h3>
+        <div class="tw"><table>
+          <thead><tr><th>Framework</th><th>Structure</th><th>Where this playbook uses it</th></tr></thead>
+          <tbody>
+            <tr><td><a href="https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/ai" target="_blank" rel="noopener">Microsoft Cloud Adoption Framework: AI</a></td><td>AI Strategy → AI Plan → AI Ready → Govern · Manage · Secure AI</td><td>Infrastructure and security checklist for IT when preparing RAG or API integration (P3)</td></tr>
+            <tr><td><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST AI Risk Management Framework 1.0</a></td><td>Govern · Map · Measure · Manage</td><td>Basis for the governance area in Step 1 and the pre-launch checklist in Step 4</td></tr>
+            <tr><td>Gartner AI Maturity Model</td><td>Awareness → Active → Operational → Systemic → Transformational</td><td>Reference for the L1–L5 levels in Step 1</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="sub">
+        <h3>Five ways to deliver, and who builds each</h3>
+        <p>Quick wins start with the first two approaches, so no development is needed. Once results are proven and you need system integration, IT or an outside partner builds it.</p>
+        <div class="tw"><table>
+          <thead><tr><th>Approach</th><th>What it does</th><th>Build</th><th>Who builds it</th><th>Time</th><th>Level</th></tr></thead>
+          <tbody>
+            <tr><td class="nw"><b>Prompt templates</b></td><td>The team shares proven prompts</td><td class="nw">None</td><td>Team members, AI champions</td><td class="nw num">1 wk</td><td><span class="pill lv">P1–P2</span></td></tr>
+            <tr><td class="nw"><b>AI tool + company docs</b></td><td>Load policies and manuals into an AI tool's project or knowledge feature</td><td class="nw">None (setup only)</td><td>AI champions</td><td class="nw num">1–2 wks</td><td><span class="pill lv">P2</span></td></tr>
+            <tr><td class="nw"><b>No-code automation</b></td><td>Connect email, form, or spreadsheet events → AI → output with an automation tool</td><td class="nw">Light</td><td>AI champions + IT (accounts and permissions)</td><td class="nw num">3–6 wks</td><td><span class="pill lv">P2–P3</span></td></tr>
+            <tr><td class="nw"><b>RAG / API integration</b></td><td>Connect AI to internal systems such as the service desk or CRM</td><td class="nw">Required</td><td>In-house IT and engineering, or an outside partner (SI or vendor)</td><td class="nw num">6–12 wks</td><td><span class="pill lv">P3</span></td></tr>
+            <tr><td class="nw"><b>AI agents</b></td><td>AI works across systems to complete multi-step tasks</td><td class="nw">Required</td><td>Engineering + outside partner</td><td class="nw num">12+ wks</td><td><span class="pill lv">P3–P4</span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="sub">
+        <h3>Current vs. future state <span class="k">Handling one customer ticket</span></h3>
+        <div class="tw"><table>
+          <thead><tr><th>Step</th><th>Today</th><th>Time</th><th>With AI</th><th>Who</th><th>Time</th></tr></thead>
+          <tbody>
+            <tr><td class="nw">Read ticket</td><td>Agent reads it and decides the category</td><td class="num">1 min</td><td>AI categorizes it</td><td>AI</td><td class="num">0 min</td></tr>
+            <tr><td class="nw">Write reply</td><td>Searches the FAQ and writes from scratch</td><td class="num">4 min</td><td>Draft based on policy docs</td><td>AI</td><td class="num">0.5 min</td></tr>
+            <tr><td class="nw">Review and send</td><td>—</td><td class="num">—</td><td>Agent reviews, edits, and sends</td><td>Person</td><td class="num">2 min</td></tr>
+            <tr><td class="nw">Wrap-up</td><td>Manual notes and tags</td><td class="num">1 min</td><td>Auto summary and tags</td><td>AI</td><td class="num">0 min</td></tr>
+            <tr><td class="nw"><b>Total</b></td><td></td><td class="num"><b>6 min</b></td><td></td><td></td><td class="num"><b>2.5–3.5 min</b></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="sub">
+        <h3>Roles and operating rhythm</h3>
+        <div class="tw"><table>
+          <thead><tr><th>Role</th><th>Who</th><th>What they do</th></tr></thead>
+          <tbody>
+            <tr><td class="nw"><b>Executive sponsor</b></td><td>CEO or another C-level leader</td><td>Sets direction, approves budget, resolves cross-team issues</td></tr>
+            <tr><td class="nw"><b>AX team</b></td><td>AX lead + 3–5 IT and data people</td><td>Standardizes method, tools, and governance; manages projects; provides technical support</td></tr>
+            <tr><td class="nw"><b>AI champions</b></td><td>1–2 per department (part-time)</td><td>Find projects, build prompts and setups, coach coworkers</td></tr>
+            <tr><td class="nw"><b>Everyone else</b></td><td>All employees</td><td>Use the tools and suggest improvements</td></tr>
+          </tbody>
+        </table></div>
+        <div class="tw"><table>
+          <thead><tr><th>Cadence</th><th>Meeting</th><th>Who attends</th></tr></thead>
+          <tbody>
+            <tr><td class="nw">Weekly</td><td>15-minute project check-in</td><td>Project owner, AI champions</td></tr>
+            <tr><td class="nw">Every two weeks</td><td>Champions meetup: share wins and prompts</td><td>AX team, all champions</td></tr>
+            <tr><td class="nw">Monthly</td><td>AX review: KPIs and new project approvals</td><td>Sponsor, AX team, department heads</td></tr>
+            <tr><td class="nw">Quarterly</td><td>Reassess readiness, update the roadmap</td><td>Company-wide</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="sub">
+        <h3>Prompt templates you can use today</h3>
+        <p>Prompts with five parts (role, context, task, format, constraints) give consistent results. Swap in your details where you see curly braces.</p>
+        <div class="prompts" id="prompts"></div>
+      </div>
+
+      <div class="sub">
+        <h3>Check these with your team before you start</h3>
+        <p>You don't need a new policy document. Your team lead just needs to be able to answer "yes" to each of these.</p>
+        <ul class="checks" id="govChecks"></ul>
+      </div>
+    </section>
+
+    <!-- STEP 5 -->
+    <section class="step" id="s5">
+      <div class="step-head">
+        <span class="shelftag">STEP 5 <span class="dur">· 1 WEEK</span></span>
+        <h2>Execution plan</h2>
+        <p class="intro">Step 3 decided <b>what</b> to do. This step decides <b>how</b> you'll run it: the target, the owner, how you'll measure it, the go/no-go criteria, and the timeline.</p>
+      </div>
+
+      <div class="sub">
+        <h3>One-page project card <span class="k">Example: weekly review and VoC insights report</span></h3>
+        <p>For projects that start without development, this one card is enough. Don't let a long charter delay the start.</p>
+        <div class="card1">
+          <div><span class="q">WHO USES IT</span><span class="a">5 merchandisers, 2 marketers, the customer service team lead</span></div>
+          <div><span class="q">OWNER</span><span class="a">Merchandising manager</span></div>
+          <div><span class="q">TODAY</span><span class="a">One merchandiser spends 4 hours a week reading and summarizing reviews. Issues take about 3 weeks to surface</span></div>
+          <div><span class="q">TARGET</span><span class="a">Within 8 weeks: 4 hours a week down to 30 minutes, issues surfaced within 1 week</span></div>
+          <div class="wide"><span class="q">APPROACH AND COST</span><span class="a">Load the review export into an AI tool and analyze it with a prompt template (P2). The only added cost is AI tool licenses</span></div>
+        </div>
+        <div class="note"><span><b>You need a full project charter in three cases:</b> when there's outside spend (build costs or a partner), when automation goes straight to customers (P3 and up), or when several departments' systems are involved. Add scope (in/out), data needed, team, budget, and risks with mitigations, and use it for budget approval.</span></div>
+      </div>
+
+      <div class="sub">
+        <h3>Who owns the KPIs</h3>
+        <div class="tw"><table>
+          <thead><tr><th>Role</th><th>KPI responsibility</th></tr></thead>
+          <tbody>
+            <tr><td class="nw"><b>Project owner</b> (department head)</td><td>Sets the success metrics and targets, because they know what good looks like for that work.</td></tr>
+            <tr><td class="nw"><b>AX lead</b></td><td>Designs the measurement, collects the baseline before launch, and reports monthly.</td></tr>
+            <tr><td class="nw"><b>AI champions</b></td><td>Track adoption and gather feedback from the floor.</td></tr>
+            <tr><td class="nw"><b>Executive sponsor</b></td><td>Approves the targets and reviews results each month.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="tw"><table>
+          <thead><tr><th>Type</th><th>Adoption metrics (are people using it?)</th><th>Outcome metrics (is it working?)</th></tr></thead>
+          <tbody>
+            <tr><td class="nw"><span class="pill pt-write">Draft</span> <span class="pill pt-search">Summarize</span></td><td>Active users, share of AI drafts used</td><td>Time per item, throughput, response time</td></tr>
+            <tr><td class="nw"><span class="pill pt-extract">Classify &amp; extract</span></td><td>Share handled automatically, edit rate</td><td>Manual hours, error rate</td></tr>
+            <tr><td class="nw"><span class="pill pt-analyze">Analyze</span></td><td>Report open rate, actions taken from insights</td><td>Time to detect issues, change in return or conversion rate</td></tr>
+            <tr><td class="nw">B2B sales projects</td><td>Proposals generated, rep adoption</td><td>Proposal turnaround, win rate, revenue per account</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><span><b>Measure the baseline for 2–4 weeks before launch.</b> Without before numbers, you can't prove the impact in Step 6.</span></div>
+      </div>
+
+      <div class="sub">
+        <h3>Go/no-go criteria</h3>
+        <div class="gates">
+          <div class="gate"><h4>PoC <span>2 wks</span></h4><div class="scope">Sample data, 2–3 champions</div><ul><li>70%+ say the output is usable as-is or with light edits</li><li>Projected ROI of 100% or more</li></ul></div>
+          <div class="gate"><h4>Pilot <span>4–6 wks</span></h4><div class="scope">Real work, one full team</div><ul><li>70%+ of the KPI target met</li><li>60%+ active users</li><li>Zero serious errors reaching customers or vendors</li></ul></div>
+          <div class="gate"><h4>Scale <span>8+ wks</span></h4><div class="scope">Other teams doing the same work</div><ul><li>Templates and how-to guide finished</li><li>An owner assigned to run it</li><li>Monthly KPI reporting in place</li></ul></div>
+        </div>
+      </div>
+
+      <div class="sub">
+        <h3>First-wave 12-week timeline</h3>
+        <div class="tw"><table class="gantt">
+          <thead><tr><th></th><th>Wks 1–2</th><th>Wks 3–4</th><th>Wks 5–6</th><th>Wks 7–8</th><th>Wks 9–10</th><th>Wks 11–12</th></tr></thead>
+          <tbody>
+            <tr><td>All projects</td><td><span class="g d">Assess · pick</span></td><td><span class="g d">Training · checklist</span></td><td></td><td><span class="g d">Mid-point share</span></td><td></td><td><span class="g s">Results readout</span></td></tr>
+            <tr><td>Review insights</td><td><span class="g d">Baseline</span></td><td><span class="g b">Setup · PoC</span></td><td><span class="g p">Pilot</span></td><td><span class="g p">Pilot</span></td><td><span class="g s">Scale</span></td><td><span class="g s">Other teams</span></td></tr>
+            <tr><td>Service reply drafts</td><td><span class="g d">Baseline</span></td><td><span class="g b">Setup · PoC</span></td><td><span class="g p">Pilot</span></td><td><span class="g p">Pilot</span></td><td><span class="g s">Scale</span></td><td><span class="g d">Integration review</span></td></tr>
+            <tr><td>B2B proposals</td><td><span class="g d">Baseline</span></td><td><span class="g d">Template cleanup</span></td><td><span class="g b">Setup · PoC</span></td><td><span class="g p">Pilot</span></td><td><span class="g p">Pilot</span></td><td><span class="g s">Scale</span></td></tr>
+          </tbody>
+        </table></div>
+        <p class="count">Setup means writing prompt templates and configuring the AI tool. It isn't development, and AI champions handle it.</p>
+      </div>
+
+      <div class="sub example" id="s5-example">
+        <span class="eyebrow">Worked example</span>
+        <h3>Weekly sales briefing: get answers by asking your Tableau data</h3>
+        <p>A sales ops analyst spends four hours every Monday building the weekly sales briefing in Excel. Here's how to replace that with a handful of questions by connecting an LLM to the Tableau data you already have. Tableau's <b>VizQL Data Service (VDS)</b> pulls the data, Tableau's official <b>MCP server</b> connects it to the LLM, and <b>Tableau Pulse</b> flags unusual changes first.</p>
+
+        <div class="arch" aria-label="How it connects">
+          <div class="node"><span class="no">1</span><b>Source data</b><span>POS sales · e-commerce orders · B2B orders (ERP) · promo calendar · inventory (WMS)</span></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="node"><span class="no">2</span><b>Tableau published data source</b><span>Published as one "Weekly_Sales_Combined" source, reusing what your dashboards already use</span></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="node"><span class="no">3</span><b>VizQL Data Service</b><span>Tableau API that queries a published data source as JSON, no chart needed</span></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="node"><span class="no">4</span><b>Tableau MCP server</b><span>Exposes VDS and Pulse as tools an LLM can call</span></div>
+          <div class="arrow" aria-hidden="true">⇄</div>
+          <div class="node hi"><span class="no">5</span><b>LLM (Claude, etc.)</b><span>Understands the question, picks the right tools, queries, and explains the result</span></div>
+          <div class="pulse"><b>Tableau Pulse</b> Register weekly sales, average order value, online conversion, and B2B bookings as metrics, and Pulse automatically spots changes outside the normal range along with likely drivers. The LLM uses those findings as its starting point through MCP.</div>
+        </div>
+
+        <h4 class="mini">① What data to expose through VDS</h4>
+        <div class="tw"><table>
+          <thead><tr><th>Data</th><th>Key fields</th><th>Source</th><th>Used for</th></tr></thead>
+          <tbody>
+            <tr><td class="nw"><b>Sales</b></td><td>Date, store and region, channel (store/online/B2B), category, sales, units, transactions</td><td class="nw">POS, e-commerce, ERP</td><td>Week-over-week and year-over-year change, by channel and region</td></tr>
+            <tr><td class="nw"><b>Promotions</b></td><td>Dates, categories and stores, discount</td><td class="nw">Marketing calendar</td><td>Explaining swings (tough comps, etc.)</td></tr>
+            <tr><td class="nw"><b>Inventory</b></td><td>Date, store, SKU, in-stock flag</td><td class="nw">WMS</td><td>Estimating sales lost to stockouts</td></tr>
+            <tr><td class="nw"><b>Targets</b></td><td>Weekly and monthly sales targets</td><td class="nw">FP&amp;A</td><td>Percent to plan</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><span><b>Add a one-line description to every field.</b> Something like "net_sales: sales after discounts and returns" keeps the LLM from picking the wrong field. Documenting what your data means has the biggest effect on accuracy.</span></div>
+
+        <h4 class="mini">② Setup <span class="k">About 2 weeks, no development</span></h4>
+        <div class="tw"><table>
+          <thead><tr><th>Task</th><th>Who</th><th>Time</th></tr></thead>
+          <tbody>
+            <tr><td>Clean up the published data source and add field descriptions</td><td>Data team</td><td class="nw num">3–5 days</td></tr>
+            <tr><td>Define four Pulse metrics (weekly sales, AOV, online conversion, B2B bookings)</td><td>Sales ops + data team</td><td class="nw num">1 day</td></tr>
+            <tr><td>Connect the Tableau MCP server to your LLM client. It uses a personal access token, so existing Tableau permissions still apply</td><td>IT or AX lead</td><td class="nw num">1–2 days</td></tr>
+            <tr><td>Save common questions and the briefing format as prompts</td><td>Sales ops (AI champion)</td><td class="nw num">1 day</td></tr>
+          </tbody>
+        </table></div>
+
+        <h4 class="mini">③ Monday morning: a briefing built from questions <span class="k">Sample data</span></h4>
+        <div class="chat">
+          <div class="msg q">How did we do last week? Anything move a lot?</div>
+          <div class="tools"><span>Pulse insight · weekly sales</span><span>query-datasource · region × channel, WoW and YoY</span></div>
+          <div class="msg a">Total sales last week were <b>$3.62M</b>, down <b>3.4%</b> week over week and down 1.2% year over year. The one change Pulse flagged as outside the normal range was <b>Northeast stores (−13.8%, −$218K)</b>. Online (+4.2%), other regions, and B2B were slightly up and offset part of the drop.</div>
+
+          <div class="msg q">Why were Northeast stores down? Break it out by category.</div>
+          <div class="tools"><span>query-datasource · Northeast stores × category</span><span>query-datasource · promotions</span></div>
+          <div class="msg a">Of the $218K drop, <b>$157K (72%) came from outdoor</b>. The same week last year had a 20%-off outdoor event in the Northeast, and there wasn't one this year. <span class="hyp">Hypothesis</span> Most of the drop looks like a tough comp against last year's promotion.</div>
+
+          <div class="msg q">Did stockouts play a part?</div>
+          <div class="tools"><span>query-datasource · inventory (Northeast outdoor)</span></div>
+          <div class="msg a"><b>3 of the top 20 outdoor SKUs were out of stock for 4+ days</b> in the Northeast. At normal sell-through, that's roughly $31K in lost sales, about 20% of the outdoor decline.</div>
+
+          <div class="msg q">Give me a five-line summary for the store managers' call, plus what to follow up on this week.</div>
+          <div class="msg a"><ol>
+            <li>Total sales $3.62M, down 3.4% week over week</li>
+            <li>The decline is concentrated in Northeast stores (−$218K); online up 4.2%</li>
+            <li>72% of the Northeast decline is outdoor: tough comp vs. last year's sale (hypothesis)</li>
+            <li>Three outdoor SKUs out of stock, about $31K in lost sales</li>
+            <li>B2B bookings within normal range</li>
+          </ol><b>Follow up this week:</b> restock dates for the three SKUs, and whether to bring back the Northeast outdoor promotion</div>
+        </div>
+        <p class="count">The LLM shows which tool it called each time, so anyone can trace a number back to Tableau.</p>
+
+        <h4 class="mini">④ What changes</h4>
+        <div class="tw"><table>
+          <thead><tr><th></th><th>Today</th><th>With this setup</th></tr></thead>
+          <tbody>
+            <tr><td class="nw"><b>Building the briefing</b></td><td>4 hours a week: pull data, pivot, write it up</td><td>4 questions, about 20 minutes</td></tr>
+            <tr><td class="nw"><b>Follow-up questions</b></td><td>Ask the BI team to change a dashboard and wait 1–2 weeks</td><td>Ask on the spot</td></tr>
+            <tr><td class="nw"><b>Spotting unusual changes</b></td><td>Whenever someone notices in a meeting</td><td>Pulse flags it first</td></tr>
+            <tr><td class="nw"><b>New analysis</b></td><td>Submit a request and wait</td><td>Change the question or prompt</td></tr>
+          </tbody>
+        </table></div>
+
+        <div class="fde">
+          <h4>Build the AI insights you want, without Palantir-style FDEs</h4>
+          <p>In the Palantir model, forward deployed engineers (FDEs) embed with your company and custom-build the data model and analytics apps. It's powerful, but it takes engineering time and budget, and every new question goes back to the engineers.</p>
+          <p>Here, the Tableau published data source you already use acts as the data model, and the official MCP server handles the connection. Your team <b>just changes the question</b> to get the analysis they need. The point is that customizing the analysis moves from outside engineers to the people who do the work.</p>
+          <div class="tw"><table>
+            <thead><tr><th></th><th>FDE model</th><th>Tableau + MCP + LLM</th></tr></thead>
+            <tbody>
+              <tr><td class="nw"><b>Who builds it</b></td><td>Outside engineers on site</td><td>Your data team + AX lead</td></tr>
+              <tr><td class="nw"><b>Time to start</b></td><td>Engineer onboarding and build time</td><td>About 2 weeks</td></tr>
+              <tr><td class="nw"><b>New question</b></td><td>Ask the engineers</td><td>Your team asks directly</td></tr>
+              <tr><td class="nw"><b>Data used</b></td><td>Consolidated into a new platform</td><td>The Tableau data sources you already have</td></tr>
+            </tbody>
+          </table></div>
+          <p class="count">If you need to stitch together data from many systems and automate operational decisions end to end, an FDE-style platform may be the right fit. When the goal is analysis and insight, like a sales briefing, this approach is enough.</p>
+        </div>
+
+        <div class="note warn"><span><b>Check before you commit.</b> The Tableau MCP server is an open-source project from Tableau and is still changing. Whether you can use VDS and Pulse depends on your license and deployment (Tableau Cloud or Tableau Server). Query results go to the LLM, so use a business-tier LLM that doesn't train on your data.</span></div>
+        <p class="src">References: <a href="https://help.tableau.com/current/api/vizql-data-service/en-us/index.html" target="_blank" rel="noopener">Tableau VizQL Data Service</a> · <a href="https://github.com/tableau/tableau-mcp" target="_blank" rel="noopener">Tableau MCP (GitHub)</a> · Numbers in the conversation are illustrative.</p>
+      </div>
+    </section>
+
+    <!-- STEP 6 -->
+    <section class="step" id="s6">
+      <div class="step-head">
+        <span class="shelftag">STEP 6 <span class="dur">· 1 WEEK</span></span>
+        <h2>ROI</h2>
+        <p class="intro">Load an example or enter your own numbers to see first-year ROI, payback period, and three-year ROI instantly.</p>
+      </div>
+      <div class="formula">ROI = (annual benefit − total cost) ÷ total cost × 100 &nbsp;·&nbsp; Payback = total cost ÷ average monthly benefit</div>
+
+      <div class="roi">
+        <form class="panel form" id="roiForm" autocomplete="off">
+          <div class="presets"><span>Load an example</span>
+            <button type="button" class="chip" data-preset="insight">Review insights (no build)</button>
+            <button type="button" class="chip" data-preset="b2b">B2B proposals (no build)</button>
+            <button type="button" class="chip" data-preset="cs">Service desk integration (P3)</button>
+          </div>
+          <fieldset>
+            <legend>Benefit · time saved</legend>
+            <div class="fields">
+              <div class="field"><label for="f_cases">Items per year</label><div class="inp"><input id="f_cases" inputmode="numeric"><em>items</em></div></div>
+              <div class="field"><label for="f_min">Time saved per item</label><div class="inp"><input id="f_min" inputmode="decimal"><em>min</em></div></div>
+              <div class="field"><label for="f_wage">Loaded hourly cost</label><div class="inp"><input id="f_wage" inputmode="numeric"><em>$/hr</em></div></div>
+              <div class="field"><label for="f_real">Realization rate</label><div class="inp"><input id="f_real" inputmode="numeric"><em>%</em></div></div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Benefit · other</legend>
+            <div class="fields">
+              <div class="field"><label for="f_save">Cost savings (annual)</label><div class="inp"><input id="f_save" inputmode="numeric"><em>$</em></div></div>
+              <div class="field"><label for="f_profit">Profit from added revenue (annual)</label><div class="inp"><input id="f_profit" inputmode="numeric"><em>$</em></div></div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Cost</legend>
+            <div class="fields">
+              <div class="field"><label for="f_build">One-time build</label><div class="inp"><input id="f_build" inputmode="numeric"><em>$</em></div></div>
+              <div class="field"><label for="f_ops">Annual run cost (incl. licenses)</label><div class="inp"><input id="f_ops" inputmode="numeric"><em>$</em></div></div>
+              <div class="field"><label for="f_change">Training and change management</label><div class="inp"><input id="f_change" inputmode="numeric"><em>$</em></div></div>
+            </div>
+          </fieldset>
+          <p class="example-flag" id="roiFlag"></p>
+        </form>
+
+        <div class="receipt" aria-live="polite">
+          <div class="hd"><b>AX ROI RECEIPT</b><span id="rcTitle">Year 1</span></div>
+          <div class="sec">BENEFIT</div>
+          <div class="ln"><span>Time saved</span><span id="r_time"></span></div>
+          <div class="ln sm"><span id="r_timeD"></span><span></span></div>
+          <div class="ln"><span>Cost savings</span><span id="r_save"></span></div>
+          <div class="ln"><span>Profit from revenue</span><span id="r_profit"></span></div>
+          <div class="ln tot"><span>Annual benefit</span><span id="r_benefit"></span></div>
+          <hr>
+          <div class="sec">COST</div>
+          <div class="ln"><span>One-time build</span><span id="r_build"></span></div>
+          <div class="ln"><span>Annual run cost</span><span id="r_ops"></span></div>
+          <div class="ln"><span>Training / change</span><span id="r_change"></span></div>
+          <div class="ln tot"><span>Total cost</span><span id="r_cost"></span></div>
+          <hr>
+          <div class="big" id="r_roiRow"><span>ROI</span><span id="r_roi"></span></div>
+          <div class="ln"><span>Payback</span><span id="r_payback"></span></div>
+          <div class="ln"><span>3-year ROI</span><span id="r_roi3"></span></div>
+          <div class="barcode" aria-hidden="true"></div>
+          <div class="ft">Conservative estimate with realization rate and margin applied</div>
+        </div>
+      </div>
+
+      <div class="sub">
+        <h3>Benefit and cost items</h3>
+        <div class="tw"><table>
+          <thead><tr><th>Type</th><th>Item</th><th>How to calculate · notes</th></tr></thead>
+          <tbody>
+            <tr><td class="nw">Benefit</td><td class="nw"><b>Time saved</b></td><td>Time saved × items × loaded hourly cost × realization rate</td></tr>
+            <tr><td class="nw">Benefit</td><td class="nw"><b>Cost savings</b></td><td>Less spending on agencies, returns, markdowns, and rework</td></tr>
+            <tr><td class="nw">Benefit</td><td class="nw"><b>Revenue lift</b></td><td>Added revenue × operating margin. Never count the full revenue</td></tr>
+            <tr><td class="nw">Benefit</td><td class="nw"><b>Risk reduction</b></td><td>Lower incident probability × cost per incident (missed contract terms, quality issues spreading)</td></tr>
+            <tr><td class="nw">Cost</td><td class="nw"><b>One-time build</b></td><td>Integration, development, partner fees. Zero for no-build projects</td></tr>
+            <tr><td class="nw">Cost</td><td class="nw"><b>Run cost</b></td><td>AI tool licenses, API usage, automation tools, maintenance</td></tr>
+            <tr><td class="nw">Cost</td><td class="nw"><b>Change management</b></td><td>Training, how-to guides, champions' time. The item most often left out</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note warn"><span><b>Use a realization rate of 50–70%.</b> Not every hour saved turns into lower cost or other productive work. Conservative numbers earn leadership's trust.</span></div>
+      </div>
+
+      <div class="sub">
+        <h3>ROI for analysis projects <span class="k">Insight → action → result</span></h3>
+        <div class="tw"><table>
+          <thead><tr><th>Step</th><th>Example: weekly review insights report</th><th>Amount</th></tr></thead>
+          <tbody>
+            <tr><td class="nw">Time saved on the report</td><td>250 reports a year × 4 hours × $50 × 70% realization</td><td class="num nw">$35,000</td></tr>
+            <tr><td class="nw">Action taken</td><td>The top complaint in negative reviews (sizing) led to a better size guide on product pages</td><td></td></tr>
+            <tr><td class="nw">Result</td><td>Return rate in that category fell from 8% to 6.5%, saving $40,000 a year in returns</td><td></td></tr>
+            <tr><td class="nw">AI's share</td><td>Without AI, the issue would have surfaced about 3 months later, so credit 50%</td><td class="num nw">$20,000</td></tr>
+            <tr><td class="nw"><b>Annual benefit</b></td><td></td><td class="num nw"><b>$55,000</b></td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><span>For analysis projects, the number of reports doesn't matter. What counts is <b>which decisions changed because of them</b>. Keep an insight-to-action log so the ROI holds up.</span></div>
+      </div>
+
+      <div class="sub">
+        <h3>Before you take it to leadership</h3>
+        <ul class="checks" id="reportChecks"></ul>
+      </div>
+    </section>
+
+    <section class="step" id="appendix">
+      <div class="step-head">
+        <div class="eyebrow">Appendix</div>
+        <h2>FAQ and glossary</h2>
+      </div>
+      <div class="faq">
+        <div><b>Our data is a mess. Can we still start?</b><p>Yes. AI handles text like reviews, service tickets, and proposals well even before it's cleaned up. Don't wait for a data platform. Start with text-based work.</p></div>
+        <div><b>Our teams are wary of AI.</b><p>Change the message from "AI will replace jobs" to "AI takes the tedious parts off your plate." Pick first projects from the work people dislike most: reports, wrap-up notes, retyping data.</p></div>
+        <div><b>Which AI tool should we use?</b><p>Check security first: a business plan that doesn't train on your data, and how well it fits the collaboration tools you already use. Start with one tool, learn how people use it, then expand.</p></div>
+        <div><b>We keep running PoCs that never scale.</b><p>Set the go/no-go criteria and the operating owner before you start, and budget for the pilot when you approve the PoC.</p></div>
+      </div>
+      <div class="tw"><table>
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="nw"><b>AX</b></td><td>AI transformation: changing how work and the business run with AI</td></tr>
+          <tr><td class="nw"><b>PoC</b></td><td>Proof of concept: a small test of whether something works and pays off</td></tr>
+          <tr><td class="nw"><b>RAG</b></td><td>Retrieval-augmented generation: AI answers grounded in your own documents</td></tr>
+          <tr><td class="nw"><b>AI agent</b></td><td>AI that takes a goal and works through the steps using multiple tools</td></tr>
+          <tr><td class="nw"><b>Realization rate</b></td><td>The share of time saved that turns into real value</td></tr>
+          <tr><td class="nw"><b>Baseline</b></td><td>Your numbers before AI, used to measure the change</td></tr>
+          <tr><td class="nw"><b>VoC</b></td><td>Voice of the customer: reviews, tickets, surveys</td></tr>
+          <tr><td class="nw"><b>MCP</b></td><td>Model Context Protocol: a standard way for LLMs to connect to outside tools and data</td></tr>
+          <tr><td class="nw"><b>FDE</b></td><td>Forward deployed engineer: an engineer embedded with a customer to custom-build solutions</td></tr>
+        </tbody>
+      </table></div>
+      <footer>
+        <span>Next step: send the Step 1 link to participants and book Workshop 1 for two weeks out.</span>
+        <span>References: AWS CAF for AI · Microsoft Cloud Adoption Framework (AI) · NIST AI RMF 1.0 · Gartner AI Maturity Model. Example figures are illustrative assumptions.</span>
+      </footer>
+    </section>
+  </main>
+</div>
+
+<script>
+(function(){
+  const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+  const $=s=>document.querySelector(s);
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  async function copyText(text,btn,fallbackEl){
+    const label=btn.textContent;
+    try{await navigator.clipboard.writeText(text);btn.textContent='Copied'}
+    catch(err){
+      if(fallbackEl){const r=document.createRange();r.selectNodeContents(fallbackEl);const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected · press ⌘C'}
+      else btn.textContent="Couldn't copy";
+    }
+    setTimeout(()=>btn.textContent=label,2000);
+  }
+
+  /* ---------- STEP 1 ---------- */
+  const AREAS=[
+    {k:'A',name:'Strategy & leadership',short:'Strategy',crit:"Can you say who owns AI adoption, where the budget comes from, and who sees the results? If you can answer all three right away, that's a 4 or higher. If you can't answer any, it's a 1 or 2.",
+     qs:[['Leadership has formally stated goals for AI','No goals, just individual interest','AI projects are in this year\'s business plan','AI is central to the multi-year strategy and built into revenue and cost targets'],
+         ['Someone owns AI transformation','No one','Part-time task force or 1–2 dedicated people','A dedicated team runs the project portfolio and budget'],
+         ['There is a dedicated budget for AI projects','None; people expense it themselves','This year\'s projects have their own budget','Ongoing budget that grows with results'],
+         ['AI projects have success metrics','None','Some projects track time saved','Every project reports results in dollars on a regular cadence'],
+         ['Department heads can name their AI projects','Most can\'t','About half can','Every head can explain their projects and results']]},
+    {k:'B',name:'Data',short:'Data',crit:"If someone asks for sales, customer, or product data today, can they get it today? If someone has to stitch together spreadsheets from several systems, that's a 2 or 3. If people can pull it themselves, that's a 4 or higher.",
+     qs:[['Sales data (store POS and online orders) is available daily','Spreadsheets after month-end close','Daily, but each channel separately','Stores, online, and B2B combined, on demand'],
+         ['Customer data is tied to a single ID','Each channel has its own customer IDs','B2C loyalty unified; B2B accounts separate','Every channel linked to one customer ID'],
+         ['Product data (SKUs, categories, attributes) is clean','SKUs and categories differ by channel','SKUs unified, some attributes missing','SKUs, categories, and attributes clean and analysis-ready'],
+         ['Reviews, service tickets, and proposals are collected and searchable','Scattered and hard to gather','Stored in one place but hard to search','Easy to search and export straight into AI'],
+         ['Business teams can get data without filing an IT request','Every request goes through IT','Key metrics in BI dashboards','Teams pull, shape, and analyze data themselves']]},
+    {k:'C',name:'Technology',short:'Tech',crit:"Can employees use AI tools on a company account right now, and is there a way to automate repetitive work? If people are quietly using personal accounts, that's a 1 or 2.",
+     qs:[['The company works in cloud collaboration tools (Microsoft 365, Google Workspace, Slack, Teams, Notion)','Mostly email and file shares','Rolled out, but only some teams use it','Everyone works there, including built-in AI features'],
+         ['Employees have access to company-approved AI tools','No approved tool; personal accounts','Business-tier tools for some teams','Everyone has a business-tier tool, with usage tracked'],
+         ['There\'s an automation tool (Power Automate, Zapier, Make, n8n)','None','Exists, but only IT uses it','Business teams build and run their own automations'],
+         ['Core systems (ERP, POS, CRM, WMS) can connect through APIs','Files only','Some systems offer APIs','All core systems connected by API'],
+         ['There\'s an analytics platform (data warehouse, etc.)','Mostly spreadsheets','Built, but only some data loaded','Company-wide data used for analytics and AI every day']]},
+    {k:'D',name:'People & culture',short:'People',crit:"Could you name one strong AI user in every department, and is their way of working spreading to the team? A few individuals is a 2. Standard team practices is a 4.",
+     qs:[['AI training happens on a regular schedule','None','Company-wide session once or twice a year','Role-based courses with completion tracked'],
+         ['Each department has an "AI champion"','None','A few volunteers in some departments','Every department has one, with time set aside for it'],
+         ['There\'s a forum for sharing AI wins','None','A channel, but sporadic','Regular show-and-tells and a shared playbook'],
+         ['Small experiments are OK even if they fail','Failure gets you blamed','Possible, but approval takes forever','Small experiment budget and fast approval'],
+         ['People know how to review and correct AI output','They use it as-is or not at all','Some people fact-check and edit','The team shares review standards and everyone follows them']]},
+    {k:'E',name:'Governance & security',short:'Governance',crit:"If you asked anyone \"Can I paste a customer's phone number into AI?\" would everyone give the same answer? Written rules that you check are actually followed is a 4 or higher.",
+     qs:[['There\'s an AI use policy (what not to enter, which tools are allowed)','None','Written, but few people know it','Everyone trained and the policy updated regularly'],
+         ['There are rules for using customer personal data with AI, in line with CCPA/CPRA, PIPEDA, or Quebec Law 25','No rules','"Don\'t enter it" is the only rule','Masking and de-identification process and tools in place'],
+         ['There are rules for human review of AI output','None','Only customer-facing output is reviewed','Review level and owner defined for each task'],
+         ['New AI tools go through security and legal review','No process','Review on request','Mandatory before adoption'],
+         ['AI usage (users, cost, incidents) is tracked','No idea who uses what','License count only','Usage, cost, and incidents reported regularly']]}
+  ];
+  const EXAMPLE=[[3,2,2,2,3],[4,2,3,2,2],[4,3,2,2,2],[2,2,2,3,3],[3,2,2,2,1]];
+  const LEVELS=[
+    {c:'L1',n:'Aware',d:'Interest is there, but use is scattered and individual'},
+    {c:'L2',n:'Experimenting',d:'Some teams run PoCs; no company-wide approach yet'},
+    {c:'L3',n:'Operational',d:'Proven projects are formally in use'},
+    {c:'L4',n:'Scaling',d:'Standard practice across departments, with results measured'},
+    {c:'L5',n:'Transformational',d:'AI shapes the P&L and how the business runs'}
+  ];
+  const REC=[[1],[1,2],[2,3],[3],[3,4]];
+  const CAP=[1,2,3,3,4];
+  const MAP=[
+    ['Write an AI use policy, roll out one business-tier tool, basic training','System integrations, customer-facing automation'],
+    ['Run 3–5 first PoCs across departments, standardize prompt templates, name AI champions','Starting with a data platform build'],
+    ['Put proven projects into daily work, add no-code automation, track KPIs','Company-wide rollout without guardrails'],
+    ['Manage a project portfolio, shared integrations (RAG/API), reuse across teams','Agents for everything'],
+    ['Agent-driven operations, new AI-powered services','—']
+  ];
+  const PLV=[
+    {c:'P1',n:'Assist',def:'People get help from AI tools',ai:'Drafts, summaries, translation',hu:'All decisions and actions',ex:'First draft of product page copy'},
+    {c:'P2',n:'Augment',def:'Teams use AI the same way',ai:'Analysis, sorting, suggestions',hu:'Review, approve, act',ex:'Review analysis → weekly quality report'},
+    {c:'P3',n:'Automate',def:'AI and automation handle defined work',ai:'Processing through execution',hu:'Exceptions and spot checks',ex:'Ticket categorization + routing'},
+    {c:'P4',n:'Autonomous',def:'AI agents get a goal, decide, and act',ai:'Plan, decide, execute',hu:'Set goals, monitor',ex:'Forecast-driven auto-replenishment'}
+  ];
+  const DEPTS=[
+    ['Customer service','Categorize and reply to shipping and exchange tickets',3,'Clear category rules; agent reviews before sending'],
+    ['Marketing (B2C)','Product page and social copy',3,'Reviewed before publishing; low cost of mistakes'],
+    ['Supply chain','Key in vendor invoice data',3,'Fixed format; totals check catches errors'],
+    ['B2B sales','Proposal and quote drafts',2,'Pricing errors are costly, so a person decides'],
+    ['Merchandising','Weekly sales and review analysis',2,'Repeated, but people draw the conclusions'],
+    ['Finance','Expense receipt categorization',2,'Subject to audit, so every item is reviewed'],
+    ['HR','Policy and benefits Q&A',2,'Anything involving personal data is excluded']
+  ];
+
+  let scores=store.get('ax.diag');
+  if(!Array.isArray(scores)||scores.length!==5) scores=EXAMPLE.map(r=>r.slice());
+  let tab=0;
+  const avg=a=>a.reduce((x,y)=>x+y,0)/a.length;
+  const r1=x=>Math.round(x*10)/10;
+  const lvIdx=x=>{x=r1(x);return x<1.5?0:x<2.5?1:x<3.5?2:x<4.5?3:4};
+  const isExample=()=>JSON.stringify(scores)===JSON.stringify(EXAMPLE);
+  let current=null;
+
+  function renderTabs(){
+    $('#areaTabs').innerHTML=AREAS.map((a,i)=>`<button role="tab" type="button" id="tab${i}" aria-selected="${i===tab}" data-i="${i}">${a.k}. ${esc(a.name)} <span class="s">${avg(scores[i]).toFixed(1)}</span></button>`).join('');
+  }
+  function renderQs(){
+    const a=AREAS[tab];
+    $('#qList').innerHTML=`<div class="criterion"><b>RULE OF THUMB</b>${esc(a.crit)}</div>`+a.qs.map((q,j)=>`<div class="qrow"><span class="id">${a.k}${j+1}</span><span class="txt">${esc(q[0])}</span><span class="seg" role="group" aria-label="${a.k}${j+1} score">${[1,2,3,4,5].map(v=>`<button type="button" data-j="${j}" data-v="${v}" aria-pressed="${scores[tab][j]===v}">${v}</button>`).join('')}</span><span class="anc"><span><b>1</b>${esc(q[1])}</span><span><b>3</b>${esc(q[2])}</span><span><b>5</b>${esc(q[3])}</span></span></div>`).join('');
+  }
+  function lowestItems(filterAreas){
+    const items=[];
+    scores.forEach((row,i)=>{if(filterAreas&&!filterAreas.includes(i))return;row.forEach((v,j)=>items.push({id:AREAS[i].k+(j+1),t:AREAS[i].qs[j][0],v}))});
+    const m=Math.min(...items.map(x=>x.v));
+    return items.filter(x=>x.v===m).slice(0,3);
+  }
+  function renderResult(){
+    const areaAvg=scores.map(avg);
+    const total=avg(areaAvg);
+    const minV=Math.min(...areaAvg), maxV=Math.max(...areaAvg);
+    const base=lvIdx(total);
+    const cap=Math.min(4,lvIdx(minV)+1);
+    const li=Math.min(base,cap);
+    current={total,li,areaAvg};
+    const L=LEVELS[li];
+    $('#total').innerHTML=r1(total).toFixed(1)+'<small> / 5</small>';
+    $('#lvName').textContent=`${L.c} · ${L.n}`;
+    $('#lvDesc').textContent=L.d;
+    const spread=r1(maxV-minV);
+    const bottlenecks=spread>=0.5?areaAvg.map((v,i)=>v===minV?i:-1).filter(i=>i>=0):[];
+    $('#bars').innerHTML=AREAS.map((a,i)=>`<div class="bar${bottlenecks.includes(i)?' min':''}"><span>${esc(a.short)}</span><span class="track"><span class="fill" style="width:${(areaAvg[i]-1)/4*100}%"></span></span><span class="v">${areaAvg[i].toFixed(1)}</span></div>`).join('');
+    $('#ladder').innerHTML=LEVELS.map((l,i)=>`<div class="${i===li?'on':''}"><b>${l.c}</b>${l.n}</div>`).join('');
+    const capEl=$('#capNote');
+    if(base>li){
+      capEl.hidden=false;
+      capEl.innerHTML=`Your overall score points to <b>${LEVELS[base].c}</b>, but your weakest area (${esc(AREAS[areaAvg.indexOf(minV)].name)}, ${minV.toFixed(1)}) is at ${LEVELS[lvIdx(minV)].c}, so you land at <b>${L.c}</b>.`;
+    }else capEl.hidden=true;
+    const recTxt=REC[li].map(p=>'P'+p).join(' → ');
+    let html;
+    if(bottlenecks.length){
+      const names=bottlenecks.map(i=>`${AREAS[i].name} (${areaAvg[i].toFixed(1)})`).join(', ');
+      const low=lowestItems(bottlenecks).map(x=>`${x.id} ${esc(x.t)}`).join(' · ');
+      html=`<span>Your bottleneck is <b>${esc(names)}</b>. Recommended automation level: <b>${recTxt}</b>. Shore this area up before you scale.</span><span>Start with: ${low}</span>`;
+    }else if(minV>=4.5){
+      html=`<span><b>Every area is at L5, so there's no bottleneck.</b> Double-check that each 5 is backed by evidence: a document, a budget line, a dashboard.</span><span>If the evidence holds up, your next move is expansion, not repair. Look at AI agent (P4) projects and new AI-powered services.</span>`;
+    }else{
+      const low=lowestItems(null).map(x=>`${x.id} ${esc(x.t)}`).join(' · ');
+      html=`<span><b>Your areas are within 0.5 points of each other, so there's no clear bottleneck.</b> Raise all five together. Recommended automation level: <b>${recTxt}</b>.</span><span>Start with your lowest-scoring questions: ${low}</span>`;
+    }
+    $('#bottleneck').innerHTML=html;
+    $('#exFlag').textContent=isExample()?'Sample scores are filled in. Change them to match your company.':'Your scores are saved only in this browser.';
+    renderStep2(li);
+  }
+  function renderStep2(li){
+    $('#mapTable tbody').innerHTML=MAP.map((r,i)=>`<tr class="${i===li?'hl':''}"><td class="nw"><b>${LEVELS[i].c}</b> ${LEVELS[i].n}</td><td><span class="pill lv">${REC[i].map(p=>'P'+p).join(' → ')}</span></td><td><span class="pill lv">Up to P${CAP[i]}</span></td><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('');
+    $('#mapNote').textContent=`Your Step 1 result: ${LEVELS[li].c} ${LEVELS[li].n}`;
+    const rec=REC[li];
+    $('#plevels').innerHTML=PLV.map((p,i)=>{const on=rec.includes(i+1);return `<div class="plv${on?' rec':''}">${on?'<span class="badge">Recommended now</span>':''}<span class="code">${p.c}</span><h4>${p.n}</h4><div class="row">${p.def}</div><div class="row">AI · <b>${p.ai}</b></div><div class="row">People · <b>${p.hu}</b></div><div class="ex">e.g., ${p.ex}</div></div>`}).join('');
+    const cap=CAP[li];
+    $('#deptNote').textContent=`Based on your Step 1 result (${LEVELS[li].c} ${LEVELS[li].n}, ceiling P${cap})`;
+    $('#deptBody').innerHTML=DEPTS.map(d=>{
+      const now=Math.min(d[2],cap);
+      const limited=now<d[2];
+      return `<tr><td class="nw">${d[0]}</td><td>${d[1]}</td><td><span class="pill lv">P${d[2]}</span></td><td><span class="pill lv on">P${now}</span>${limited?`<br><span class="count">P${d[2]} once you reach L${CAP.findIndex(c=>c>=d[2])+1}</span>`:''}</td><td>${d[3]}</td></tr>`;
+    }).join('');
+  }
+  function renderDiag(){renderTabs();renderQs();renderResult()}
+  $('#areaTabs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;tab=+b.dataset.i;renderTabs();renderQs();$('#tab'+tab).focus()});
+  $('#qList').addEventListener('click',e=>{const b=e.target.closest('button[data-v]');if(!b)return;scores[tab][+b.dataset.j]=+b.dataset.v;store.set('ax.diag',scores);renderTabs();renderQs();renderResult()});
+  $('#resetDiag').addEventListener('click',()=>{scores=EXAMPLE.map(r=>r.slice());store.set('ax.diag',scores);renderDiag()});
+  const savedRole=store.get('axen.role');if(savedRole)$('#roleSel').value=savedRole;
+  $('#roleSel').addEventListener('change',e=>store.set('axen.role',e.target.value));
+  $('#copyDiag').addEventListener('click',e=>{
+    const c=current;const L=LEVELS[c.li];
+    const lines=[`[AI readiness assessment] Role: ${$('#roleSel').value}`,
+      `Overall ${r1(c.total).toFixed(1)} · ${L.c} ${L.n}`,
+      AREAS.map((a,i)=>`${a.k}. ${a.name} ${c.areaAvg[i].toFixed(1)}`).join(' / '),
+      'By question: '+AREAS.map((a,i)=>scores[i].map((v,j)=>`${a.k}${j+1}=${v}`).join(' ')).join(' | ')];
+    copyText(lines.join('\n'),e.currentTarget);
+  });
+  renderDiag();
+
+  /* ---------- STEP 3 ---------- */
+  const PT={write:'Draft',search:'Summarize & search',extract:'Classify & extract',analyze:'Analyze',predict:'Predict'};
+  const UC=[
+    ['Marketing','Product page and social copy drafts','write',1,'50–70% less time on content','1–2 wks'],
+    ['Marketing','A/B variants of campaign copy','write',1,'3–5× more variants to test','1 wk'],
+    ['Marketing','Review and social listening summary','analyze',1,'Catch quality issues earlier','2 wks'],
+    ['Marketing','Messaging by customer segment','analyze',2,'Better response on targeted campaigns','4 wks'],
+    ['Marketing','Campaign performance recap','analyze',2,'80% less time on reporting','3 wks'],
+    ['B2B sales','Proposal and quote drafts','write',1,'50–60% less drafting time','2–3 wks'],
+    ['B2B sales','Meeting notes summarized into the CRM','search',2,'3–5 hours a week of admin back','4 wks'],
+    ['B2B sales','Account news and industry briefings','search',1,'Faster meeting prep','1 wk'],
+    ['B2B sales','Key terms pulled from RFPs and contracts','extract',1,'60% faster review, fewer misses','2 wks'],
+    ['B2B sales','Churn and upsell signal prediction','predict',3,'Higher repeat orders and order size','8+ wks'],
+    ['Merchandising','Product fixes from customer reviews','analyze',1,'Stronger case for new products','2 wks'],
+    ['Merchandising','Competitor product and price comparison','analyze',2,'Faster pricing and assortment calls','3 wks'],
+    ['Merchandising','Weekly sales trend summary','analyze',2,'Weekly merch meeting deck on autopilot','3 wks'],
+    ['Merchandising','Product attribute and category tagging','extract',2,'Better search and recs, faster setup','4 wks'],
+    ['Supply chain','Data pulled from vendor POs and invoices','extract',2,'80%+ less manual entry','4 wks'],
+    ['Supply chain','Vendor emails on delivery dates and claims','write',1,'Less time on vendor follow-up','1 wk'],
+    ['Supply chain','Demand forecasting (promos and seasonality)','predict',3,'Better accuracy, less shrink','8–12 wks'],
+    ['Supply chain','Overstock and stockout risk alerts','predict',3,'Fewer stockouts, faster turns','8+ wks'],
+    ['Stores','Store operations manual Q&A','search',1,'Fewer calls to HQ, faster onboarding','2 wks'],
+    ['Stores','Daily sales briefing by store','analyze',2,'Faster decisions for store managers','4 wks'],
+    ['Stores','Store walk and audit reports','write',1,'Less time on reporting','1 wk'],
+    ['Customer service','Reply drafts based on policy docs','write',1,'30–50% shorter handle time','2–3 wks'],
+    ['Customer service','Ticket categorization and routing','extract',2,'Faster resolution','4 wks'],
+    ['Customer service','Weekly VoC report from tickets','analyze',1,'Root causes of repeat complaints','2 wks'],
+    ['Customer service','After-call summaries and tags','search',2,'Less wrap-up time','3 wks'],
+    ['Finance & HR','Monthly results narrative and variance drivers','analyze',1,'Faster month-end reporting','2 wks'],
+    ['Finance & HR','Expense receipt categorization','extract',2,'Less time reviewing','4 wks'],
+    ['Finance & HR','Job postings and resume summaries','write',1,'Lighter load for recruiters','1 wk'],
+    ['Finance & HR','Policy and benefits Q&A','search',1,'Fewer repeat questions to HR','2 wks'],
+    ['Finance & HR','Open-ended survey analysis','analyze',1,'Spot team issues earlier','1 wk']
+  ];
+  const DEPT_F=['All','Marketing','B2B sales','Merchandising','Supply chain','Stores','Customer service','Finance & HR'];
+  const TYPE_F=[['all','All types'],['write','Draft'],['search','Summarize & search'],['extract','Classify & extract'],['analyze','Analyze'],['predict','Predict'],['easy','★ AI tool only']];
+  let fDept=store.get('axen.dept')||'All', fType=store.get('axen.type')||'all';
+  if(!DEPT_F.includes(fDept))fDept='All';
+  if(!TYPE_F.some(t=>t[0]===fType))fType='all';
+  function renderUC(){
+    $('#deptChips').innerHTML=DEPT_F.map(d=>`<button type="button" class="chip" data-d="${esc(d)}" aria-pressed="${d===fDept}">${esc(d)}</button>`).join('');
+    $('#typeChips').innerHTML=TYPE_F.map(t=>`<button type="button" class="chip" data-t="${t[0]}" aria-pressed="${t[0]===fType}">${esc(t[1])}</button>`).join('');
+    const rows=UC.filter(u=>(fDept==='All'||u[0]===fDept)&&(fType==='all'||(fType==='easy'?u[3]===1:u[2]===fType)));
+    $('#ucBody').innerHTML=rows.map(u=>`<tr><td class="nw">${esc(u[0])}</td><td>${esc(u[1])}</td><td><span class="pill pt-${u[2]}">${esc(PT[u[2]])}</span></td><td class="stars">${'★'.repeat(u[3])}<i>${'★'.repeat(3-u[3])}</i></td><td>${esc(u[4])}</td><td class="nw num">${u[5]}</td></tr>`).join('')||'<tr><td colspan="6">No tasks match. Try a different filter.</td></tr>';
+    $('#ucCount').textContent=`${rows.length} tasks`;
+  }
+  $('#deptChips').addEventListener('click',e=>{const b=e.target.closest('[data-d]');if(!b)return;fDept=b.dataset.d;store.set('axen.dept',fDept);renderUC()});
+  $('#typeChips').addEventListener('click',e=>{const b=e.target.closest('[data-t]');if(!b)return;fType=b.dataset.t;store.set('axen.type',fType);renderUC()});
+  renderUC();
+
+  const CRITS=[
+    {n:'Business impact',w:.30,h:'1: under $10K a year · 3: $10K–$100K · 5: over $100K'},
+    {n:'Ease of starting',w:.25,h:'1: needs development · 3: needs an automation tool · 5: AI tool only'},
+    {n:'Data readiness',w:.20,h:'1: data has to be collected · 3: needs cleanup · 5: ready to use'},
+    {n:'Team buy-in',w:.15,h:'1: reluctant · 3: cooperative · 5: the department head asked for it'},
+    {n:'Reuse potential',w:.10,h:'1: this team only · 3: 2–3 teams · 5: company-wide'}
+  ];
+  const SC_EX=[3,5,5,4,4];
+  let sc=store.get('ax.sc2');
+  if(!Array.isArray(sc)||sc.length!==5) sc=SC_EX.slice();
+  function renderSC(){
+    $('#crits').innerHTML=CRITS.map((c,i)=>`<div class="crit"><span class="nm">${c.n}<span class="w">${Math.round(c.w*100)}%</span></span><span class="seg" role="group" aria-label="${c.n} score">${[1,2,3,4,5].map(v=>`<button type="button" data-i="${i}" data-v="${v}" aria-pressed="${sc[i]===v}">${v}</button>`).join('')}</span><span class="hint">${c.h}</span></div>`).join('');
+    const t=CRITS.reduce((s,c,i)=>s+c.w*sc[i],0);
+    $('#scTotal').innerHTML=t.toFixed(2)+'<small> / 5</small>';
+    const st=$('#scState');
+    if(t>=3.5){st.textContent='Go';st.className='state go';$('#scMsg').textContent='3.5 or higher. Add it to your first wave and write a project card in Step 5.'}
+    else if(t>=2.5){st.textContent='Rework and rescore';st.className='state hold';$('#scMsg').textContent='Find a way to lift the weak criteria (narrow the scope, clean up the data), then score it again.'}
+    else{st.textContent='Not now';st.className='state no';$('#scMsg').textContent='The effort outweighs the payoff for now. Start with another candidate.'}
+  }
+  $('#crits').addEventListener('click',e=>{const b=e.target.closest('button[data-v]');if(!b)return;sc[+b.dataset.i]=+b.dataset.v;store.set('ax.sc2',sc);renderSC()});
+  renderSC();
+
+  const STARTERS={
+    'Company-wide picks':[
+      ['Weekly review and VoC insights report','Merchandising, marketing, and customer service work from the same report to find fixes. Start by dropping the review export into an AI tool.','analyze','B2C','2 wks'],
+      ['Customer service reply drafts','Load return and exchange policies into an AI tool project so agents get a draft to edit. Integrate with the service desk only after the results are proven.','write','B2C','3 wks'],
+      ['B2B proposal and quote drafts','Combine your standard template with the account\'s purchase history to get a first draft. Faster proposals can show up in win rates.','write','B2B','3 wks']],
+    'Marketing':[
+      ['Product page and social copy drafts','Feed in product specs and your brand voice guide to get copy for every channel at once. Someone reviews it before it goes live.','write','B2C','1–2 wks'],
+      ['Review and social listening summary','Feed in last week\'s reviews and social mentions to see what people complain about and what lands. It gives your next campaign a basis.','analyze','B2C','2 wks'],
+      ['Campaign performance recap','Upload performance exports by channel to get what worked, what didn\'t, and next steps. Cuts weekly reporting time sharply.','analyze','B2C','3 wks']],
+    'B2B sales':[
+      ['Proposal and quote drafts','Combine the standard template, account purchase history, and this quarter\'s promo terms into a first draft. A person signs off on pricing.','write','B2B','2–3 wks'],
+      ['Key terms from RFPs and contracts','Pull delivery, payment, and penalty terms from long RFPs and contracts into a table so nothing slips.','extract','B2B','2 wks'],
+      ['Account briefings','Summarize news about the account and its industry before each visit to cut prep time.','search','B2B','1 wk']],
+    'Merchandising':[
+      ['Product fixes from reviews','Feed in reviews by category to group complaints about fit, quality, and price, with suggested fixes.','analyze','B2C','2 wks'],
+      ['Weekly sales trend summary','Feed in weekly sales to see what\'s rising, what\'s slipping, and why. Ties into the Tableau example in Step 5.','analyze','B2C & B2B','3 wks'],
+      ['Competitor product and price comparison','Pull competitor product info into a side-by-side of price points, assortment, and promotions.','analyze','B2C','3 wks']],
+    'Supply chain':[
+      ['Vendor email drafts','Write delivery check-ins, claims, and cost negotiations quickly from templates for each situation.','write','B2B','1 wk'],
+      ['Invoice and PO data cleanup','Pull items, quantities, and amounts from PDF or scanned invoices into your spreadsheet format. A totals check catches errors.','extract','B2B','3–4 wks'],
+      ['Weekly inventory and inbound summary','Feed in inventory and inbound files to flag items at risk of stocking out and late shipments.','analyze','B2C & B2B','2 wks']],
+    'Stores':[
+      ['Store operations manual Q&A','Load the ops manual and notices into an AI tool so managers and associates can just ask. Fewer calls to HQ.','search','B2C','2 wks'],
+      ['Store walk and audit reports','Turn walk notes into a report in your standard format.','write','B2C','1 wk'],
+      ['Daily store sales briefing','Feed in yesterday\'s sales to get results vs. plan and anything unusual in three lines.','analyze','B2C','2–3 wks']],
+    'Customer service':[
+      ['Reply drafts','Agents get a draft based on return and exchange policies, then review and send.','write','B2C','2–3 wks'],
+      ['Weekly VoC report','Feed in tickets to get the top five repeat complaints and which team owns each, then share it with them.','analyze','B2C','2 wks'],
+      ['After-call summaries and tags','Summarize each contact and tag it automatically to cut wrap-up time.','search','B2C','2–3 wks']],
+    'Finance & HR':[
+      ['Monthly results narrative','Feed in actuals to get a written explanation of variance to plan. Someone checks the numbers before it goes out.','analyze','—','2 wks'],
+      ['Policy and benefits Q&A','Load policy documents into an AI tool to answer employees\' repeat questions. Questions involving personal data are excluded.','search','—','2 wks'],
+      ['Job postings and resume summaries','Write postings from the job description and summarize applicants\' key experience. People make every hiring call.','write','—','1 wk']]
+  };
+  const sSel=$('#starterSel');
+  sSel.innerHTML=Object.keys(STARTERS).map(k=>`<option>${esc(k)}</option>`).join('');
+  const savedStarter=store.get('axen.starter');
+  if(savedStarter&&STARTERS[savedStarter])sSel.value=savedStarter;
+  function renderStarters(){
+    $('#starterCards').innerHTML=STARTERS[sSel.value].map(s=>`<div class="card"><h4>${esc(s[0])}</h4><p>${esc(s[1])}</p><div class="meta"><span class="pill pt-${s[2]}">${esc(PT[s[2]])}</span>${s[3]!=='—'?`<span class="pill lv">${esc(s[3])}</span>`:''}<span class="pill lv">P2</span><span class="pill lv">${s[4]}</span></div></div>`).join('');
+  }
+  sSel.addEventListener('change',()=>{store.set('axen.starter',sSel.value);renderStarters()});
+  renderStarters();
+
+  /* ---------- STEP 4 ---------- */
+  const PROMPTS=[
+    {t:'Review insights',type:'analyze',body:`[Role] You're a retail merchandising analyst.
+[Context] Below are {count} customer reviews from the past week for {category}.
+[Task] Give me 1) the positive/negative split 2) the top five causes of
+       negative reviews, with counts 3) three product fixes
+       4) any issues that need action right away.
+[Format] A table plus a three-line summary.
+[Constraints] Don't guess beyond what the reviews say. Quote one
+       representative review for each cause.`},
+    {t:'B2B proposal draft',type:'write',body:`[Role] You're a B2B wholesale account manager.
+[Context] Account details: {industry, size, last 12 months of purchases, request}
+       I've attached our standard proposal template and this quarter's promo terms.
+[Task] Draft a proposal for this account. Based on their purchase
+       history, suggest 2–3 additional products.
+[Format] Follow the template's section order exactly.
+[Constraints] Only quote prices and discounts within the attached promo terms.
+       Mark anything not confirmed as [TO CONFIRM].`},
+    {t:'Customer service reply',type:'write',body:`[Role] You're an e-commerce customer service agent.
+[Context] I've attached our return and exchange policy and the customer's message.
+[Task] Categorize the message (shipping/exchange/return/other) and draft a reply.
+[Format] First line: [Category]. Then the reply to the customer.
+[Constraints] Don't promise credits or exceptions that aren't in the policy.
+       If you're not sure, mark it [AGENT TO REVIEW].`},
+    {t:'Weekly sales briefing',type:'analyze',body:`[Role] You're a retail sales operations analyst.
+[Context] The attached file has last week's and the same week last year's
+       sales by store and channel.
+[Task] 1) The five stores or categories with the biggest change vs. last
+       week and last year 2) likely reasons 3) what to check next week.
+[Format] Ten lines or fewer, readable in one minute by executives.
+[Constraints] Label any reason the data doesn't confirm as a "hypothesis."`}
+  ];
+  $('#prompts').innerHTML=PROMPTS.map((p,i)=>`<div class="prompt"><header><b>${p.t} <span class="pill pt-${p.type}">${esc(PT[p.type])}</span></b><button type="button" class="linkbtn" data-copy="${i}">Copy</button></header><pre id="pr${i}">${esc(p.body).replace(/\[(Role|Context|Task|Format|Constraints)\]/g,'<span class="k">[$1]</span>')}</pre></div>`).join('');
+  $('#prompts').addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const i=+b.dataset.copy;copyText(PROMPTS[i].body,b,$('#pr'+i))});
+
+  function checklist(sel,key,items){
+    const st=store.get(key)||{};
+    $(sel).innerHTML=items.map((t,i)=>`<li><input type="checkbox" id="${key}-${i}" ${st[i]?'checked':''}><label for="${key}-${i}">${t[0]}${t[1]?`<small>${t[1]}</small>`:''}</label></li>`).join('');
+    $(sel).addEventListener('change',e=>{const m=e.target.id.match(/-(\d+)$/);if(!m)return;st[m[1]]=e.target.checked;store.set(key,st)});
+  }
+  checklist('#govChecks','axen.gov',[
+    ['Everyone on the team knows not to paste customer names, emails, phone numbers, addresses, or card numbers into AI tools','If anyone\'s unsure, cover it at your next team meeting.'],
+    ['The team can name what should never leave the building: vendor cost sheets, contract terms, unreleased financials',''],
+    ['We use a company-approved AI tool on a business plan that doesn\'t train on our data','If people are doing work in personal free accounts, stop and talk to IT.'],
+    ['Anything going to a customer or vendor gets read by a person before it\'s sent, even if AI wrote it',''],
+    ['Any use of customer data lines up with the privacy laws that apply to us','For example, CCPA/CPRA in California, PIPEDA and Quebec\'s Law 25 in Canada. If you\'re not sure, ask legal first.'],
+    ['We know who to tell first if AI sends out something wrong','Usually your manager and the AX lead. Pin their contact info in the team channel.']
+  ]);
+  checklist('#reportChecks','axen.report',[
+    ['I wrote down when and how the baseline was measured',''],
+    ['The numbers are conservative, with realization rate and margin applied',''],
+    ['Costs include training, change management, and internal staff time',''],
+    ['I have best, base, and worst cases ready',''],
+    ['I can explain where the saved time goes (more customer time, more account visits)',''],
+    ['Benefits that are hard to quantify (employee and customer experience) are listed separately','']
+  ]);
+
+  /* ---------- STEP 6 ---------- */
+  const FIELDS=['cases','min','wage','real','save','profit','build','ops','change'];
+  const PRESETS={
+    insight:{label:'Review insights (no build)',v:{cases:250,min:240,wage:50,real:70,save:20000,profit:0,build:0,ops:3600,change:2000},
+        note:'Example: 250 weekly reports a year (5 people × 50 weeks), 4 hours saved each, $20K credited from lower returns, AI licenses for 5 people at $60/month (assumed)'},
+    b2b:{label:'B2B proposals (no build)',v:{cases:2880,min:150,wage:55,real:70,save:0,profit:86400,build:0,ops:21600,change:5000},
+        note:'Example: 30 reps × 8 proposals a month, 4 hours down to 1.5, win rate 20% → 22%, $15K average deal, 10% margin, licenses for 30 reps at $60/month (assumed)'},
+    cs:{label:'Service desk integration (P3)',v:{cases:375000,min:2.5,wage:32,real:70,save:0,profit:0,build:75000,ops:35000,change:10000},
+        note:'Example: 1,500 tickets a day × 250 days, 6 minutes down to 3.5. Integrating with the service desk is P3, so it includes a partner build'}
+  };
+  let roiState=store.get('axen.roi');
+  if(!roiState||!roiState.v) roiState={p:'insight',v:Object.assign({},PRESETS.insight.v)};
+  const num=v=>{const n=parseFloat(String(v).replace(/[,$]/g,''));return isFinite(n)?n:0};
+  const fmtN=n=>n.toLocaleString('en-US',{maximumFractionDigits:1});
+  const usd=x=>(x<0?'−':'')+'$'+Math.abs(Math.round(x)).toLocaleString('en-US');
+  function fillForm(){FIELDS.forEach(f=>{$('#f_'+f).value=fmtN(roiState.v[f]??0)})}
+  function calc(){
+    const v=roiState.v;
+    const hours=v.cases*v.min/60;
+    const time=hours*v.wage*v.real/100;
+    const benefit=time+v.save+v.profit;
+    const cost=v.build+v.ops+v.change;
+    $('#r_time').textContent=usd(time);
+    $('#r_timeD').textContent=`${fmtN(Math.round(hours))} hrs × $${fmtN(v.wage)} × ${fmtN(v.real)}%`;
+    $('#r_save').textContent=usd(v.save);
+    $('#r_profit').textContent=usd(v.profit);
+    $('#r_benefit').textContent=usd(benefit);
+    $('#r_build').textContent=usd(v.build);
+    $('#r_ops').textContent=usd(v.ops);
+    $('#r_change').textContent=usd(v.change);
+    $('#r_cost').textContent=usd(cost);
+    const row=$('#r_roiRow');
+    if(cost>0){
+      const roi=(benefit-cost)/cost*100;
+      $('#r_roi').textContent=`${roi>=0?'+':''}${Math.round(roi).toLocaleString('en-US')}%`;
+      row.className='big '+(roi>=0?'pos':'neg');
+      $('#r_payback').textContent=benefit>0?`${(cost/(benefit/12)).toFixed(1)} months`:'No payback';
+      const c3=v.build+v.change+v.ops*3;
+      $('#r_roi3').textContent=`${Math.round((benefit*3-c3)/c3*100).toLocaleString('en-US')}%`;
+    }else{$('#r_roi').textContent='—';row.className='big';$('#r_payback').textContent='—';$('#r_roi3').textContent='—'}
+    const p=roiState.p&&PRESETS[roiState.p];
+    $('#rcTitle').textContent=p?`${p.label} · Year 1`:'Your numbers · Year 1';
+    $('#roiFlag').textContent=p?p.note+'. Change any number to switch to your own inputs.':'Your inputs are saved only in this browser.';
+    document.querySelectorAll('[data-preset]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.preset===roiState.p));
+  }
+  $('#roiForm').addEventListener('input',e=>{
+    const f=e.target.id.replace('f_','');if(!FIELDS.includes(f))return;
+    roiState.v[f]=num(e.target.value);roiState.p=null;store.set('axen.roi',roiState);calc();
+  });
+  $('#roiForm').addEventListener('focusout',e=>{const f=e.target.id&&e.target.id.replace('f_','');if(FIELDS.includes(f))e.target.value=fmtN(roiState.v[f])});
+  $('#roiForm').addEventListener('submit',e=>e.preventDefault());
+  document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{roiState={p:b.dataset.preset,v:Object.assign({},PRESETS[b.dataset.preset].v)};store.set('axen.roi',roiState);fillForm();calc()}));
+  fillForm();calc();
+
+  const links=[...document.querySelectorAll('.toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  function onScroll(){
+    let cur=0;const y=window.scrollY+140;
+    secs.forEach((s,i)=>{if(s&&s.offsetTop<=y)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  document.querySelectorAll('.lang a').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('ax.lang',a.dataset.lang)}catch(e){}}));
+})();
+</script>
+</body>
+</html>
