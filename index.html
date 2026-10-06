@@ -1,0 +1,1439 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="B2B·B2C 리테일 기업의 AX 실무자를 위한 6단계 실행 가이드: 수준 진단, 적용 레벨, 우선 적용 업무, 방법론, 실행 계획, ROI 계산">
+<meta name="author" content="Nathan Kim">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>리테일 AX 플레이북</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#F3F4F0; --surface:#FFFFFF; --surface-2:#EAECE6;
+  --ink:#16202A; --ink-2:#4B5663; --ink-3:#7A8490; --line:#D6DAD2;
+  --accent:#0E6A5A; --accent-ink:#FFFFFF; --accent-soft:#DCEDE8;
+  --tag:#F2C230; --tag-ink:#2E2400;
+  --c1:#0E6A5A; --c1s:#DCEDE8;
+  --c2:#2F6DB5; --c2s:#DFEAF7;
+  --c3:#8A5A00; --c3s:#F6EAD2;
+  --c4:#4550C4; --c4s:#E3E5FA;
+  --c5:#9A3A5E; --c5s:#F5E1E9;
+  --good:#1F7A3E; --warn:#A86A00; --bad:#B3362B;
+  --receipt:#FFFFFF;
+  --display:"Do Hyeon","IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0F151B; --surface:#161F28; --surface-2:#1D2833;
+    --ink:#E6EBEE; --ink-2:#A3AEB8; --ink-3:#77838E; --line:#2A3642;
+    --accent:#4CC2A6; --accent-ink:#06201A; --accent-soft:#143530;
+    --tag:#E6B82A; --tag-ink:#231B00;
+    --c1:#4CC2A6; --c1s:#143530; --c2:#7DB2F0; --c2s:#1B2E45; --c3:#E0B156; --c3s:#3A2C12; --c4:#9199F2; --c4s:#23284F; --c5:#EB8FB2; --c5s:#3D1F2B;
+    --good:#5CC47D; --warn:#E0A43A; --bad:#EF7A6E;
+    --receipt:#1A232C;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0F151B; --surface:#161F28; --surface-2:#1D2833;
+  --ink:#E6EBEE; --ink-2:#A3AEB8; --ink-3:#77838E; --line:#2A3642;
+  --accent:#4CC2A6; --accent-ink:#06201A; --accent-soft:#143530;
+  --tag:#E6B82A; --tag-ink:#231B00;
+  --c1:#4CC2A6; --c1s:#143530; --c2:#7DB2F0; --c2s:#1B2E45; --c3:#E0B156; --c3s:#3A2C12; --c4:#9199F2; --c4s:#23284F; --c5:#EB8FB2; --c5s:#3D1F2B;
+  --good:#5CC47D; --warn:#E0A43A; --bad:#EF7A6E;
+  --receipt:#1A232C;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.25;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,4vw,38px)}
+h3{font-size:22px}
+p{margin:0}
+a{color:var(--accent)}
+button,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--ink-2)}
+
+.shell{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;max-width:1240px;margin:0 auto;padding-inline:24px}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;padding-block:32px;display:flex;flex-direction:column;gap:4px}
+.toc .brand{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;margin-bottom:14px}
+.toc a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink-2);padding:7px 10px;border-radius:6px;font-size:14px}
+.toc a .n{font-family:var(--mono);font-size:11px;color:var(--ink-3);min-width:22px}
+.toc a:hover{background:var(--surface-2);color:var(--ink)}
+.toc a.on{background:var(--surface);color:var(--ink);box-shadow:inset 3px 0 0 var(--tag)}
+main{padding-block:32px 96px;min-width:0;display:flex;flex-direction:column;gap:88px}
+
+.hero{display:flex;flex-direction:column;gap:22px;padding-top:12px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.hero h1{font-size:clamp(40px,6.4vw,68px);letter-spacing:-.01em}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--tag) 62%);padding:0 .08em}
+.hero .lede{max-width:62ch;color:var(--ink-2);font-size:17px}
+.facts{display:flex;flex-wrap:wrap;gap:10px}
+.fact{display:flex;gap:8px;align-items:baseline;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13.5px;background:var(--surface)}
+.route{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.route a{padding:16px 14px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px;border-left:1px solid var(--line)}
+.route a:first-child{border-left:0}
+.route a:hover{background:var(--surface-2)}
+.route .q{font-size:13px;color:var(--ink-2);line-height:1.5}
+.route .t{font-weight:700;font-size:15px}
+.route .d{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:auto}
+.plan{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.plan>div{background:var(--surface);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.plan .when{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink-3)}
+.plan b{font-size:15px}
+.plan p{font-size:13.5px;color:var(--ink-2);line-height:1.6}
+
+.shelftag{position:relative;display:inline-flex;align-items:center;gap:8px;background:var(--tag);color:var(--tag-ink);font-family:var(--mono);font-weight:600;font-size:12px;letter-spacing:.08em;padding:5px 12px 5px 18px;border-radius:3px 6px 6px 3px;align-self:flex-start}
+.shelftag::before{content:"";position:absolute;left:6px;top:50%;width:5px;height:5px;border-radius:50%;background:var(--bg);transform:translateY(-50%)}
+.shelftag .dur{font-weight:400;opacity:.8}
+
+section.step{display:flex;flex-direction:column;gap:26px;scroll-margin-top:24px}
+.step-head{display:flex;flex-direction:column;gap:12px}
+.step-head .intro{max-width:68ch;color:var(--ink-2)}
+.io{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;font-size:13.5px}
+.io div{background:var(--surface);padding:12px 14px;line-height:1.6}
+.io span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--ink-3);margin-bottom:4px}
+.io ul{margin:0;padding-left:16px}
+
+.sub{display:flex;flex-direction:column;gap:14px}
+.sub>h3{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.sub>h3 .k{font-family:var(--mono);font-size:13px;color:var(--ink-3);font-weight:400}
+.sub>p{max-width:68ch;color:var(--ink-2)}
+
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.55}
+th,td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid var(--line)}
+th{font-weight:700;font-size:12.5px;color:var(--ink-2);background:var(--surface-2);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.nw{white-space:nowrap}
+tr.hl td{background:var(--accent-soft)}
+tr.hl td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
+
+.note{border-left:3px solid var(--tag);background:var(--surface);padding:14px 18px;border-radius:0 8px 8px 0;font-size:14.5px;color:var(--ink-2);display:flex;flex-direction:column;gap:6px}
+.note b{color:var(--ink)}
+.note.warn{border-left-color:var(--warn)}
+.note ul{margin:0;padding-left:18px}
+
+.pill{display:inline-block;font-size:12px;font-weight:500;padding:1px 9px;border-radius:999px;white-space:nowrap}
+.pill.lv{background:var(--surface-2);color:var(--ink);font-family:var(--mono);font-size:11.5px}
+.pill.lv.on{background:var(--accent);color:var(--accent-ink)}
+.pt-write{background:var(--c1s);color:var(--c1)}
+.pt-search{background:var(--c2s);color:var(--c2)}
+.pt-extract{background:var(--c3s);color:var(--c3)}
+.pt-analyze{background:var(--c4s);color:var(--c4)}
+.pt-predict{background:var(--c5s);color:var(--c5)}
+.stars{font-family:var(--mono);letter-spacing:1px;color:var(--warn);white-space:nowrap}
+.stars i{font-style:normal;color:var(--line)}
+
+/* Diagnosis */
+.tool{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:20px;align-items:start}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.tabs{display:flex;flex-wrap:wrap;gap:4px;padding:8px;border-bottom:1px solid var(--line)}
+.tabs button{border:0;background:transparent;padding:7px 12px;border-radius:6px;font-size:13.5px;cursor:pointer;color:var(--ink-2);white-space:nowrap;display:flex;gap:6px;align-items:baseline}
+.tabs button .s{font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.tabs button[aria-selected="true"] .s{color:var(--bg);opacity:.75}
+.qs{padding:6px 18px 10px}
+.criterion{margin:12px 0 4px;padding:12px 14px;background:var(--surface-2);border-radius:8px;font-size:13.5px;line-height:1.6}
+.criterion b{display:block;font-size:12px;font-family:var(--mono);letter-spacing:.08em;color:var(--ink-3);font-weight:400;margin-bottom:2px}
+.qrow{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:6px 10px;align-items:start;padding:13px 0;border-bottom:1px dashed var(--line)}
+.qrow:last-child{border-bottom:0}
+.qrow .id{font-family:var(--mono);font-size:12px;color:var(--ink-3);padding-top:3px}
+.qrow .txt{font-size:14.5px;line-height:1.5;font-weight:500}
+.anc{grid-column:2/-1;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+.anc span b{font-family:var(--mono);color:var(--ink-2);margin-right:4px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;flex:none}
+.seg button{border:0;border-left:1px solid var(--line);background:var(--surface);width:32px;height:30px;cursor:pointer;font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+.seg button:first-child{border-left:0}
+.seg button:hover{background:var(--surface-2)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);font-weight:600}
+.scale-key{font-size:12px;color:var(--ink-3);padding:10px 18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:4px 14px}
+.scale-key b{font-family:var(--mono);color:var(--ink-2)}
+
+.result{padding:20px;display:flex;flex-direction:column;gap:16px;position:sticky;top:16px}
+.bigscore{font-family:var(--mono);font-size:44px;line-height:1;font-weight:600;white-space:nowrap}
+.bigscore small{font-size:15px;color:var(--ink-3);font-weight:400}
+.lvname .l{font-family:var(--display);font-size:24px;line-height:1.2}
+.lvname .d{font-size:13px;color:var(--ink-2)}
+.bars{display:flex;flex-direction:column;gap:9px}
+.bar{display:grid;grid-template-columns:88px minmax(0,1fr) 34px;gap:10px;align-items:center;font-size:13px}
+.track{position:relative;height:10px;background:var(--surface-2);border-radius:5px}
+.fill{position:absolute;inset:0 auto 0 0;border-radius:5px;background:var(--accent);transition:width .3s}
+.bar.min .fill{background:var(--bad)}
+.bar .v{font-family:var(--mono);text-align:right;font-size:12.5px}
+.axis{display:grid;grid-template-columns:88px minmax(0,1fr) 34px;gap:10px;font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+.axis .ticks{display:flex;justify-content:space-between}
+.ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.ladder div{border:1px solid var(--line);border-radius:6px;padding:6px 4px;text-align:center;font-size:11.5px;line-height:1.3;color:var(--ink-3)}
+.ladder div b{display:block;font-family:var(--mono);font-size:12px}
+.ladder div.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.callout{font-size:13.5px;background:var(--surface-2);border-radius:8px;padding:12px 14px;color:var(--ink-2);display:flex;flex-direction:column;gap:6px}
+.callout b{color:var(--ink)}
+.callout.cap{background:transparent;border:1px dashed var(--warn)}
+.row-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.linkbtn{border:1px solid var(--line);background:transparent;border-radius:6px;padding:6px 12px;font-size:13px;cursor:pointer;color:var(--ink-2)}
+.linkbtn:hover{background:var(--surface-2);color:var(--ink)}
+.linkbtn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.role{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--ink-2)}
+.role select{border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:5px 8px;font-size:13px}
+.example-flag{font-size:12px;color:var(--ink-3)}
+
+.guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.guide>div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.guide h4{margin:0;font-size:15px}
+.guide ol,.guide ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--ink-2);display:flex;flex-direction:column;gap:5px}
+.guide b{color:var(--ink)}
+
+/* Step 2 */
+.plevels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.plv{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.plv .code{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.plv h4{margin:0;font-family:var(--display);font-weight:400;font-size:20px}
+.plv .row{font-size:13px;color:var(--ink-2)}
+.plv .row b{color:var(--ink);font-weight:500}
+.plv .ex{margin-top:auto;font-size:13px;border-top:1px dashed var(--line);padding-top:8px}
+.plv.rec{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.plv .badge{align-self:flex-start;font-size:11.5px;background:var(--accent);color:var(--accent-ink);padding:1px 8px;border-radius:999px}
+.ladderq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.ladderq>div{display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,200px);gap:14px;align-items:center;padding:14px 16px;border-top:1px solid var(--line)}
+.ladderq>div:first-child{border-top:0}
+.ladderq .p{font-family:var(--mono);font-weight:600;font-size:15px}
+.ladderq .qq{font-size:14.5px}
+.ladderq .qq small{display:block;font-size:12.5px;color:var(--ink-3)}
+.ladderq .yes{font-size:13px;color:var(--ink-2)}
+.ladderq .yes b{color:var(--good)}
+
+/* Step 3 */
+.ptypes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.ptype{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.ptype h4{margin:0;font-size:15px}
+.ptype p{font-size:13px;color:var(--ink-2);line-height:1.55}
+.ptype .goal{margin-top:auto;font-size:12px;color:var(--ink-3);border-top:1px dashed var(--line);padding-top:6px}
+.filters{display:flex;flex-direction:column;gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 13px;font-size:13px;cursor:pointer;color:var(--ink-2)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.count{font-size:13px;color:var(--ink-3)}
+.byline{display:flex;justify-content:space-between;align-items:baseline;gap:8px 16px;flex-wrap:wrap}
+.author{font-size:13px;color:var(--ink-3)}
+.author b{color:var(--ink);font-weight:500}
+.starter-head{display:flex;justify-content:space-between;align-items:center;gap:10px 16px;flex-wrap:wrap}
+.starter-head select{min-width:180px}
+.starter{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.starter .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.starter .card h4{margin:0;font-size:16px}
+.starter .card p{font-size:13.5px;color:var(--ink-2)}
+.starter .card .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.score-tool{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;align-items:start}
+.crit{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:12px 18px;border-bottom:1px dashed var(--line);align-items:center}
+.crit:last-child{border-bottom:0}
+.crit .nm{font-weight:500;font-size:14.5px}
+.crit .nm .w{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-left:6px}
+.crit .hint{grid-column:1/-1;font-size:12.5px;color:var(--ink-3)}
+.verdict{padding:20px;display:flex;flex-direction:column;gap:12px}
+.verdict .state{font-family:var(--display);font-size:24px}
+.verdict .state.go{color:var(--good)}
+.verdict .state.hold{color:var(--warn)}
+.verdict .state.no{color:var(--bad)}
+
+/* Step 4 */
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.flow>div{padding:16px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.flow>div:first-child{border-left:0}
+.flow .en{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--ink-3);text-transform:uppercase}
+.flow h4{margin:0;font-family:var(--display);font-weight:400;font-size:22px}
+.flow .aws{font-size:12.5px;color:var(--ink-3);line-height:1.5}
+.flow ul{margin:0;padding-left:16px;font-size:13.5px;color:var(--ink-2);display:flex;flex-direction:column;gap:3px}
+.flow .map{margin-top:auto;font-size:12.5px;border-top:1px dashed var(--line);padding-top:8px}
+.flow .map b{color:var(--accent);font-family:var(--mono);font-weight:600}
+.src{font-size:12.5px;color:var(--ink-3)}
+.prompts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.prompt{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.prompt header{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.prompt header b{font-size:14px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.prompt pre{margin:0;padding:14px;font-family:var(--mono);font-size:12.5px;line-height:1.65;white-space:pre-wrap;color:var(--ink-2);overflow-x:auto}
+.prompt pre .k{color:var(--accent);font-weight:600}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.checks li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;padding:12px 16px;border-top:1px solid var(--line)}
+.checks li:first-child{border-top:0}
+.checks input{margin-top:5px;accent-color:var(--accent);width:16px;height:16px;flex:none}
+.checks small{display:block;color:var(--ink-3);font-size:12.5px;margin-top:2px}
+
+/* Step 5 */
+.gantt td,.gantt th{text-align:center;padding:8px 6px;font-size:12.5px}
+.gantt td:first-child,.gantt th:first-child{text-align:left;padding-left:14px;white-space:nowrap;font-weight:500}
+.g{border-radius:4px;padding:4px 6px;display:block;white-space:nowrap}
+.g.d{background:var(--surface-2);color:var(--ink-2)}
+.g.b{background:var(--c4s);color:var(--c4)}
+.g.p{background:var(--accent-soft);color:var(--accent)}
+.g.s{background:var(--tag);color:var(--tag-ink)}
+.gates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.gate{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.gate h4{margin:0;font-family:var(--display);font-weight:400;font-size:20px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.gate h4 span{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.gate .scope{font-size:13px;color:var(--ink-2)}
+.gate ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px;font-size:13.5px;border-top:1px dashed var(--line);padding-top:10px}
+.gate li::before{content:"✓ ";color:var(--good);font-weight:700}
+.card1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.card1>div{background:var(--surface);padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.card1 .q{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-3)}
+.card1 .a{font-size:14.5px}
+.card1 .wide{grid-column:1/-1}
+
+/* Example */
+.example{border-top:1px solid var(--line);padding-top:28px;margin-top:8px}
+.example .mini{margin:10px 0 0;font-size:16px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.example .mini .k{font-family:var(--mono);font-size:12px;color:var(--ink-3);font-weight:400}
+.arch{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:stretch}
+.arch .node{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:var(--ink-2);line-height:1.5}
+.arch .node b{color:var(--ink);font-size:14px;line-height:1.35}
+.arch .node .no{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.arch .node.hi{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.arch .arrow{display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--ink-3);font-size:16px}
+.arch .pulse{grid-column:1/-1;background:var(--c4s);color:var(--ink);border-radius:10px;padding:12px 14px;font-size:13.5px}
+.arch .pulse b{color:var(--c4);margin-right:6px}
+.chat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:78%;padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.6}
+.msg.q{align-self:flex-end;background:var(--ink);color:var(--bg);border-bottom-right-radius:4px}
+.msg.a{align-self:flex-start;background:var(--surface-2);border-bottom-left-radius:4px}
+.msg.a ol{margin:0 0 8px;padding-left:18px}
+.tools{align-self:flex-start;display:flex;flex-wrap:wrap;gap:6px}
+.tools span{font-family:var(--mono);font-size:11.5px;color:var(--c2);background:var(--c2s);border-radius:4px;padding:2px 8px}
+.tools span::before{content:"⚙ ";opacity:.7}
+.hyp{font-family:var(--mono);font-size:11px;background:var(--tag);color:var(--tag-ink);border-radius:3px;padding:0 5px;margin-right:4px}
+.fde{background:var(--surface);border:1px solid var(--accent);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.fde h4{margin:0;font-family:var(--display);font-weight:400;font-size:24px;line-height:1.3;color:var(--accent);text-wrap:balance}
+.fde p{font-size:14.5px;color:var(--ink-2);max-width:72ch}
+.fde p b{color:var(--ink)}
+@media (max-width:1080px){
+  .arch{grid-template-columns:minmax(0,1fr)}
+  .arch .arrow{transform:rotate(90deg);height:18px}
+}
+@media (max-width:560px){.msg{max-width:92%}}
+
+/* ROI */
+.formula{font-family:var(--mono);font-size:13.5px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;overflow-x:auto}
+.roi{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:24px;align-items:start}
+.form{padding:18px;display:flex;flex-direction:column;gap:18px}
+.presets{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.presets span{font-size:13px;color:var(--ink-3);margin-right:4px}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+legend{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--ink-3);text-transform:uppercase;margin-bottom:8px;padding:0}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
+.field{display:flex;flex-direction:column;gap:4px}
+.field label{font-size:13px;color:var(--ink-2)}
+.inp{display:flex;align-items:center;border:1px solid var(--line);border-radius:6px;background:var(--bg);overflow:hidden}
+.inp:focus-within{border-color:var(--accent)}
+.inp input{flex:1;min-width:0;border:0;background:transparent;padding:8px 10px;font-family:var(--mono);font-size:14px;color:var(--ink);text-align:right}
+.inp input:focus{outline:none}
+.inp em{font-style:normal;font-size:12px;color:var(--ink-3);padding-right:10px}
+.receipt{background:var(--receipt);color:var(--ink);font-family:var(--mono);font-size:13px;padding:22px 22px 26px;position:sticky;top:16px;border:1px solid var(--line);border-bottom:0;
+  --zz:10px;
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/var(--zz) 100%;
+          mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/var(--zz) 100%}
+.receipt .hd{text-align:center;display:flex;flex-direction:column;gap:2px;margin-bottom:12px}
+.receipt .hd b{font-size:14px;letter-spacing:.14em}
+.receipt .hd span{font-size:11.5px;color:var(--ink-3)}
+.receipt .ln{display:flex;justify-content:space-between;gap:12px;padding:3px 0}
+.receipt .ln span:first-child{color:var(--ink-2)}
+.receipt .ln span:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.receipt .sm{font-size:11.5px;color:var(--ink-3)}
+.receipt hr{border:0;border-top:1px dashed var(--ink-3);margin:10px 0}
+.receipt .sec{font-size:11px;letter-spacing:.12em;color:var(--ink-3);margin:6px 0 2px}
+.receipt .tot{font-weight:600;font-size:14px}
+.receipt .big{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0}
+.receipt .big span:last-child{font-size:28px;font-weight:600}
+.receipt .big.pos span:last-child{color:var(--good)}
+.receipt .big.neg span:last-child{color:var(--bad)}
+.receipt .barcode{height:34px;margin-top:16px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px);opacity:.8}
+.receipt .ft{text-align:center;font-size:11px;color:var(--ink-3);margin-top:6px}
+
+.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.faq div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.faq b{font-size:15px}
+.faq p{font-size:14px;color:var(--ink-2)}
+footer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:var(--ink-3);display:flex;flex-direction:column;gap:6px}
+
+@media (max-width:1080px){
+  .route{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .route a:nth-child(4){border-left:0}
+  .route a:nth-child(n+4){border-top:1px solid var(--line)}
+  .flow,.plevels{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow>div{border-top:1px solid var(--line)}
+  .ptypes{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .tool{grid-template-columns:minmax(0,1fr)}
+  .result{position:static}
+}
+@media (max-width:900px){
+  .shell{grid-template-columns:minmax(0,1fr);gap:0;padding-inline:16px}
+  nav.toc{flex-direction:row;overflow-x:auto;padding-block:10px;background:var(--bg);z-index:5;border-bottom:1px solid var(--line);margin-inline:-16px;padding-inline:16px;gap:2px}
+  .toc .brand{display:none}
+  .toc a{white-space:nowrap;padding:6px 10px}
+  .toc a.on{box-shadow:inset 0 -3px 0 var(--tag)}
+  .score-tool,.roi{grid-template-columns:minmax(0,1fr)}
+  .receipt{position:static}
+  .starter,.gates,.prompts,.faq,.guide,.plan{grid-template-columns:minmax(0,1fr)}
+  .ladderq>div{grid-template-columns:48px minmax(0,1fr)}
+  .ladderq .yes{grid-column:2}
+}
+@media (max-width:560px){
+  body{font-size:15px}
+  .route{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .route a{border-left:1px solid var(--line)!important;border-top:1px solid var(--line)}
+  .route a:nth-child(odd){border-left:0!important}
+  .route a:nth-child(-n+2){border-top:0}
+  .io,.card1{grid-template-columns:minmax(0,1fr)}
+  .flow,.plevels,.ptypes{grid-template-columns:minmax(0,1fr)}
+  .flow>div{border-left:0}
+  .qrow{grid-template-columns:26px minmax(0,1fr)}
+  .qrow .seg{grid-column:2}
+  .fields{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+
+</head>
+<body>
+<div class="shell">
+  <nav class="toc" aria-label="가이드 목차">
+    <div class="brand">Retail AX Playbook</div>
+    <a href="#top"><span class="n">00</span>시작하기</a>
+    <a href="#s1"><span class="n">01</span>수준 진단</a>
+    <a href="#s2"><span class="n">02</span>적용 레벨 산정</a>
+    <a href="#s3"><span class="n">03</span>우선 적용 업무 선정</a>
+    <a href="#s4"><span class="n">04</span>방법론·실행 방식</a>
+    <a href="#s5"><span class="n">05</span>실행 계획 수립</a>
+    <a href="#s6"><span class="n">06</span>ROI 계산</a>
+    <a href="#appendix"><span class="n">+</span>부록</a>
+  </nav>
+
+  <main>
+    <header class="hero" id="top">
+      <div class="byline"><span class="eyebrow">AX 실무자를 위한 실행 가이드 · B2B·B2C 리테일</span><span class="author">Created by <b>Nathan Kim</b></span></div>
+      <h1>우리 회사의 AI 전환,<br><em>어디서부터</em> 시작할까요?</h1>
+      <p class="lede">이 가이드는 세 가지 질문에 차례로 답합니다. 우리 회사는 지금 어느 수준인지, 어떤 업무부터 시작해야 하는지, 투자하면 얼마를 돌려받는지입니다. 개발 없이 기존 AI 도구로 바로 시작할 수 있는 업무를 중심으로 정리했습니다.</p>
+      <div class="facts">
+        <div class="fact"><b>6단계</b> 순서대로 진행</div>
+        <div class="fact">첫 과제 착수까지 <b class="num">3~4주</b></div>
+        <div class="fact">자가진단 · 스코어카드 · ROI 계산기 내장</div>
+      </div>
+      <div class="route" aria-label="6단계 로드맵">
+        <a href="#s1"><span class="shelftag">STEP 1</span><span class="t">수준 진단</span><span class="q">우리 회사는 AI를 얼마나 준비했나?</span><span class="d">각자 15분</span></a>
+        <a href="#s2"><span class="shelftag">STEP 2</span><span class="t">적용 레벨 산정</span><span class="q">업무에 AI를 어디까지 맡길 수 있나?</span><span class="d">워크숍 1회차</span></a>
+        <a href="#s3"><span class="shelftag">STEP 3</span><span class="t">우선 적용 업무 선정</span><span class="q">어떤 업무부터 시작할까?</span><span class="d">워크숍 2회차</span></a>
+        <a href="#s4"><span class="shelftag">STEP 4</span><span class="t">방법론·실행 방식</span><span class="q">누가, 어떤 방식으로 만드나?</span><span class="d">1주</span></a>
+        <a href="#s5"><span class="shelftag">STEP 5</span><span class="t">실행 계획 수립</span><span class="q">목표·책임자·일정은?</span><span class="d">1주</span></a>
+        <a href="#s6"><span class="shelftag">STEP 6</span><span class="t">ROI 계산</span><span class="q">얼마를 넣고 얼마를 얻나?</span><span class="d">1주</span></a>
+      </div>
+      <div class="sub">
+        <h3>처음이라면 이렇게 진행하세요</h3>
+        <div class="plan">
+          <div><span class="when">워크숍 전 · 각자</span><b>STEP 1 진단 입력</b><p>참여자가 이 페이지에서 각자 진단하고 결과를 복사해 AX 담당자에게 보냅니다.</p></div>
+          <div><span class="when">워크숍 1회차 · 반나절</span><b>STEP 1~2 결과 합의</b><p>진단 결과를 모아 회사 레벨을 확정하고, 부서별로 AI를 어디까지 맡길지 정합니다.</p></div>
+          <div><span class="when">워크숍 2회차 · 반나절</span><b>STEP 3 첫 과제 3개 선정</b><p>정한 레벨 안에서 부서별 후보 업무를 뽑고, 스코어카드로 첫 과제 3개를 고릅니다.</p></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- STEP 1 -->
+    <section class="step" id="s1">
+      <div class="step-head">
+        <span class="shelftag">STEP 1 <span class="dur">· 각자 15분</span></span>
+        <h2>회사의 AI 수준 진단</h2>
+        <p class="intro">5개 영역, 25개 문항에 1~5점을 매깁니다. 문항마다 1·3·5점의 예시가 있으니 우리 회사와 가장 가까운 쪽을 고르세요. 점수는 바로 계산되고, 결과는 STEP 2에 자동으로 반영됩니다.</p>
+      </div>
+      <div class="io">
+        <div><span>적용 대상</span>
+          <ul>
+            <li>AX 담당자 (진단 주관, 결과 취합)</li>
+            <li>경영기획·전략 담당</li>
+            <li>IT·데이터 담당</li>
+            <li>현업 부서장: 영업, 마케팅, MD, CS, SCM, 매장운영</li>
+          </ul>
+          각자 따로 진행하며, 1명만 해도 결과가 나옵니다.</div>
+        <div><span>문항 영역</span>전략·리더십, 데이터, 기술·인프라, 인력·문화, 거버넌스·보안<br>5개 영역 × 5문항 = 25문항</div>
+        <div><span>진단 결과</span>종합 점수와 성숙도 레벨(L1~L5), 영역별 점수, 병목 영역, 권장 적용 레벨(P1~P4)</div>
+      </div>
+
+      <div class="tool">
+        <div class="panel">
+          <div class="tabs" role="tablist" id="areaTabs"></div>
+          <div class="qs" id="qList"></div>
+          <div class="scale-key"><span><b>1</b> 없음·개인 차원</span><span><b>2</b> 일부에서 시도</span><span><b>3</b> 공식 운영, 일부 부서</span><span><b>4</b> 전사 표준, 성과 측정</span><span><b>5</b> 사업 성과로 연결</span></div>
+        </div>
+        <div class="panel result" aria-live="polite">
+          <div>
+            <div class="eyebrow">종합 점수</div>
+            <div class="bigscore" id="total">0.0<small> / 5</small></div>
+          </div>
+          <div class="lvname"><div class="l" id="lvName">—</div><div class="d" id="lvDesc"></div></div>
+          <div class="bars" id="bars"></div>
+          <div class="axis"><span></span><span class="ticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></span><span></span></div>
+          <div class="ladder" id="ladder"></div>
+          <div class="callout cap" id="capNote" hidden></div>
+          <div class="callout" id="bottleneck"></div>
+          <div class="row-actions">
+            <label class="role" for="roleSel">내 역할
+              <select id="roleSel">
+                <option>AX 담당자</option><option>경영기획·전략</option><option>IT·데이터</option><option>현업 부서장</option><option>기타</option>
+              </select>
+            </label>
+            <button class="linkbtn primary" id="copyDiag" type="button">결과 복사</button>
+          </div>
+          <div class="row-actions">
+            <span class="example-flag" id="exFlag"></span>
+            <button class="linkbtn" id="resetDiag" type="button">예시 점수로 되돌리기</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub">
+        <h3>진단 가이드</h3>
+        <div class="guide">
+          <div>
+            <h4>사용 방법</h4>
+            <ol>
+              <li>A~E 탭을 차례로 열고, 탭 위의 <b>판단 기준</b>을 먼저 읽습니다.</li>
+              <li>문항마다 1·3·5점 예시를 보고 점수를 누릅니다. 중간이면 2점이나 4점을 고릅니다.</li>
+              <li>오른쪽에서 레벨과 병목 영역을 확인합니다.</li>
+              <li>역할을 고르고 <b>결과 복사</b>를 눌러 AX 담당자에게 메신저나 메일로 보냅니다.</li>
+            </ol>
+          </div>
+          <div>
+            <h4>채점 원칙</h4>
+            <ul>
+              <li><b>근거가 있는 것만</b> 점수로 인정합니다. 문서, 예산, 시스템 화면으로 보여줄 수 없다면 한 단계 낮게 줍니다.</li>
+              <li><b>계획이 아니라 현재</b> 상태로 채점합니다. "내년에 할 예정"은 1점입니다.</li>
+              <li><b>잘 모르는 문항은</b> 2점을 주고, AX 담당자에게 확인할 문항으로 표시해 둡니다.</li>
+              <li>내 부서가 아니라 <b>회사 전체</b>를 기준으로 봅니다.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>결과 해석</h4>
+            <ul>
+              <li><b>레벨</b>은 종합 점수를 반올림한 값입니다. 2.5~3.4점이면 L3입니다.</li>
+              <li><b>가장 낮은 영역보다 두 단계 이상 높은 레벨은 나오지 않습니다.</b> 예를 들어 평균이 L4여도 거버넌스가 L2면 L3로 조정됩니다.</li>
+              <li><b>병목 영역</b>은 다른 영역보다 0.5점 이상 낮은 영역입니다. 확산 전에 먼저 보강하세요.</li>
+              <li>여러 명의 결과에서 <b>1.5점 이상 차이 나는 문항</b>은 워크숍 1회차의 토론 주제로 삼으세요.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="step" id="s2">
+      <div class="step-head">
+        <span class="shelftag">STEP 2 <span class="dur">· 워크숍 1회차</span></span>
+        <h2>성숙도에 따른 프로세스 적용 레벨 산정</h2>
+        <p class="intro">업무를 AI에 얼마나 맡길지를 네 단계로 나눕니다. 회사 레벨이 넘을 수 없는 한도를 정하고, 그 안에서 업무별 조건에 따라 실제 레벨이 정해집니다.</p>
+      </div>
+
+      <div class="plevels" id="plevels"></div>
+
+      <div class="sub">
+        <h3>성숙도 × 적용 레벨 매핑 <span class="k" id="mapNote"></span></h3>
+        <div class="tw"><table id="mapTable">
+          <thead><tr><th>성숙도</th><th>권장 적용 레벨</th><th>최대 허용</th><th>지금 할 일</th><th>아직 하지 말 것</th></tr></thead>
+          <tbody></tbody>
+        </table></div>
+      </div>
+
+      <div class="sub">
+        <h3>업무별 적용 레벨 정하기</h3>
+        <p>부서에서 AI를 적용할 업무를 하나 정하고 아래 질문에 위에서부터 답하세요. <b>처음 "아니오"가 나오기 직전 레벨</b>이 그 업무의 레벨입니다.</p>
+        <div class="ladderq">
+          <div><span class="p">P1</span><span class="qq">담당자가 AI 도구로 초안·요약·번역 도움을 받을 수 있는 업무인가?<small>대부분의 사무 업무가 해당됩니다.</small></span><span class="yes"><b>예</b> → P1 가능</span></div>
+          <div><span class="p">P2</span><span class="qq">팀이 같은 방식으로 반복하는 업무이고, 필요한 자료를 AI에 넣을 수 있는가?<small>예: 매주 쓰는 리포트, 정해진 양식의 제안서</small></span><span class="yes"><b>예</b> → P2 가능</span></div>
+          <div><span class="p">P3</span><span class="qq">판단 규칙이 분명하고, AI가 틀려도 피해가 작거나 사람이 바로 잡을 수 있는가?<small>예: 문의 유형 분류, 송장 데이터 입력. 가격·계약·인사 평가는 해당하지 않습니다.</small></span><span class="yes"><b>예</b> → P3 가능</span></div>
+          <div><span class="p">P4</span><span class="qq">여러 시스템을 오가는 판단을 맡길 만큼 데이터 연동과 통제 장치가 갖춰졌는가?<small>예: 수요예측을 보고 AI가 발주까지 실행</small></span><span class="yes"><b>예</b> → P4 가능</span></div>
+        </div>
+        <div class="note"><span><b>마지막으로 회사 레벨의 최대 허용을 확인하세요.</b> 업무 조건이 P3여도 회사가 L2라면 지금은 P2까지만 적용합니다. 사용 가이드라인, IT 지원, 결과 모니터링이 없는 상태에서 자동화를 돌리면 오류가 생겼을 때 수습할 체계가 없기 때문입니다. 회사 레벨이 오르면 같은 업무를 한 단계 올리면 됩니다.</span></div>
+      </div>
+
+      <div class="sub">
+        <h3>부서별 산정 예시 <span class="k" id="deptNote"></span></h3>
+        <div class="tw"><table>
+          <thead><tr><th>부서</th><th>대표 업무</th><th>업무 조건상 레벨</th><th>지금 적용할 레벨</th><th>근거</th></tr></thead>
+          <tbody id="deptBody"></tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="step" id="s3">
+      <div class="step-head">
+        <span class="shelftag">STEP 3 <span class="dur">· 워크숍 2회차</span></span>
+        <h2>우선 적용 업무 선정</h2>
+        <p class="intro">후보 업무를 넓게 찾은 뒤, 스코어카드로 첫 과제 3개를 고릅니다. 좋은 후보는 주 1회 이상 반복되고, 담당자가 주 2시간 이상 쓰고, 자료가 이미 있고, 사람이 결과를 검토할 수 있는 업무입니다.</p>
+      </div>
+
+      <div class="sub">
+        <h3>AI가 하는 일로 본 업무 유형 5가지</h3>
+        <p>유형은 AI가 그 업무에서 실제로 하는 일을 기준으로 나눴습니다. 유형을 알면 어떤 도구와 프롬프트를 쓸지, 얼마나 빨리 시작할 수 있을지가 정해집니다.</p>
+        <div class="ptypes">
+          <div class="ptype"><span class="pill pt-write">작성</span><h4>초안을 쓴다</h4><p>상세페이지 문구, 제안서, 답변, 메일 초안</p><div class="goal">목적: 업무 시간 절감</div></div>
+          <div class="ptype"><span class="pill pt-search">요약·검색</span><h4>찾아서 줄인다</h4><p>매뉴얼 Q&amp;A, 회의록 요약, 업계 동향 브리핑</p><div class="goal">목적: 업무 시간 절감</div></div>
+          <div class="ptype"><span class="pill pt-extract">분류·추출</span><h4>나누고 뽑아낸다</h4><p>문의 유형 분류, 송장 데이터 추출, 상품 속성 태깅</p><div class="goal">목적: 수작업 자동화</div></div>
+          <div class="ptype"><span class="pill pt-analyze">분석</span><h4>패턴과 이유를 찾는다</h4><p>리뷰·VOC 분석, 매출 변동 원인, 경쟁사 비교</p><div class="goal">목적: 인사이트 발굴</div></div>
+          <div class="ptype"><span class="pill pt-predict">예측</span><h4>숫자를 예측한다</h4><p>수요예측, 거래처 이탈, 결품 위험</p><div class="goal">목적: 의사결정 고도화 · 별도 모델 필요</div></div>
+        </div>
+        <div class="note"><span><b>처음에는 작성, 요약·검색, 분류·추출, 분석부터 시작하세요.</b> 기존 AI 도구로 바로 할 수 있습니다. 예측은 과거 데이터로 머신러닝 모델을 만들어야 해서 데이터 정비와 개발 기간이 필요하므로 두 번째 웨이브 이후에 검토합니다.</span></div>
+      </div>
+
+      <div class="sub">
+        <h3>부서별 후보 업무</h3>
+        <div class="filters">
+          <div class="chips" id="deptChips" aria-label="부서 필터"></div>
+          <div class="chips" id="typeChips" aria-label="유형 필터"></div>
+          <span class="count" id="ucCount"></span>
+        </div>
+        <div class="tw"><table>
+          <thead><tr><th>부서</th><th>업무</th><th>유형</th><th>준비 수준</th><th>기대 효과</th><th>기간</th></tr></thead>
+          <tbody id="ucBody"></tbody>
+        </table></div>
+        <p class="count">준비 수준: ★ AI 도구만으로 가능 · ★★ 자동화 도구 연결 필요 · ★★★ 개발 또는 외부 파트너 필요</p>
+      </div>
+
+      <div class="sub">
+        <h3>과제 선정 스코어카드</h3>
+        <p>후보마다 점수를 매겨 3.5점 이상인 과제 중 상위 3개를 첫 웨이브로 고릅니다.</p>
+        <div class="score-tool">
+          <div class="panel" id="crits"></div>
+          <div class="panel verdict" aria-live="polite">
+            <div class="eyebrow">가중 합계</div>
+            <div class="bigscore" id="scTotal">0.0<small> / 5</small></div>
+            <div class="state" id="scState"></div>
+            <p class="muted" style="font-size:13.5px" id="scMsg"></p>
+            <p class="example-flag">예시로 "리뷰·VOC 인사이트 주간 리포트" 과제의 점수가 채워져 있습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub">
+        <h3>부서별 추천 첫 과제 3개</h3>
+        <div class="starter-head">
+          <p class="muted">부서를 고르면 개발 없이 기존 AI 도구로 바로 시작할 수 있는 과제 3개를 보여줍니다.</p>
+          <label class="role" for="starterSel">부서
+            <select id="starterSel"></select>
+          </label>
+        </div>
+        <div class="starter" id="starterCards" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section class="step" id="s4">
+      <div class="step-head">
+        <span class="shelftag">STEP 4 <span class="dur">· 1주</span></span>
+        <h2>AI 적용 방법론과 실행 방식</h2>
+        <p class="intro">전체 흐름은 AWS의 AI 도입 프레임워크 4단계를 따르고, 거버넌스는 NIST 기준을 참고했습니다. 이 가이드의 각 STEP이 어느 단계에 해당하는지 함께 표시했습니다.</p>
+      </div>
+
+      <div class="sub">
+        <h3>4단계 적용 방법론 <span class="k">AWS CAF for AI 기반</span></h3>
+        <div class="flow">
+          <div><span class="en">Envision</span><h4>구상</h4><span class="aws">비즈니스 목표에 맞는 AI 기회를 찾고, 필요한 데이터와 이해관계자를 확인한다</span><ul><li>수준 진단</li><li>적용 레벨 산정</li><li>후보 업무 발굴·선정</li></ul><div class="map">이 가이드 <b>STEP 1~3</b></div></div>
+          <div><span class="en">Align</span><h4>정렬</h4><span class="aws">부서 간 합의를 만들고, 선행 조건과 조직 준비 상태를 갖춘다</span><ul><li>실행 방식과 담당자 결정</li><li>거버넌스 최소 요건</li><li>목표·KPI·책임자 합의</li></ul><div class="map">이 가이드 <b>STEP 4~5</b></div></div>
+          <div><span class="en">Launch</span><h4>착수</h4><span class="aws">파일럿이나 PoC로 가치를 증명하고, 결과에서 배워 전략을 다듬는다</span><ul><li>베이스라인 측정</li><li>PoC → 파일럿 운영</li><li>ROI 검증</li></ul><div class="map">이 가이드 <b>STEP 5~6</b></div></div>
+          <div><span class="en">Scale</span><h4>확산</h4><span class="aws">성공한 파일럿을 전사로 넓혀 기술적·사업적 효과를 키운다</span><ul><li>표준 템플릿·매뉴얼</li><li>타 부서 확산</li><li>분기별 재진단</li></ul><div class="map">분기별로 <b>STEP 1</b>부터 반복</div></div>
+        </div>
+        <p class="src">출처: AWS, <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-caf-for-ai/your-ai-transformation-journey.html" target="_blank" rel="noopener">AWS Cloud Adoption Framework for Artificial Intelligence, Machine Learning, and Generative AI</a> · 각 단계 설명은 원문을 요약했습니다.</p>
+      </div>
+
+      <div class="sub">
+        <h3>함께 참고할 프레임워크</h3>
+        <div class="tw"><table>
+          <thead><tr><th>프레임워크</th><th>구성</th><th>이 가이드에서 쓰는 곳</th></tr></thead>
+          <tbody>
+            <tr><td><a href="https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/ai" target="_blank" rel="noopener">Microsoft Cloud Adoption Framework: AI</a></td><td>AI Strategy → AI Plan → AI Ready → Govern · Manage · Secure AI</td><td>IT 부서가 RAG·API 연동(P3)을 준비할 때 인프라·보안 체크리스트로 활용</td></tr>
+            <tr><td><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST AI Risk Management Framework 1.0</a></td><td>Govern · Map · Measure · Manage</td><td>STEP 1 거버넌스 영역과 STEP 4 착수 전 체크리스트의 기준</td></tr>
+            <tr><td>Gartner AI Maturity Model</td><td>Awareness → Active → Operational → Systemic → Transformational</td><td>STEP 1의 L1~L5 레벨 정의 참고</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="sub">
+        <h3>실행 방식 5가지와 담당자</h3>
+        <p>빠르게 적용할 업무는 위의 두 방식으로 시작하므로 개발이 필요 없습니다. 효과를 확인한 뒤 시스템 연동이 필요해지면 그때 IT나 외부 파트너가 구축합니다.</p>
+        <div class="tw"><table>
+          <thead><tr><th>방식</th><th>하는 일</th><th>구축</th><th>누가 만드나</th><th>기간</th><th>레벨</th></tr></thead>
+          <tbody>
+            <tr><td class="nw"><b>프롬프트 템플릿</b></td><td>검증된 프롬프트를 팀이 공유해서 사용</td><td class="nw">없음</td><td>현업 담당자, AI 챔피언</td><td class="nw num">1주</td><td><span class="pill lv">P1~P2</span></td></tr>
+            <tr><td class="nw"><b>AI 도구 + 사내 문서</b></td><td>AI 도구의 프로젝트·지식 기능에 정책·매뉴얼을 올려 사용</td><td class="nw">없음 (설정만)</td><td>AI 챔피언</td><td class="nw num">1~2주</td><td><span class="pill lv">P2</span></td></tr>
+            <tr><td class="nw"><b>노코드 자동화 연결</b></td><td>메일·폼·시트 이벤트 → AI 처리 → 결과 전달을 자동화 도구로 연결</td><td class="nw">가벼운 구축</td><td>AI 챔피언 + IT (계정·권한 승인)</td><td class="nw num">3~6주</td><td><span class="pill lv">P2~P3</span></td></tr>
+            <tr><td class="nw"><b>RAG / API 연동</b></td><td>상담 시스템, CRM 등 사내 시스템과 AI를 연결</td><td class="nw">구축 필요</td><td>사내 IT·개발팀 또는 외부 파트너 (SI, 솔루션 업체)</td><td class="nw num">6~12주</td><td><span class="pill lv">P3</span></td></tr>
+            <tr><td class="nw"><b>AI 에이전트</b></td><td>AI가 여러 시스템을 쓰며 다단계 업무를 실행</td><td class="nw">구축 필요</td><td>개발팀 + 외부 파트너</td><td class="nw num">12주+</td><td><span class="pill lv">P3~P4</span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="sub">
+        <h3>현재 → 개선 후 설계 예시 <span class="k">CS 문의 1건 처리</span></h3>
+        <div class="tw"><table>
+          <thead><tr><th>업무 단계</th><th>현재</th><th>소요</th><th>AI 적용 후</th><th>담당</th><th>소요</th></tr></thead>
+          <tbody>
+            <tr><td class="nw">문의 확인</td><td>상담원이 내용을 읽고 유형 판단</td><td class="num">1분</td><td>AI가 유형 분류</td><td>AI</td><td class="num">0분</td></tr>
+            <tr><td class="nw">답변 작성</td><td>FAQ 검색 후 직접 작성</td><td class="num">4분</td><td>정책 문서 기반 초안 생성</td><td>AI</td><td class="num">0.5분</td></tr>
+            <tr><td class="nw">검토·발송</td><td>—</td><td class="num">—</td><td>상담원이 초안을 검토·수정해 발송</td><td>사람</td><td class="num">2분</td></tr>
+            <tr><td class="nw">후처리</td><td>상담 내용 수기 태깅</td><td class="num">1분</td><td>자동 요약·태깅</td><td>AI</td><td class="num">0분</td></tr>
+            <tr><td class="nw"><b>합계</b></td><td></td><td class="num"><b>6분</b></td><td></td><td></td><td class="num"><b>2.5~3.5분</b></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="sub">
+        <h3>조직과 운영 리듬</h3>
+        <div class="tw"><table>
+          <thead><tr><th>역할</th><th>구성</th><th>하는 일</th></tr></thead>
+          <tbody>
+            <tr><td class="nw"><b>AX 스폰서</b></td><td>CEO 또는 C-level 1명</td><td>방향 설정, 예산 승인, 부서 간 조정</td></tr>
+            <tr><td class="nw"><b>AX 담당 조직</b></td><td>AX 리드 + IT·데이터 3~5명</td><td>방법론·도구·거버넌스 표준화, 과제 관리, 기술 지원</td></tr>
+            <tr><td class="nw"><b>AI 챔피언</b></td><td>부서별 1~2명 (겸직)</td><td>부서 과제 발굴, 프롬프트·설정 작업, 동료 교육</td></tr>
+            <tr><td class="nw"><b>현업 사용자</b></td><td>전 임직원</td><td>도구 활용, 개선 의견 제안</td></tr>
+          </tbody>
+        </table></div>
+        <div class="tw"><table>
+          <thead><tr><th>주기</th><th>활동</th><th>참석자</th></tr></thead>
+          <tbody>
+            <tr><td class="nw">주간</td><td>과제별 진행 점검 (15분)</td><td>과제 오너, AI 챔피언</td></tr>
+            <tr><td class="nw">격주</td><td>챔피언 모임: 사례·프롬프트 공유</td><td>AX 담당 조직, 전체 챔피언</td></tr>
+            <tr><td class="nw">월간</td><td>AX 성과 리뷰: KPI 점검, 신규 과제 승인</td><td>스폰서, AX 담당 조직, 부서장</td></tr>
+            <tr><td class="nw">분기</td><td>수준 재진단, 로드맵 업데이트</td><td>전사</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="sub">
+        <h3>바로 쓰는 프롬프트 템플릿</h3>
+        <p>역할, 맥락, 작업, 형식, 제약의 다섯 가지를 갖추면 결과 품질이 안정됩니다. 중괄호 부분만 바꿔서 쓰세요.</p>
+        <div class="prompts" id="prompts"></div>
+      </div>
+
+      <div class="sub">
+        <h3>시작 전에 팀에서 확인할 것</h3>
+        <p>문서를 새로 만들 필요는 없습니다. 팀장이 아래 질문에 "예"라고 답할 수 있으면 됩니다.</p>
+        <ul class="checks" id="govChecks"></ul>
+      </div>
+    </section>
+
+    <!-- STEP 5 -->
+    <section class="step" id="s5">
+      <div class="step-head">
+        <span class="shelftag">STEP 5 <span class="dur">· 1주</span></span>
+        <h2>실행 계획 수립</h2>
+        <p class="intro">STEP 3에서 <b>무엇을</b> 할지 골랐다면, 여기서는 고른 과제를 <b>어떻게</b> 진행할지 정합니다. 목표 숫자, 책임자, 성과를 재는 방법, 단계별 진행 조건, 일정입니다.</p>
+      </div>
+
+      <div class="sub">
+        <h3>과제 카드 한 장 <span class="k">예시: 리뷰·VOC 인사이트 주간 리포트</span></h3>
+        <p>개발 없이 시작하는 과제는 아래 카드 한 장이면 충분합니다. 긴 정의서를 쓰느라 착수가 늦어지지 않게 하세요.</p>
+        <div class="card1">
+          <div><span class="q">누가 쓰나</span><span class="a">MD 5명, 마케팅 2명, CS 파트장</span></div>
+          <div><span class="q">책임자 (과제 오너)</span><span class="a">MD팀장</span></div>
+          <div><span class="q">지금은</span><span class="a">MD 1명이 매주 4시간 들여 리뷰를 읽고 요약. 이슈 발견까지 평균 3주</span></div>
+          <div><span class="q">목표</span><span class="a">8주 안에 작성 시간 주 4시간 → 30분, 이슈 발견 1주 이내</span></div>
+          <div class="wide"><span class="q">방식과 비용</span><span class="a">리뷰 파일을 AI 도구에 넣고 프롬프트 템플릿으로 분석 (P2). 추가 비용은 AI 도구 라이선스뿐</span></div>
+        </div>
+        <div class="note"><span><b>정식 프로젝트 정의서가 필요한 경우</b>는 세 가지입니다. 외부 비용(구축비, 외부 파트너)이 들 때, 고객에게 바로 나가는 자동화(P3 이상)일 때, 여러 부서의 시스템이 얽힐 때입니다. 이때는 카드에 범위(포함/제외), 필요 데이터, 팀 구성, 예산, 리스크와 대응을 추가해 예산 승인 자료로 씁니다.</span></div>
+      </div>
+
+      <div class="sub">
+        <h3>KPI는 누가 정하나</h3>
+        <div class="tw"><table>
+          <thead><tr><th>역할</th><th>KPI에서 하는 일</th></tr></thead>
+          <tbody>
+            <tr><td class="nw"><b>과제 오너</b> (현업 부서장)</td><td>성과 지표와 목표치를 정합니다. 그 업무의 성과를 가장 잘 아는 사람이기 때문입니다.</td></tr>
+            <tr><td class="nw"><b>AX 담당자</b></td><td>측정 방법을 설계하고, 적용 전 베이스라인을 수집하고, 매월 집계합니다.</td></tr>
+            <tr><td class="nw"><b>AI 챔피언</b></td><td>사용률과 현장 의견을 모읍니다.</td></tr>
+            <tr><td class="nw"><b>AX 스폰서</b></td><td>목표치를 승인하고 월간 리뷰에서 결과를 봅니다.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="tw"><table>
+          <thead><tr><th>유형</th><th>사용 지표 (잘 쓰고 있나?)</th><th>성과 지표 (효과가 났나?)</th></tr></thead>
+          <tbody>
+            <tr><td class="nw"><span class="pill pt-write">작성</span> <span class="pill pt-search">요약·검색</span></td><td>활성 사용자 비율, AI 초안 채택률</td><td>건당 작성 시간, 처리량, 응답 리드타임</td></tr>
+            <tr><td class="nw"><span class="pill pt-extract">분류·추출</span></td><td>자동 처리 비율, 수정 비율</td><td>수작업 시간, 오류율</td></tr>
+            <tr><td class="nw"><span class="pill pt-analyze">분석</span></td><td>리포트 열람률, 인사이트 기반 액션 건수</td><td>이슈 발견 리드타임, 반품률·전환율 변화</td></tr>
+            <tr><td class="nw">B2B 영업 과제</td><td>제안서 생성 건수, 영업 사용률</td><td>제안 리드타임, 수주율, 거래처당 매출</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><span><b>베이스라인은 착수 전에 2~4주 동안 재세요.</b> 적용 전 수치가 없으면 STEP 6에서 효과를 증명할 수 없습니다.</span></div>
+      </div>
+
+      <div class="sub">
+        <h3>단계별 진행 조건</h3>
+        <div class="gates">
+          <div class="gate"><h4>PoC <span>2주</span></h4><div class="scope">샘플 자료, 챔피언 2~3명</div><ul><li>결과물을 그대로 또는 조금만 고쳐 쓸 수 있다는 응답 70% 이상</li><li>예상 ROI 100% 이상</li></ul></div>
+          <div class="gate"><h4>파일럿 <span>4~6주</span></h4><div class="scope">실제 업무, 1개 팀 전체</div><ul><li>목표 KPI 70% 이상 달성</li><li>사용자 활성률 60% 이상</li><li>고객·거래처에 나간 중대 오류 0건</li></ul></div>
+          <div class="gate"><h4>확산 <span>8주+</span></h4><div class="scope">같은 업무를 하는 다른 팀·부서</div><ul><li>템플릿·매뉴얼 정리 완료</li><li>운영 담당자 지정</li><li>월간 KPI 집계 체계 운영</li></ul></div>
+        </div>
+      </div>
+
+      <div class="sub">
+        <h3>첫 웨이브 12주 일정</h3>
+        <div class="tw"><table class="gantt">
+          <thead><tr><th></th><th>1~2주</th><th>3~4주</th><th>5~6주</th><th>7~8주</th><th>9~10주</th><th>11~12주</th></tr></thead>
+          <tbody>
+            <tr><td>공통</td><td><span class="g d">진단·선정</span></td><td><span class="g d">교육·체크리스트</span></td><td></td><td><span class="g d">중간 공유</span></td><td></td><td><span class="g s">성과 보고</span></td></tr>
+            <tr><td>리뷰 인사이트</td><td><span class="g d">베이스라인</span></td><td><span class="g b">세팅·PoC</span></td><td><span class="g p">파일럿</span></td><td><span class="g p">파일럿</span></td><td><span class="g s">확산</span></td><td><span class="g s">타 부서 확산</span></td></tr>
+            <tr><td>CS 답변 초안</td><td><span class="g d">베이스라인</span></td><td><span class="g b">세팅·PoC</span></td><td><span class="g p">파일럿</span></td><td><span class="g p">파일럿</span></td><td><span class="g s">확산</span></td><td><span class="g d">연동 검토</span></td></tr>
+            <tr><td>B2B 제안서</td><td><span class="g d">베이스라인</span></td><td><span class="g d">템플릿 정리</span></td><td><span class="g b">세팅·PoC</span></td><td><span class="g p">파일럿</span></td><td><span class="g p">파일럿</span></td><td><span class="g s">확산</span></td></tr>
+          </tbody>
+        </table></div>
+        <p class="count">세팅: 프롬프트 템플릿 작성과 AI 도구 설정. 개발이 아니며 AI 챔피언이 합니다.</p>
+      </div>
+
+      <div class="sub example" id="s5-example">
+        <span class="eyebrow">적용 예시</span>
+        <h3>주간 매출 브리핑: Tableau 데이터에 질문해서 인사이트 얻기</h3>
+        <p>영업기획 담당자가 매주 월요일 4시간씩 엑셀로 만들던 주간 매출 브리핑을, 이미 쓰고 있는 Tableau 데이터에 LLM을 연결해 질문 몇 개로 바꾸는 예시입니다. 데이터는 Tableau의 <b>VizQL Data Service(VDS)</b>로 꺼내고, Tableau 공식 <b>MCP 서버</b>가 LLM과 연결하며, <b>Tableau Pulse</b>가 이상 변화를 먼저 찾아 줍니다.</p>
+
+        <div class="arch" aria-label="연결 구조">
+          <div class="node"><span class="no">1</span><b>원천 데이터</b><span>POS 매출 · 이커머스 주문 · B2B 수주(ERP) · 프로모션 일정 · 재고(WMS)</span></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="node"><span class="no">2</span><b>Tableau 게시 데이터 원본</b><span>"주간매출_통합" 하나로 게시. 기존 대시보드가 쓰던 원본을 그대로 씀</span></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="node"><span class="no">3</span><b>VizQL Data Service</b><span>게시된 데이터 원본을 차트 없이 JSON 쿼리로 조회하는 Tableau API</span></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="node"><span class="no">4</span><b>Tableau MCP 서버</b><span>VDS와 Pulse를 LLM이 쓸 수 있는 도구로 열어 줌</span></div>
+          <div class="arrow" aria-hidden="true">⇄</div>
+          <div class="node hi"><span class="no">5</span><b>LLM (Claude 등)</b><span>질문을 이해하고 필요한 도구를 골라 조회한 뒤 결과를 해석</span></div>
+          <div class="pulse"><b>Tableau Pulse</b> 주간 매출, 객단가, 온라인 전환율, B2B 수주액을 지표로 등록하면 평소 범위를 벗어난 변화와 그 원인 후보를 자동으로 찾습니다. LLM은 MCP를 통해 이 결과를 출발점으로 삼습니다.</div>
+        </div>
+
+        <h4 class="mini">① 어떤 데이터를 VDS로 여나</h4>
+        <div class="tw"><table>
+          <thead><tr><th>데이터</th><th>주요 필드</th><th>원천</th><th>브리핑에서 쓰는 곳</th></tr></thead>
+          <tbody>
+            <tr><td class="nw"><b>매출 실적</b></td><td>일자, 매장·지역, 채널(매장/온라인/B2B), 카테고리, 매출액, 수량, 객수</td><td class="nw">POS, 이커머스, ERP</td><td>전주·전년 대비 증감, 채널·지역별 분해</td></tr>
+            <tr><td class="nw"><b>프로모션</b></td><td>기간, 대상 카테고리·매장, 할인율</td><td class="nw">마케팅 일정표</td><td>증감 원인 설명 (기저효과 등)</td></tr>
+            <tr><td class="nw"><b>재고</b></td><td>일자, 매장, SKU, 결품 여부</td><td class="nw">WMS</td><td>결품으로 놓친 매출 추정</td></tr>
+            <tr><td class="nw"><b>목표</b></td><td>주·월 목표 매출</td><td class="nw">경영기획</td><td>목표 달성률</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><span><b>필드마다 한 줄 설명을 붙이세요.</b> 예를 들어 "net_sales: 할인·반품을 뺀 순매출"처럼 적어 두면 LLM이 어떤 필드로 계산할지 헷갈리지 않습니다. 데이터의 의미를 정리하는 이 작업이 정확도를 가장 크게 좌우합니다.</span></div>
+
+        <h4 class="mini">② 준비 순서 <span class="k">약 2주, 개발 없음</span></h4>
+        <div class="tw"><table>
+          <thead><tr><th>할 일</th><th>누가</th><th>기간</th></tr></thead>
+          <tbody>
+            <tr><td>게시 데이터 원본 정리, 필드 설명 추가</td><td>데이터 담당</td><td class="nw num">3~5일</td></tr>
+            <tr><td>Pulse 지표 4개 정의 (주간 매출, 객단가, 온라인 전환율, B2B 수주액)</td><td>영업기획 + 데이터 담당</td><td class="nw num">1일</td></tr>
+            <tr><td>Tableau MCP 서버를 LLM 클라이언트에 연결. 개인 액세스 토큰을 쓰므로 Tableau 권한이 그대로 적용됨</td><td>IT 또는 AX 담당</td><td class="nw num">1~2일</td></tr>
+            <tr><td>자주 하는 질문과 브리핑 형식을 프롬프트로 저장</td><td>영업기획 (AI 챔피언)</td><td class="nw num">1일</td></tr>
+          </tbody>
+        </table></div>
+
+        <h4 class="mini">③ 월요일 오전, 질문으로 브리핑 만들기 <span class="k">예시 데이터</span></h4>
+        <div class="chat">
+          <div class="msg q">지난주 매출 어땠어? 크게 움직인 곳이 있으면 알려줘.</div>
+          <div class="tools"><span>Pulse 인사이트 · 주간 매출</span><span>query-datasource · 지역 × 채널, 전주·전년</span></div>
+          <div class="msg a">지난주 전사 매출은 <b>48.2억 원</b>으로 전주 대비 <b>−3.4%</b>, 전년 대비 −1.2%입니다. Pulse가 평소 범위를 벗어난 변화로 잡은 곳은 <b>수도권 매장(−13.8%, −2.9억 원)</b> 한 곳입니다. 온라인(+4.2%)과 지방 매장, B2B는 소폭 늘어 하락을 일부 상쇄했습니다.</div>
+
+          <div class="msg q">수도권 매장은 왜 빠졌어? 카테고리별로 봐줘.</div>
+          <div class="tools"><span>query-datasource · 수도권 매장 × 카테고리</span><span>query-datasource · 프로모션</span></div>
+          <div class="msg a">하락분 2.9억 원 중 <b>2.1억 원(72%)이 아웃도어</b>입니다. 전년 같은 주에는 수도권 아웃도어 20% 할인전이 있었고 올해는 없었습니다. <span class="hyp">가설</span> 전년 프로모션의 기저효과가 주원인으로 보입니다.</div>
+
+          <div class="msg q">결품 영향은 없었어?</div>
+          <div class="tools"><span>query-datasource · 재고 (수도권 아웃도어)</span></div>
+          <div class="msg a">수도권 아웃도어 상위 20개 상품 중 <b>3개가 4일 이상 결품</b>이었습니다. 평소 판매 속도로 추정하면 약 0.4억 원을 놓쳤고, 아웃도어 하락의 약 20%에 해당합니다.</div>
+
+          <div class="msg q">점장 회의용으로 5줄 요약하고, 이번 주에 확인할 것도 적어줘.</div>
+          <div class="msg a"><ol>
+            <li>전사 매출 48.2억 원, 전주 대비 −3.4%</li>
+            <li>하락은 수도권 매장(−2.9억 원)에 집중, 온라인은 +4.2%</li>
+            <li>수도권 하락의 72%가 아웃도어: 전년 할인전 기저효과(가설)</li>
+            <li>아웃도어 3개 상품 결품으로 약 0.4억 원 손실 추정</li>
+            <li>B2B 수주는 평소 범위</li>
+          </ol><b>이번 주 확인할 것:</b> 결품 3개 상품 입고 일정, 수도권 아웃도어 프로모션 재개 여부</div>
+        </div>
+        <p class="count">LLM이 매번 어떤 도구를 불렀는지 표시되므로, 숫자의 출처를 Tableau에서 다시 확인할 수 있습니다.</p>
+
+        <h4 class="mini">④ 바뀌는 것</h4>
+        <div class="tw"><table>
+          <thead><tr><th></th><th>지금</th><th>적용 후</th></tr></thead>
+          <tbody>
+            <tr><td class="nw"><b>브리핑 작성</b></td><td>매주 4시간: 엑셀 취합, 피벗, 문장 작성</td><td>질문 4개, 약 20분</td></tr>
+            <tr><td class="nw"><b>추가 질문</b></td><td>BI팀에 대시보드 수정 요청, 1~2주 대기</td><td>그 자리에서 바로 질문</td></tr>
+            <tr><td class="nw"><b>이상 변화 발견</b></td><td>회의에서 누군가 눈치챌 때</td><td>Pulse가 먼저 알려 줌</td></tr>
+            <tr><td class="nw"><b>새로운 분석</b></td><td>개발 요청 후 대기</td><td>질문과 프롬프트를 바꾸면 끝</td></tr>
+          </tbody>
+        </table></div>
+
+        <div class="fde">
+          <h4>팔란티어 같은 FDE 없이, 원하는 AI 인사이트를 직접 만듭니다</h4>
+          <p>팔란티어 방식은 FDE(Forward Deployed Engineer)가 고객사에 들어와 데이터 모델과 분석 앱을 맞춤으로 만들어 줍니다. 강력하지만 엔지니어를 투입하는 기간과 비용이 들고, 새로운 질문이 생기면 다시 엔지니어에게 요청해야 합니다.</p>
+          <p>이 방식에서는 이미 쓰고 있는 Tableau 게시 데이터 원본이 데이터 모델 역할을 하고, 공식 MCP 서버가 연결을 맡습니다. 현업은 <b>질문만 바꾸면</b> 원하는 분석을 바로 얻습니다. 분석을 맞춤으로 바꾸는 주체가 외부 엔지니어에서 현업으로 옮겨 오는 것이 핵심입니다.</p>
+          <div class="tw"><table>
+            <thead><tr><th></th><th>FDE 방식</th><th>Tableau + MCP + LLM</th></tr></thead>
+            <tbody>
+              <tr><td class="nw"><b>누가 만드나</b></td><td>외부 엔지니어가 상주하며 구축</td><td>사내 데이터 담당 + AX 담당</td></tr>
+              <tr><td class="nw"><b>시작까지</b></td><td>엔지니어 투입과 구축 기간 필요</td><td>약 2주</td></tr>
+              <tr><td class="nw"><b>새 질문이 생기면</b></td><td>엔지니어에게 요청</td><td>현업이 바로 질문</td></tr>
+              <tr><td class="nw"><b>쓰는 데이터</b></td><td>새 플랫폼으로 통합</td><td>이미 쓰는 Tableau 데이터 원본</td></tr>
+            </tbody>
+          </table></div>
+          <p class="count">여러 시스템에 흩어진 데이터를 묶어 운영 의사결정까지 자동으로 실행해야 한다면 FDE형 플랫폼이 맞을 수 있습니다. 매출 브리핑처럼 분석과 인사이트가 목적이라면 이 방식으로 충분합니다.</p>
+        </div>
+
+        <div class="note warn"><span><b>도입 전에 확인하세요.</b> Tableau MCP 서버는 Tableau가 공개한 오픈소스 프로젝트로 기능이 계속 바뀌고 있습니다. VDS와 Pulse를 쓸 수 있는지는 라이선스와 배포 형태(Tableau Cloud, Tableau Server)에 따라 다릅니다. 조회 결과가 LLM으로 전달되므로, 입력 데이터가 학습에 쓰이지 않는 기업용 LLM을 쓰세요.</span></div>
+        <p class="src">참고: <a href="https://help.tableau.com/current/api/vizql-data-service/en-us/index.html" target="_blank" rel="noopener">Tableau VizQL Data Service</a> · <a href="https://github.com/tableau/tableau-mcp" target="_blank" rel="noopener">Tableau MCP (GitHub)</a> · 대화 속 수치는 설명을 위한 예시입니다.</p>
+      </div>
+    </section>
+
+    <!-- STEP 6 -->
+    <section class="step" id="s6">
+      <div class="step-head">
+        <span class="shelftag">STEP 6 <span class="dur">· 1주</span></span>
+        <h2>ROI 계산</h2>
+        <p class="intro">예시를 불러오거나 우리 회사 숫자를 넣으면 1년차 ROI, 투자회수기간, 3년 누적 ROI가 바로 계산됩니다.</p>
+      </div>
+      <div class="formula">ROI = (연간 총효과 − 총비용) ÷ 총비용 × 100 &nbsp;·&nbsp; 투자회수기간 = 총비용 ÷ 월 평균 효과</div>
+
+      <div class="roi">
+        <form class="panel form" id="roiForm" autocomplete="off">
+          <div class="presets"><span>예시 불러오기</span>
+            <button type="button" class="chip" data-preset="insight">리뷰 인사이트 (구축 없음)</button>
+            <button type="button" class="chip" data-preset="b2b">B2B 제안서 (구축 없음)</button>
+            <button type="button" class="chip" data-preset="cs">CS 시스템 연동 (P3)</button>
+          </div>
+          <fieldset>
+            <legend>효과 · 시간 절감</legend>
+            <div class="fields">
+              <div class="field"><label for="f_cases">연간 처리 건수</label><div class="inp"><input id="f_cases" inputmode="numeric"><em>건</em></div></div>
+              <div class="field"><label for="f_min">건당 절감 시간</label><div class="inp"><input id="f_min" inputmode="decimal"><em>분</em></div></div>
+              <div class="field"><label for="f_wage">시간당 인건비</label><div class="inp"><input id="f_wage" inputmode="numeric"><em>원</em></div></div>
+              <div class="field"><label for="f_real">실현율</label><div class="inp"><input id="f_real" inputmode="numeric"><em>%</em></div></div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>효과 · 기타</legend>
+            <div class="fields">
+              <div class="field"><label for="f_save">비용 절감 (연)</label><div class="inp"><input id="f_save" inputmode="numeric"><em>만 원</em></div></div>
+              <div class="field"><label for="f_profit">매출 증대의 이익 기여분 (연)</label><div class="inp"><input id="f_profit" inputmode="numeric"><em>만 원</em></div></div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>비용</legend>
+            <div class="fields">
+              <div class="field"><label for="f_build">초기 구축비</label><div class="inp"><input id="f_build" inputmode="numeric"><em>만 원</em></div></div>
+              <div class="field"><label for="f_ops">연 운영비 (라이선스 포함)</label><div class="inp"><input id="f_ops" inputmode="numeric"><em>만 원</em></div></div>
+              <div class="field"><label for="f_change">교육·변경관리비</label><div class="inp"><input id="f_change" inputmode="numeric"><em>만 원</em></div></div>
+            </div>
+          </fieldset>
+          <p class="example-flag" id="roiFlag"></p>
+        </form>
+
+        <div class="receipt" aria-live="polite">
+          <div class="hd"><b>AX ROI 영수증</b><span id="rcTitle">1년차 기준</span></div>
+          <div class="sec">효과</div>
+          <div class="ln"><span>시간 절감</span><span id="r_time"></span></div>
+          <div class="ln sm"><span id="r_timeD"></span><span></span></div>
+          <div class="ln"><span>비용 절감</span><span id="r_save"></span></div>
+          <div class="ln"><span>매출 이익 기여</span><span id="r_profit"></span></div>
+          <div class="ln tot"><span>연간 총효과</span><span id="r_benefit"></span></div>
+          <hr>
+          <div class="sec">비용</div>
+          <div class="ln"><span>초기 구축비</span><span id="r_build"></span></div>
+          <div class="ln"><span>연 운영비</span><span id="r_ops"></span></div>
+          <div class="ln"><span>교육·변경관리</span><span id="r_change"></span></div>
+          <div class="ln tot"><span>총비용</span><span id="r_cost"></span></div>
+          <hr>
+          <div class="big" id="r_roiRow"><span>ROI</span><span id="r_roi"></span></div>
+          <div class="ln"><span>투자회수기간</span><span id="r_payback"></span></div>
+          <div class="ln"><span>3년 누적 ROI</span><span id="r_roi3"></span></div>
+          <div class="barcode" aria-hidden="true"></div>
+          <div class="ft">실현율과 영업이익률을 반영한 보수적 추정치</div>
+        </div>
+      </div>
+
+      <div class="sub">
+        <h3>효과와 비용 항목</h3>
+        <div class="tw"><table>
+          <thead><tr><th>구분</th><th>항목</th><th>계산 방법 · 비고</th></tr></thead>
+          <tbody>
+            <tr><td class="nw">효과</td><td class="nw"><b>시간 절감</b></td><td>절감 시간 × 대상 건수 × 시간당 인건비 × 실현율</td></tr>
+            <tr><td class="nw">효과</td><td class="nw"><b>비용 절감</b></td><td>외주 제작비, 반품·폐기 비용, 재작업 비용의 감소분</td></tr>
+            <tr><td class="nw">효과</td><td class="nw"><b>매출 증대</b></td><td>증가 매출 × 영업이익률. 매출액 전체를 효과로 잡지 않습니다</td></tr>
+            <tr><td class="nw">효과</td><td class="nw"><b>리스크 감소</b></td><td>사고 확률 감소분 × 건당 비용 (계약 조건 누락, 품질 이슈 확산 등)</td></tr>
+            <tr><td class="nw">비용</td><td class="nw"><b>초기 구축비</b></td><td>시스템 연동, 개발, 외부 파트너 비용. 구축 없는 과제는 0원</td></tr>
+            <tr><td class="nw">비용</td><td class="nw"><b>운영비</b></td><td>AI 도구 라이선스, API 사용료, 자동화 도구, 유지보수</td></tr>
+            <tr><td class="nw">비용</td><td class="nw"><b>변경관리비</b></td><td>교육, 매뉴얼, 챔피언 활동 시간. 가장 자주 빠뜨리는 항목입니다</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note warn"><span><b>실현율은 50~70%를 적용하세요.</b> 절감된 시간이 모두 비용 절감이나 다른 업무로 이어지지는 않습니다. 보수적인 수치가 경영진의 신뢰를 얻습니다.</span></div>
+      </div>
+
+      <div class="sub">
+        <h3>분석 과제의 ROI <span class="k">인사이트 → 액션 → 결과</span></h3>
+        <div class="tw"><table>
+          <thead><tr><th>단계</th><th>예시: 리뷰 인사이트 주간 리포트</th><th>금액</th></tr></thead>
+          <tbody>
+            <tr><td class="nw">리포트 작성 시간 절감</td><td>연 250건 × 건당 4시간 × 35,000원 × 실현율 70%</td><td class="num nw">2,450만 원</td></tr>
+            <tr><td class="nw">인사이트로 실행한 액션</td><td>부정 리뷰 1위 이슈(사이즈 불일치)를 발견해 상세페이지 사이즈 가이드 개선</td><td></td></tr>
+            <tr><td class="nw">액션의 결과</td><td>해당 카테고리 반품률 8% → 6.5%, 연 반품 비용 5,000만 원 절감</td><td></td></tr>
+            <tr><td class="nw">AI 기여도 반영</td><td>AI 없이는 발견이 3개월 늦었을 것으로 보고 기여도 50% 적용</td><td class="num nw">2,500만 원</td></tr>
+            <tr><td class="nw"><b>연간 총효과</b></td><td></td><td class="num nw"><b>4,950만 원</b></td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><span>분석 과제는 리포트를 몇 건 냈는지가 아니라 <b>리포트 때문에 어떤 결정이 바뀌었는지</b>를 기록해야 ROI가 남습니다. 인사이트-액션 기록표를 함께 운영하세요.</span></div>
+      </div>
+
+      <div class="sub">
+        <h3>경영진 보고 전 확인</h3>
+        <ul class="checks" id="reportChecks"></ul>
+      </div>
+    </section>
+
+    <section class="step" id="appendix">
+      <div class="step-head">
+        <div class="eyebrow">부록</div>
+        <h2>자주 묻는 질문과 용어</h2>
+      </div>
+      <div class="faq">
+        <div><b>데이터가 정리되어 있지 않은데 시작할 수 있나요?</b><p>가능합니다. 리뷰, 상담 로그, 제안서 같은 텍스트는 정리 전 상태로도 AI가 잘 다룹니다. 데이터 플랫폼 구축을 기다리지 말고 텍스트 기반 업무부터 시작하세요.</p></div>
+        <div><b>현업이 AI 사용을 꺼립니다.</b><p>"AI가 일자리를 대체한다" 대신 "귀찮은 업무를 AI가 대신한다"로 메시지를 바꾸세요. 첫 과제는 보고서, 후처리, 반복 입력처럼 현업이 가장 귀찮아하는 업무에서 고르세요.</p></div>
+        <div><b>어떤 AI 도구를 써야 하나요?</b><p>도구보다 보안 요건(기업용 요금제, 입력 데이터 학습 제외)과 기존 협업툴 연동을 먼저 확인하세요. 한 가지 도구로 시작해 사용 패턴을 본 뒤 넓히는 것을 권장합니다.</p></div>
+        <div><b>PoC만 반복되고 확산이 안 됩니다.</b><p>착수 전에 단계별 진행 조건과 운영 담당자를 정하고, PoC를 시작할 때 파일럿 예산도 함께 확보하세요.</p></div>
+      </div>
+      <div class="tw"><table>
+        <thead><tr><th>용어</th><th>설명</th></tr></thead>
+        <tbody>
+          <tr><td class="nw"><b>AX</b></td><td>AI Transformation. AI로 업무 방식과 비즈니스를 바꾸는 것</td></tr>
+          <tr><td class="nw"><b>PoC</b></td><td>Proof of Concept. 작은 범위에서 효과와 실현 가능성을 확인하는 단계</td></tr>
+          <tr><td class="nw"><b>RAG</b></td><td>사내 문서를 검색해 AI 답변의 근거로 쓰는 방식</td></tr>
+          <tr><td class="nw"><b>AI 에이전트</b></td><td>목표를 받아 여러 도구를 쓰며 스스로 단계를 수행하는 AI</td></tr>
+          <tr><td class="nw"><b>실현율</b></td><td>절감된 시간 중 실제 가치로 이어지는 비율</td></tr>
+          <tr><td class="nw"><b>베이스라인</b></td><td>AI 적용 전 현재 상태의 측정값. 성과 비교의 기준</td></tr>
+        </tbody>
+      </table></div>
+      <footer>
+        <span>다음 할 일: STEP 1 진단 링크를 참여자에게 보내고, 2주 뒤 워크숍 1회차 일정을 잡으세요.</span>
+        <span>참고: AWS CAF for AI · Microsoft Cloud Adoption Framework (AI) · NIST AI RMF 1.0 · Gartner AI Maturity Model. 예시 수치는 설명을 위한 가정값입니다.</span>
+      </footer>
+    </section>
+  </main>
+</div>
+
+<script>
+(function(){
+  const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+  const $=s=>document.querySelector(s);
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  async function copyText(text,btn,fallbackEl){
+    const label=btn.textContent;
+    try{await navigator.clipboard.writeText(text);btn.textContent='복사됨'}
+    catch(err){
+      if(fallbackEl){const r=document.createRange();r.selectNodeContents(fallbackEl);const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='선택됨 · ⌘C로 복사'}
+      else btn.textContent='복사 실패';
+    }
+    setTimeout(()=>btn.textContent=label,2000);
+  }
+
+  /* ---------- STEP 1 ---------- */
+  const AREAS=[
+    {k:'A',name:'전략·리더십',crit:'AI 도입을 누가 책임지는지, 예산이 어디서 나오는지, 성과를 누구에게 보고하는지 답할 수 있나요? 셋 다 바로 답하면 4점 이상, 하나도 답하기 어려우면 1~2점입니다.',
+     qs:[['경영진이 AI 도입 목표를 공식적으로 밝혔다','목표 없음, 개인 관심 수준','올해 사업계획에 AI 과제가 들어 있음','AI가 중기 전략의 핵심이고 매출·비용 목표에 반영됨'],
+         ['AX를 맡은 조직이나 담당자가 있다','담당자 없음','겸직 TF 또는 전담자 1~2명','전담 조직이 과제와 예산을 운영'],
+         ['AI 과제에 쓸 예산이 따로 있다','없음, 부서 경비로 개인 결제','올해 과제 예산이 별도로 잡혀 있음','성과에 따라 매년 늘어나는 상시 예산'],
+         ['AI 과제의 성과를 재는 지표가 있다','없음','일부 과제만 시간 절감 등을 기록','모든 과제 성과를 금액으로 정기 보고'],
+         ['부서장들이 자기 부서의 AI 과제를 말할 수 있다','대부분 답하지 못함','절반 정도가 답함','모든 부서장이 과제와 성과를 설명함']]},
+    {k:'B',name:'데이터',crit:'판매·고객·상품 데이터가 필요할 때 담당자가 오늘 요청해서 오늘 받을 수 있나요? 여러 시스템의 엑셀을 사람이 합쳐야 하면 2~3점, 요청 없이 직접 조회되면 4점 이상입니다.',
+     qs:[['판매 데이터(매장 POS·온라인 주문)를 일 단위로 볼 수 있다','월 마감 후 엑셀로 받음','일 단위로 보지만 채널별로 따로','매장·온라인·B2B를 합쳐 바로 조회'],
+         ['고객 데이터가 하나의 기준으로 묶여 있다','채널마다 고객 ID가 다름','B2C 회원은 통합, B2B 거래처는 별도','모든 채널 고객이 하나의 ID로 연결'],
+         ['상품 정보(코드·분류·속성)가 정리되어 있다','채널마다 상품코드·분류가 다름','코드는 통일, 속성은 일부 누락','코드·분류·속성이 정리되어 바로 분석 가능'],
+         ['리뷰, 상담 기록, 제안서 같은 문서를 모아 찾을 수 있다','여기저기 흩어져 모으기 어려움','한 곳에 쌓이지만 찾기 어려움','검색·내보내기가 쉬워 AI에 바로 넣을 수 있음'],
+         ['현업이 IT에 요청하지 않고 데이터를 볼 수 있다','모든 데이터를 IT에 요청','주요 지표는 대시보드로 조회','현업이 직접 조회·가공해 분석까지 함']]},
+    {k:'C',name:'기술·인프라',crit:'직원이 회사 계정으로 AI 도구를 바로 쓸 수 있고, 반복 작업을 자동으로 돌릴 수단이 있나요? 직원들이 개인 계정으로 따로 쓰고 있다면 1~2점입니다.',
+     qs:[['전사가 클라우드 협업툴(M365, Google Workspace, Notion, Slack 등)을 쓴다','메일과 파일 서버 위주','도입했지만 일부 부서만 사용','전사가 협업툴에서 일하고 AI 기능까지 사용'],
+         ['직원이 회사가 승인한 AI 도구를 쓸 수 있다','공식 도구 없음, 개인 계정 사용','일부 부서에만 기업용 도구 지급','전 직원이 기업용 도구를 쓰고 사용량을 관리'],
+         ['반복 작업을 자동화하는 도구(Power Automate, Zapier, Make, n8n 등)가 있다','없음','있지만 IT만 사용','현업이 직접 자동화를 만들어 운영'],
+         ['주요 시스템(ERP, POS, CRM, WMS)을 API로 연결할 수 있다','파일로만 주고받음','일부 시스템만 API 제공','핵심 시스템이 모두 API로 연결'],
+         ['데이터를 모아 분석하는 환경(데이터 웨어하우스 등)이 있다','엑셀 위주','구축했지만 일부 데이터만 적재','전사 데이터가 모여 분석·AI에 상시 사용']]},
+    {k:'D',name:'인력·문화',crit:'우리 회사에서 AI를 잘 쓰는 사람을 부서마다 한 명씩 바로 댈 수 있고, 그 사람의 방법이 팀에 퍼지고 있나요? 몇몇 개인만 쓰면 2점, 팀마다 표준 사용법이 있으면 4점입니다.',
+     qs:[['AI 활용 교육이 정기적으로 열린다','없음','연 1~2회 전사 교육','직무별 교육 과정이 있고 이수율을 관리'],
+         ['부서마다 AI를 잘 쓰는 "AI 챔피언"이 있다','없음','몇몇 부서에 자발적으로 있음','모든 부서에 지정되어 활동 시간을 인정받음'],
+         ['AI 활용 사례를 공유하는 자리가 있다','없음','공유 채널은 있지만 비정기','정기 공유회와 사례집이 운영됨'],
+         ['실패해도 괜찮은 작은 실험이 허용된다','실패하면 책임을 묻는 분위기','시도는 가능하지만 승인이 오래 걸림','작은 실험 예산과 빠른 승인 절차가 있음'],
+         ['직원들이 AI 결과물을 검토하고 고칠 줄 안다','그대로 쓰거나 아예 안 씀','일부 담당자만 사실 확인·수정','검토 기준이 팀에 공유되어 모두 적용']]},
+    {k:'E',name:'거버넌스·보안',crit:'직원 아무에게나 "고객 전화번호를 AI에 넣어도 되나요?"라고 물었을 때 모두 같은 답을 하나요? 규칙이 문서로 있고 실제로 지켜지는지 확인하고 있다면 4점 이상입니다.',
+     qs:[['생성형 AI 사용 규칙(넣으면 안 되는 정보, 써도 되는 도구)이 있다','없음','문서는 있지만 아는 사람이 적음','전 직원이 교육받고 정기적으로 갱신'],
+         ['고객 개인정보를 AI에 쓸 때의 기준이 있다','기준 없음','"넣지 말 것" 원칙만 있음','마스킹·가명처리 절차와 도구가 있음'],
+         ['AI 결과물을 사람이 검토하는 기준이 있다','기준 없음','고객에게 나가는 결과물만 검토','업무별 검토 수준과 책임자가 정해짐'],
+         ['AI 도구를 들일 때 보안·법무 검토를 거친다','절차 없음','요청하면 검토해 줌','도입 전 필수 절차로 운영'],
+         ['AI 사용 현황(사용자, 비용, 사고)을 파악하고 있다','누가 쓰는지 모름','라이선스 수만 파악','사용량·비용·사고를 정기적으로 보고']]}
+  ];
+  const EXAMPLE=[[3,2,2,2,3],[4,2,3,2,2],[4,3,2,2,2],[2,2,2,3,3],[3,2,2,2,1]];
+  const LEVELS=[
+    {c:'L1',n:'인지',d:'관심은 있지만 개인 단위로 산발적으로 사용'},
+    {c:'L2',n:'실험',d:'일부 부서에서 PoC 진행, 전사 체계는 없음'},
+    {c:'L3',n:'도입',d:'검증된 과제가 실제 업무에 공식 적용됨'},
+    {c:'L4',n:'확산',d:'여러 부서에 표준으로 퍼지고 성과를 측정함'},
+    {c:'L5',n:'혁신',d:'AI가 매출·비용 구조와 사업 방식에 반영됨'}
+  ];
+  const REC=[[1],[1,2],[2,3],[3],[3,4]];
+  const CAP=[1,2,3,3,4];
+  const MAP=[
+    ['AI 사용 규칙 수립, 기업용 도구 1종 도입, 기초 교육','시스템 연동, 고객 대상 자동화'],
+    ['부서별 첫 과제 3~5개 PoC, 프롬프트 템플릿 표준화, AI 챔피언 지정','데이터 플랫폼 구축부터 시작하기'],
+    ['검증된 과제를 실업무에 적용, 노코드 자동화 연결, KPI 관리','규칙 없이 전사 확산'],
+    ['과제 포트폴리오 관리, 공통 연동(RAG·API), 부서 간 재사용','모든 업무에 에이전트 적용'],
+    ['에이전트 기반 자율 운영, AI 기반 신규 서비스','—']
+  ];
+  const PLV=[
+    {c:'P1',n:'보조',en:'Assist',def:'담당자가 AI 도구로 업무 도움을 받는다',ai:'초안, 요약, 번역',hu:'모든 판단과 실행',ex:'상품 상세페이지 문구 초안'},
+    {c:'P2',n:'증강',en:'Augment',def:'팀이 같은 방식으로 AI를 쓴다',ai:'분석, 분류, 추천',hu:'검토 후 승인·실행',ex:'리뷰 분석 → 주간 품질 리포트'},
+    {c:'P3',n:'자동화',en:'Automate',def:'정해진 업무를 AI와 자동화 도구가 처리한다',ai:'처리부터 실행까지',hu:'예외 처리, 샘플 검수',ex:'CS 문의 분류 + 담당자 배정'},
+    {c:'P4',n:'자율',en:'Autonomous',def:'AI 에이전트가 목표를 받아 판단하고 실행한다',ai:'계획·판단·실행',hu:'목표 설정, 모니터링',ex:'수요예측 기반 자동 발주'}
+  ];
+  const DEPTS=[
+    ['고객센터(CS)','배송·교환 문의 분류와 답변',3,'유형 판단 규칙이 분명하고, 상담원이 발송 전 검토'],
+    ['마케팅 (B2C)','상세페이지·SNS 문구 생성',3,'게시 전 검수가 가능하고 오류 피해가 작음'],
+    ['SCM·물류','협력사 송장 데이터 입력',3,'양식이 정해져 있고 합계 검증으로 오류를 잡을 수 있음'],
+    ['B2B 영업','제안서·견적서 초안',2,'가격·조건 오류의 피해가 커서 사람이 최종 판단'],
+    ['MD·상품기획','주간 판매·리뷰 분석',2,'분석은 반복되지만 결론은 사람이 판단'],
+    ['재무·회계','경비 증빙 분류',2,'감사 대상이라 전건 검토 필요'],
+    ['인사','사내 규정 Q&A',2,'개인정보가 들어가는 업무는 제외']
+  ];
+
+  let scores=store.get('ax.diag');
+  if(!Array.isArray(scores)||scores.length!==5) scores=EXAMPLE.map(r=>r.slice());
+  let tab=0;
+  const avg=a=>a.reduce((x,y)=>x+y,0)/a.length;
+  const r1=x=>Math.round(x*10)/10;
+  const lvIdx=x=>{x=r1(x);return x<1.5?0:x<2.5?1:x<3.5?2:x<4.5?3:4};
+  const isExample=()=>JSON.stringify(scores)===JSON.stringify(EXAMPLE);
+  let current=null;
+
+  function renderTabs(){
+    $('#areaTabs').innerHTML=AREAS.map((a,i)=>`<button role="tab" type="button" id="tab${i}" aria-selected="${i===tab}" data-i="${i}">${a.k}. ${esc(a.name)} <span class="s">${avg(scores[i]).toFixed(1)}</span></button>`).join('');
+  }
+  function renderQs(){
+    const a=AREAS[tab];
+    $('#qList').innerHTML=`<div class="criterion"><b>판단 기준</b>${esc(a.crit)}</div>`+a.qs.map((q,j)=>`<div class="qrow"><span class="id">${a.k}${j+1}</span><span class="txt">${esc(q[0])}</span><span class="seg" role="group" aria-label="${a.k}${j+1} 점수">${[1,2,3,4,5].map(v=>`<button type="button" data-j="${j}" data-v="${v}" aria-pressed="${scores[tab][j]===v}">${v}</button>`).join('')}</span><span class="anc"><span><b>1</b>${esc(q[1])}</span><span><b>3</b>${esc(q[2])}</span><span><b>5</b>${esc(q[3])}</span></span></div>`).join('');
+  }
+  function lowestItems(filterAreas){
+    const items=[];
+    scores.forEach((row,i)=>{if(filterAreas&&!filterAreas.includes(i))return;row.forEach((v,j)=>items.push({id:AREAS[i].k+(j+1),t:AREAS[i].qs[j][0],v}))});
+    const m=Math.min(...items.map(x=>x.v));
+    return items.filter(x=>x.v===m).slice(0,3);
+  }
+  function renderResult(){
+    const areaAvg=scores.map(avg);
+    const total=avg(areaAvg);
+    const minV=Math.min(...areaAvg), maxV=Math.max(...areaAvg);
+    const base=lvIdx(total);
+    const cap=Math.min(4,lvIdx(minV)+1);
+    const li=Math.min(base,cap);
+    current={total,li,areaAvg};
+    const L=LEVELS[li];
+    $('#total').innerHTML=r1(total).toFixed(1)+'<small> / 5</small>';
+    $('#lvName').textContent=`${L.c} · ${L.n}`;
+    $('#lvDesc').textContent=L.d;
+    const spread=r1(maxV-minV);
+    const bottlenecks=spread>=0.5?areaAvg.map((v,i)=>v===minV?i:-1).filter(i=>i>=0):[];
+    $('#bars').innerHTML=AREAS.map((a,i)=>`<div class="bar${bottlenecks.includes(i)?' min':''}"><span>${esc(a.name)}</span><span class="track"><span class="fill" style="width:${(areaAvg[i]-1)/4*100}%"></span></span><span class="v">${areaAvg[i].toFixed(1)}</span></div>`).join('');
+    $('#ladder').innerHTML=LEVELS.map((l,i)=>`<div class="${i===li?'on':''}"><b>${l.c}</b>${l.n}</div>`).join('');
+    const capEl=$('#capNote');
+    if(base>li){
+      capEl.hidden=false;
+      capEl.innerHTML=`종합 점수로는 <b>${LEVELS[base].c}</b>이지만, 가장 낮은 영역(${esc(AREAS[areaAvg.indexOf(minV)].name)} ${minV.toFixed(1)})이 ${LEVELS[lvIdx(minV)].c} 수준이라 <b>${L.c}</b>로 조정했습니다.`;
+    }else capEl.hidden=true;
+    const recTxt=REC[li].map(p=>'P'+p).join(' → ');
+    let html;
+    if(bottlenecks.length){
+      const names=bottlenecks.map(i=>`${AREAS[i].name} (${areaAvg[i].toFixed(1)})`).join(', ');
+      const low=lowestItems(bottlenecks).map(x=>`${x.id} ${esc(x.t)}`).join(' · ');
+      html=`<span>병목 영역은 <b>${esc(names)}</b>입니다. 권장 적용 레벨은 <b>${recTxt}</b>이며, 확산 전에 이 영역을 먼저 보강하세요.</span><span>먼저 볼 문항: ${low}</span>`;
+    }else if(minV>=4.5){
+      html=`<span><b>모든 영역이 L5 수준이라 병목이 없습니다.</b> 5점을 준 문항마다 문서, 예산, 대시보드 같은 근거가 있는지 한 번 더 확인하세요.</span><span>근거가 충분하다면 다음 목표는 보강이 아니라 확장입니다. AI 에이전트(P4) 과제와 AI 기반 신규 서비스를 검토하세요.</span>`;
+    }else{
+      const low=lowestItems(null).map(x=>`${x.id} ${esc(x.t)}`).join(' · ');
+      html=`<span><b>영역 간 차이가 0.5점 미만이라 뚜렷한 병목은 없습니다.</b> 다섯 영역을 함께 한 단계씩 올리는 것이 다음 목표이며, 권장 적용 레벨은 <b>${recTxt}</b>입니다.</span><span>점수가 가장 낮은 문항부터 보강하세요: ${low}</span>`;
+    }
+    $('#bottleneck').innerHTML=html;
+    $('#exFlag').textContent=isExample()?'예시 점수가 채워져 있습니다. 우리 회사 기준으로 바꿔 보세요.':'입력한 점수는 이 브라우저에만 저장됩니다.';
+    renderStep2(li);
+  }
+  function renderStep2(li){
+    $('#mapTable tbody').innerHTML=MAP.map((r,i)=>`<tr class="${i===li?'hl':''}"><td class="nw"><b>${LEVELS[i].c}</b> ${LEVELS[i].n}</td><td><span class="pill lv">${REC[i].map(p=>'P'+p).join(' → ')}</span></td><td><span class="pill lv">P${CAP[i]}까지</span></td><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('');
+    $('#mapNote').textContent=`STEP 1 결과: ${LEVELS[li].c} ${LEVELS[li].n}`;
+    const rec=REC[li];
+    $('#plevels').innerHTML=PLV.map((p,i)=>{const on=rec.includes(i+1);return `<div class="plv${on?' rec':''}">${on?'<span class="badge">현재 권장</span>':''}<span class="code">${p.c} · ${p.en}</span><h4>${p.n}</h4><div class="row">${p.def}</div><div class="row">AI · <b>${p.ai}</b></div><div class="row">사람 · <b>${p.hu}</b></div><div class="ex">예: ${p.ex}</div></div>`}).join('');
+    const cap=CAP[li];
+    $('#deptNote').textContent=`STEP 1 결과(${LEVELS[li].c} ${LEVELS[li].n}, 최대 P${cap}) 기준`;
+    $('#deptBody').innerHTML=DEPTS.map(d=>{
+      const now=Math.min(d[2],cap);
+      const limited=now<d[2];
+      return `<tr><td class="nw">${d[0]}</td><td>${d[1]}</td><td><span class="pill lv">P${d[2]}</span></td><td><span class="pill lv on">P${now}</span>${limited?`<br><span class="count">회사가 L${CAP.findIndex(c=>c>=d[2])+1}가 되면 P${d[2]}</span>`:''}</td><td>${d[3]}</td></tr>`;
+    }).join('');
+  }
+  function renderDiag(){renderTabs();renderQs();renderResult()}
+  $('#areaTabs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;tab=+b.dataset.i;renderTabs();renderQs();$('#tab'+tab).focus()});
+  $('#qList').addEventListener('click',e=>{const b=e.target.closest('button[data-v]');if(!b)return;scores[tab][+b.dataset.j]=+b.dataset.v;store.set('ax.diag',scores);renderTabs();renderQs();renderResult()});
+  $('#resetDiag').addEventListener('click',()=>{scores=EXAMPLE.map(r=>r.slice());store.set('ax.diag',scores);renderDiag()});
+  const savedRole=store.get('ax.role');if(savedRole)$('#roleSel').value=savedRole;
+  $('#roleSel').addEventListener('change',e=>store.set('ax.role',e.target.value));
+  $('#copyDiag').addEventListener('click',e=>{
+    const c=current;const L=LEVELS[c.li];
+    const lines=[`[AI 수준 진단 결과] 응답자 역할: ${$('#roleSel').value}`,
+      `종합 ${r1(c.total).toFixed(1)}점 · ${L.c} ${L.n}`,
+      AREAS.map((a,i)=>`${a.k}.${a.name} ${c.areaAvg[i].toFixed(1)}`).join(' / '),
+      '문항별: '+AREAS.map((a,i)=>scores[i].map((v,j)=>`${a.k}${j+1}=${v}`).join(' ')).join(' | ')];
+    copyText(lines.join('\n'),e.currentTarget);
+  });
+  renderDiag();
+
+  /* ---------- STEP 3 ---------- */
+  const PT={write:'작성',search:'요약·검색',extract:'분류·추출',analyze:'분석',predict:'예측'};
+  const UC=[
+    ['마케팅','상품 상세페이지·SNS 문구 초안','write',1,'콘텐츠 제작 시간 50~70% 단축','1~2주'],
+    ['마케팅','캠페인 문구 A/B 변형안 만들기','write',1,'테스트할 수 있는 변형 수 3~5배','1주'],
+    ['마케팅','리뷰·SNS 언급 분석과 이슈 요약','analyze',1,'품질 이슈 조기 발견','2주'],
+    ['마케팅','고객 세그먼트별 메시지 도출','analyze',2,'타깃 캠페인 반응률 개선','4주'],
+    ['마케팅','캠페인 성과 요약 리포트','analyze',2,'리포트 작성 시간 80% 절감','3주'],
+    ['영업','제안서·견적서 초안','write',1,'작성 시간 50~60% 단축','2~3주'],
+    ['영업','미팅록 요약과 CRM 입력','search',2,'영업 행정 업무 주 3~5시간 절감','4주'],
+    ['영업','거래처 뉴스·업계 동향 브리핑','search',1,'미팅 준비 시간 단축','1주'],
+    ['영업','RFP·계약서 핵심 조건 뽑기','extract',1,'검토 시간 60% 단축, 누락 방지','2주'],
+    ['영업','거래처 이탈·업셀링 신호 예측','predict',3,'재구매율·객단가 개선','8주+'],
+    ['MD','리뷰 기반 상품 개선 포인트','analyze',1,'신상품 기획 근거 강화','2주'],
+    ['MD','경쟁사 상품·가격 비교','analyze',2,'가격·구색 결정 속도 향상','3주'],
+    ['MD','주간 판매 트렌드 요약','analyze',2,'주간 MD 회의 자료 자동화','3주'],
+    ['MD','상품 속성·카테고리 태깅','extract',2,'검색·추천 품질 개선, 등록 시간 단축','4주'],
+    ['SCM','협력사 발주서·송장 데이터 추출','extract',2,'수기 입력 80% 이상 제거','4주'],
+    ['SCM','협력사 납기 확인·클레임 메일 초안','write',1,'커뮤니케이션 시간 절감','1주'],
+    ['SCM','수요예측 (프로모션·시즌 반영)','predict',3,'예측 정확도 개선, 폐기 비용 감소','8~12주'],
+    ['SCM','과재고·결품 위험 예측 알림','predict',3,'결품률·재고회전일 개선','8주+'],
+    ['매장','매장 운영 매뉴얼 Q&A','search',1,'본사 문의 감소, 신입 교육 단축','2주'],
+    ['매장','매장별 매출 일일 브리핑','analyze',2,'점장 의사결정 속도 향상','4주'],
+    ['매장','점검 보고서 작성','write',1,'보고 업무 시간 절감','1주'],
+    ['CS','상담 답변 초안 (정책 문서 기반)','write',1,'건당 처리시간 30~50% 단축','2~3주'],
+    ['CS','문의 유형 분류와 담당자 배정','extract',2,'처리 리드타임 단축','4주'],
+    ['CS','상담 기록 기반 VOC 주간 리포트','analyze',1,'반복 불만 원인 파악','2주'],
+    ['CS','상담 후 요약·태깅','search',2,'후처리 시간 절감','3주'],
+    ['재무·인사','월간 실적 보고서 초안과 변동 원인','analyze',1,'결산 보고 시간 단축','2주'],
+    ['재무·인사','경비 증빙 분류','extract',2,'검토 업무 시간 절감','4주'],
+    ['재무·인사','채용 공고 작성, 이력서 요약','write',1,'채용 담당자 업무 경감','1주'],
+    ['재무·인사','사내 규정·복리후생 Q&A','search',1,'인사팀 반복 문의 감소','2주'],
+    ['재무·인사','직원 설문 주관식 분석','analyze',1,'조직 이슈 조기 파악','1주']
+  ];
+  const DEPT_F=['전체','마케팅','영업','MD','SCM','매장','CS','재무·인사'];
+  const TYPE_F=[['all','모든 유형'],['write','작성'],['search','요약·검색'],['extract','분류·추출'],['analyze','분석'],['predict','예측'],['easy','★ AI 도구만으로 가능']];
+  let fDept=store.get('ax.dept')||'전체', fType=store.get('ax.type2')||'all';
+  if(!DEPT_F.includes(fDept))fDept='전체';
+  if(!TYPE_F.some(t=>t[0]===fType))fType='all';
+  function renderUC(){
+    $('#deptChips').innerHTML=DEPT_F.map(d=>`<button type="button" class="chip" data-d="${d}" aria-pressed="${d===fDept}">${d}</button>`).join('');
+    $('#typeChips').innerHTML=TYPE_F.map(t=>`<button type="button" class="chip" data-t="${t[0]}" aria-pressed="${t[0]===fType}">${t[1]}</button>`).join('');
+    const rows=UC.filter(u=>(fDept==='전체'||u[0]===fDept)&&(fType==='all'||(fType==='easy'?u[3]===1:u[2]===fType)));
+    $('#ucBody').innerHTML=rows.map(u=>`<tr><td class="nw">${u[0]}</td><td>${esc(u[1])}</td><td><span class="pill pt-${u[2]}">${PT[u[2]]}</span></td><td class="stars">${'★'.repeat(u[3])}<i>${'★'.repeat(3-u[3])}</i></td><td>${esc(u[4])}</td><td class="nw num">${u[5]}</td></tr>`).join('')||'<tr><td colspan="6">조건에 맞는 업무가 없습니다. 필터를 바꿔 보세요.</td></tr>';
+    $('#ucCount').textContent=`${rows.length}개 업무`;
+  }
+  $('#deptChips').addEventListener('click',e=>{const b=e.target.closest('[data-d]');if(!b)return;fDept=b.dataset.d;store.set('ax.dept',fDept);renderUC()});
+  $('#typeChips').addEventListener('click',e=>{const b=e.target.closest('[data-t]');if(!b)return;fType=b.dataset.t;store.set('ax.type2',fType);renderUC()});
+  renderUC();
+
+  const CRITS=[
+    {n:'업무 효과',w:.30,h:'1점: 연 1천만 원 미만 · 3점: 1천만~1억 원 · 5점: 1억 원 이상'},
+    {n:'시작하기 쉬운 정도',w:.25,h:'1점: 개발 필요 · 3점: 자동화 도구 연결 · 5점: AI 도구만으로 가능'},
+    {n:'자료 준비 상태',w:.20,h:'1점: 자료를 새로 모아야 함 · 3점: 정리가 필요함 · 5점: 바로 넣을 수 있음'},
+    {n:'부서의 의지',w:.15,h:'1점: 소극적 · 3점: 협조적 · 5점: 부서장이 직접 요청'},
+    {n:'다른 부서로 확산',w:.10,h:'1점: 해당 부서만 · 3점: 2~3개 부서 · 5점: 전사 적용 가능'}
+  ];
+  const SC_EX=[3,5,5,4,4];
+  let sc=store.get('ax.sc2');
+  if(!Array.isArray(sc)||sc.length!==5) sc=SC_EX.slice();
+  function renderSC(){
+    $('#crits').innerHTML=CRITS.map((c,i)=>`<div class="crit"><span class="nm">${c.n}<span class="w">${Math.round(c.w*100)}%</span></span><span class="seg" role="group" aria-label="${c.n} 점수">${[1,2,3,4,5].map(v=>`<button type="button" data-i="${i}" data-v="${v}" aria-pressed="${sc[i]===v}">${v}</button>`).join('')}</span><span class="hint">${c.h}</span></div>`).join('');
+    const t=CRITS.reduce((s,c,i)=>s+c.w*sc[i],0);
+    $('#scTotal').innerHTML=t.toFixed(2)+'<small> / 5</small>';
+    const st=$('#scState');
+    if(t>=3.5){st.textContent='착수 권장';st.className='state go';$('#scMsg').textContent='3.5점 이상입니다. 첫 웨이브 후보로 올리고 STEP 5에서 과제 카드를 작성하세요.'}
+    else if(t>=2.5){st.textContent='보완 후 재검토';st.className='state hold';$('#scMsg').textContent='점수가 낮은 기준을 보완할 방법(범위 축소, 자료 정리)을 찾은 뒤 다시 평가하세요.'}
+    else{st.textContent='보류';st.className='state no';$('#scMsg').textContent='지금은 효과에 비해 부담이 큽니다. 다른 후보를 먼저 진행하세요.'}
+  }
+  $('#crits').addEventListener('click',e=>{const b=e.target.closest('button[data-v]');if(!b)return;sc[+b.dataset.i]=+b.dataset.v;store.set('ax.sc2',sc);renderSC()});
+  renderSC();
+
+  const STARTERS={
+    '전사 공통':[
+      ['리뷰·VOC 인사이트 주간 리포트','MD, 마케팅, CS가 같은 리포트를 보고 개선 과제를 찾습니다. 리뷰 파일을 AI 도구에 넣는 것으로 시작합니다.','analyze','B2C','2주'],
+      ['CS 답변 초안','교환·반품 정책 문서를 AI 도구의 프로젝트 기능에 올려 상담원이 초안을 받아 씁니다. 시스템 연동은 효과를 확인한 뒤 진행합니다.','write','B2C','3주'],
+      ['B2B 제안서·견적서 초안','표준 템플릿과 거래처 구매 이력을 넣어 초안을 만듭니다. 제안 속도가 빨라지면 수주율 변화까지 볼 수 있습니다.','write','B2B','3주']],
+    '마케팅':[
+      ['상품 상세페이지·SNS 문구 초안','상품 스펙과 브랜드 톤 가이드를 넣어 채널별 문구를 한 번에 만듭니다. 게시 전 담당자가 검수합니다.','write','B2C','1~2주'],
+      ['리뷰·SNS 언급 분석','지난주 리뷰와 SNS 언급을 넣어 불만 원인과 반응 좋은 포인트를 정리합니다. 다음 캠페인 메시지의 근거가 됩니다.','analyze','B2C','2주'],
+      ['캠페인 성과 요약 리포트','광고 매체별 성과 파일을 넣어 잘된 점, 아쉬운 점, 다음 액션을 요약합니다. 매주 리포트 작성 시간이 크게 줄어듭니다.','analyze','B2C','3주']],
+    '영업 (B2B)':[
+      ['제안서·견적서 초안','표준 템플릿, 거래처 구매 이력, 이번 분기 프로모션 조건을 넣어 초안을 만듭니다. 가격은 사람이 최종 확인합니다.','write','B2B','2~3주'],
+      ['RFP·계약서 핵심 조건 정리','긴 RFP나 계약서에서 납기, 결제 조건, 위약 조항을 표로 뽑아 놓친 조건이 없는지 확인합니다.','extract','B2B','2주'],
+      ['거래처 동향 브리핑','방문 전에 거래처 관련 뉴스와 업계 동향을 요약해 미팅 준비 시간을 줄입니다.','search','B2B','1주']],
+    'MD·상품기획':[
+      ['리뷰 기반 상품 개선 포인트','카테고리별 리뷰를 넣어 사이즈, 품질, 가격에 대한 불만을 묶고 개선안을 정리합니다.','analyze','B2C','2주'],
+      ['주간 판매 트렌드 요약','주간 판매 데이터를 넣어 뜨는 상품과 빠지는 상품, 그 이유를 요약합니다. STEP 5의 Tableau 예시와 연결됩니다.','analyze','B2C·B2B','3주'],
+      ['경쟁사 상품·가격 비교','경쟁사 상품 정보를 모아 가격대, 구색, 프로모션 차이를 표로 정리합니다.','analyze','B2C','3주']],
+    'SCM·물류':[
+      ['협력사 메일 초안','납기 확인, 클레임, 단가 협의 메일을 상황별 템플릿으로 빠르게 씁니다.','write','B2B','1주'],
+      ['발주서·송장 데이터 정리','PDF나 이미지로 받은 송장에서 품목, 수량, 금액을 뽑아 엑셀 양식으로 정리합니다. 합계 검증으로 오류를 잡습니다.','extract','B2B','3~4주'],
+      ['주간 재고·입고 현황 요약','재고와 입고 예정 파일을 넣어 결품 위험 품목과 지연 입고를 정리합니다.','analyze','B2C·B2B','2주']],
+    '매장 운영':[
+      ['매장 운영 매뉴얼 Q&A','운영 매뉴얼과 공지를 AI 도구에 올려 점장과 직원이 바로 물어볼 수 있게 합니다. 본사 문의가 줄어듭니다.','search','B2C','2주'],
+      ['점검 보고서 작성','점검 메모를 넣으면 정해진 양식의 보고서로 정리합니다.','write','B2C','1주'],
+      ['매장별 매출 일일 브리핑','전날 매출 파일을 넣어 목표 대비 실적과 특이사항을 3줄로 요약합니다.','analyze','B2C','2~3주']],
+    '고객센터(CS)':[
+      ['상담 답변 초안','교환·반품 정책 문서를 기반으로 답변 초안을 받고, 상담원이 검토해 보냅니다.','write','B2C','2~3주'],
+      ['VOC 주간 리포트','상담 기록을 넣어 반복 불만 Top 5와 원인 부서를 정리해 관련 부서에 공유합니다.','analyze','B2C','2주'],
+      ['상담 후 요약·태깅','상담 내용을 요약하고 유형 태그를 붙여 후처리 시간을 줄입니다.','search','B2C','2~3주']],
+    '재무·인사':[
+      ['월간 실적 보고서 초안','실적 파일을 넣어 계획 대비 차이와 그 원인을 문장으로 정리합니다. 숫자는 담당자가 최종 확인합니다.','analyze','—','2주'],
+      ['사내 규정·복리후생 Q&A','규정 문서를 AI 도구에 올려 직원 반복 문의에 바로 답합니다. 개인정보가 필요한 문의는 제외합니다.','search','—','2주'],
+      ['채용 공고와 이력서 요약','직무 기술서로 공고를 쓰고, 지원서 핵심 경력을 요약합니다. 평가와 판단은 사람이 합니다.','write','—','1주']]
+  };
+  const sSel=$('#starterSel');
+  sSel.innerHTML=Object.keys(STARTERS).map(k=>`<option>${k}</option>`).join('');
+  const savedStarter=store.get('ax.starter');
+  if(savedStarter&&STARTERS[savedStarter])sSel.value=savedStarter;
+  function renderStarters(){
+    $('#starterCards').innerHTML=STARTERS[sSel.value].map(s=>`<div class="card"><h4>${esc(s[0])}</h4><p>${esc(s[1])}</p><div class="meta"><span class="pill pt-${s[2]}">${PT[s[2]]}</span>${s[3]!=='—'?`<span class="pill lv">${s[3]}</span>`:''}<span class="pill lv">P2</span><span class="pill lv">${s[4]}</span></div></div>`).join('');
+  }
+  sSel.addEventListener('change',()=>{store.set('ax.starter',sSel.value);renderStarters()});
+  renderStarters();
+
+  /* ---------- STEP 4 ---------- */
+  const PROMPTS=[
+    {t:'리뷰 인사이트 분석',type:'analyze',body:`[역할] 너는 리테일 상품기획 분석가야.
+[맥락] 아래는 지난 1주간 '{카테고리}' 상품의 고객 리뷰 {건수}건이야.
+[작업] 1) 긍정/부정 비율 2) 부정 리뷰의 주요 원인 5가지와 건수
+       3) 상품 개선 제안 3가지 4) 바로 대응해야 할 이슈를 정리해줘.
+[형식] 표와 3줄 요약으로 작성해줘.
+[제약] 리뷰에 없는 내용은 추측하지 말고, 원인마다 대표 리뷰 원문을 1개씩 인용해줘.`},
+    {t:'B2B 제안서 초안',type:'write',body:`[역할] 너는 B2B 유통 영업 담당자야.
+[맥락] 거래처 정보: {업종, 규모, 최근 12개월 구매 품목·금액, 요청 사항}
+       우리 회사 표준 제안서 템플릿과 이번 분기 프로모션 조건을 첨부했어.
+[작업] 이 거래처에 맞는 제안서 초안을 써줘. 구매 이력을 근거로
+       추가 제안 품목 2~3개를 넣어줘.
+[형식] 템플릿의 목차를 그대로 따라줘.
+[제약] 가격과 할인율은 첨부한 프로모션 조건 안에서만 쓰고,
+       확정되지 않은 내용은 [확인 필요]로 표시해줘.`},
+    {t:'CS 답변 초안',type:'write',body:`[역할] 너는 온라인몰 고객센터 상담원이야.
+[맥락] 첨부한 교환·반품 정책 문서와 고객 문의 원문이 있어.
+[작업] 문의 유형(배송/교환/반품/기타)을 나누고 답변 초안을 써줘.
+[형식] 첫 줄에 [유형], 이어서 고객에게 보낼 답변.
+[제약] 정책 문서에 없는 보상이나 예외는 약속하지 말고,
+       판단이 어려우면 [상담원 확인 필요]로 표시해줘.`},
+    {t:'주간 매출 브리핑',type:'analyze',body:`[역할] 너는 리테일 영업기획 담당자야.
+[맥락] 첨부 파일은 지난주와 전년 같은 주의 매장·채널별 매출이야.
+[작업] 1) 전주·전년 대비 변화가 큰 매장·카테고리 5개
+       2) 변화의 가능한 원인 3) 다음 주에 확인할 것을 정리해줘.
+[형식] 경영진이 1분 안에 읽을 수 있게 10줄 이내.
+[제약] 데이터로 확인되지 않는 원인은 '가설'로 표시해줘.`}
+  ];
+  $('#prompts').innerHTML=PROMPTS.map((p,i)=>`<div class="prompt"><header><b>${p.t} <span class="pill pt-${p.type}">${PT[p.type]}</span></b><button type="button" class="linkbtn" data-copy="${i}">복사</button></header><pre id="pr${i}">${esc(p.body).replace(/\[(역할|맥락|작업|형식|제약)\]/g,'<span class="k">[$1]</span>')}</pre></div>`).join('');
+  $('#prompts').addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const i=+b.dataset.copy;copyText(PROMPTS[i].body,b,$('#pr'+i))});
+
+  function checklist(sel,key,items){
+    const st=store.get(key)||{};
+    $(sel).innerHTML=items.map((t,i)=>`<li><input type="checkbox" id="${key}-${i}" ${st[i]?'checked':''}><label for="${key}-${i}">${t[0]}${t[1]?`<small>${t[1]}</small>`:''}</label></li>`).join('');
+    $(sel).addEventListener('change',e=>{const m=e.target.id.match(/-(\d+)$/);if(!m)return;st[m[1]]=e.target.checked;store.set(key,st)});
+  }
+  checklist('#govChecks','ax.gov2',[
+    ['우리 팀은 고객 이름, 전화번호, 주소, 카드번호를 AI에 넣지 않는다는 걸 다 알고 있다','모르는 사람이 있다면 팀 회의에서 한 번 짚고 넘어가세요.'],
+    ['거래처 단가표, 계약서 원문, 공개 전 실적처럼 밖에 나가면 안 되는 자료가 뭔지 팀원들이 말할 수 있다',''],
+    ['회사 계정으로 쓰는 AI 도구가 정해져 있고, 넣은 자료가 AI 학습에 쓰이지 않는 요금제다','개인 무료 계정으로 업무를 하고 있다면 여기서 멈추고 IT에 문의하세요.'],
+    ['고객이나 거래처에 나가는 글은 AI가 쓴 것이라도 사람이 한 번 읽고 보낸다',''],
+    ['AI가 틀린 내용을 내보냈을 때 누구에게 먼저 알릴지 정해 뒀다','보통 팀장과 AX 담당자입니다. 연락처를 팀 채널 상단에 고정해 두세요.']
+  ]);
+  checklist('#reportChecks','ax.report',[
+    ['베이스라인을 언제, 어떻게 쟀는지 적었다',''],
+    ['실현율과 영업이익률을 적용한 보수적인 수치다',''],
+    ['비용에 교육·변경관리비와 내부 인력의 시간을 넣었다',''],
+    ['낙관·기본·보수 세 가지 시나리오를 준비했다',''],
+    ['줄어든 시간을 어디에 다시 쓸지(고객 응대, 거래처 방문 등) 설명할 수 있다',''],
+    ['숫자로 표현하기 어려운 효과(직원 만족, 고객 경험)를 따로 정리했다','']
+  ]);
+
+  /* ---------- STEP 6 ---------- */
+  const FIELDS=['cases','min','wage','real','save','profit','build','ops','change'];
+  const PRESETS={
+    insight:{label:'리뷰 인사이트 (구축 없음)',v:{cases:250,min:240,wage:35000,real:70,save:2500,profit:0,build:0,ops:300,change:200},
+        note:'예시: 주간 리포트 연 250건(5명 × 50주), 건당 4시간 절감, 반품 비용 절감 기여분 2,500만 원, AI 도구 라이선스 5명분 연 300만 원(가정)'},
+    b2b:{label:'B2B 제안서 (구축 없음)',v:{cases:2880,min:150,wage:40000,real:70,save:0,profit:8640,build:0,ops:1800,change:500},
+        note:'예시: 영업 30명 × 월 8건, 건당 4시간 → 1.5시간, 수주율 20% → 22%, 평균 거래 1,500만 원, 이익률 10%, 라이선스 30명분 연 1,800만 원(가정)'},
+    cs:{label:'CS 시스템 연동 (P3)',v:{cases:375000,min:2.5,wage:35000,real:70,save:0,profit:0,build:8000,ops:4000,change:1000},
+        note:'예시: 일 1,500건 × 250일, 건당 6분 → 3.5분. 상담 시스템과 연동하는 P3 단계라서 외부 파트너 구축비가 들어갑니다'}
+  };
+  let roiState=store.get('ax.roi2');
+  if(!roiState||!roiState.v) roiState={p:'insight',v:Object.assign({},PRESETS.insight.v)};
+  const num=v=>{const n=parseFloat(String(v).replace(/,/g,''));return isFinite(n)?n:0};
+  const fmtN=n=>n.toLocaleString('ko-KR',{maximumFractionDigits:1});
+  function won(x){
+    const neg=x<0;x=Math.abs(Math.round(x));
+    if(x===0)return '0원';
+    const eok=Math.floor(x/1e8), man=Math.round((x%1e8)/1e4);
+    const s=eok?`${eok}억${man?' '+man.toLocaleString('ko-KR')+'만':''} 원`:`${man.toLocaleString('ko-KR')}만 원`;
+    return (neg?'−':'')+s;
+  }
+  function fillForm(){FIELDS.forEach(f=>{$('#f_'+f).value=fmtN(roiState.v[f]??0)})}
+  function calc(){
+    const v=roiState.v;
+    const hours=v.cases*v.min/60;
+    const time=hours*v.wage*v.real/100;
+    const save=v.save*1e4, profit=v.profit*1e4;
+    const benefit=time+save+profit;
+    const build=v.build*1e4, ops=v.ops*1e4, change=v.change*1e4;
+    const cost=build+ops+change;
+    $('#r_time').textContent=won(time);
+    $('#r_timeD').textContent=`${fmtN(Math.round(hours))}시간 × ${fmtN(v.wage)}원 × ${fmtN(v.real)}%`;
+    $('#r_save').textContent=won(save);
+    $('#r_profit').textContent=won(profit);
+    $('#r_benefit').textContent=won(benefit);
+    $('#r_build').textContent=won(build);
+    $('#r_ops').textContent=won(ops);
+    $('#r_change').textContent=won(change);
+    $('#r_cost').textContent=won(cost);
+    const row=$('#r_roiRow');
+    if(cost>0){
+      const roi=(benefit-cost)/cost*100;
+      $('#r_roi').textContent=`${roi>=0?'+':''}${Math.round(roi).toLocaleString('ko-KR')}%`;
+      row.className='big '+(roi>=0?'pos':'neg');
+      $('#r_payback').textContent=benefit>0?`${(cost/(benefit/12)).toFixed(1)}개월`:'회수 불가';
+      const c3=build+change+ops*3;
+      $('#r_roi3').textContent=`${Math.round((benefit*3-c3)/c3*100).toLocaleString('ko-KR')}%`;
+    }else{$('#r_roi').textContent='—';row.className='big';$('#r_payback').textContent='—';$('#r_roi3').textContent='—'}
+    const p=roiState.p&&PRESETS[roiState.p];
+    $('#rcTitle').textContent=p?`${p.label} · 1년차 기준`:'직접 입력 · 1년차 기준';
+    $('#roiFlag').textContent=p?p.note+'. 숫자를 바꾸면 직접 입력으로 바뀝니다.':'직접 입력한 값은 이 브라우저에만 저장됩니다.';
+    document.querySelectorAll('[data-preset]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.preset===roiState.p));
+  }
+  $('#roiForm').addEventListener('input',e=>{
+    const f=e.target.id.replace('f_','');if(!FIELDS.includes(f))return;
+    roiState.v[f]=num(e.target.value);roiState.p=null;store.set('ax.roi2',roiState);calc();
+  });
+  $('#roiForm').addEventListener('focusout',e=>{const f=e.target.id&&e.target.id.replace('f_','');if(FIELDS.includes(f))e.target.value=fmtN(roiState.v[f])});
+  $('#roiForm').addEventListener('submit',e=>e.preventDefault());
+  document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{roiState={p:b.dataset.preset,v:Object.assign({},PRESETS[b.dataset.preset].v)};store.set('ax.roi2',roiState);fillForm();calc()}));
+  fillForm();calc();
+
+  const links=[...document.querySelectorAll('.toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  function onScroll(){
+    let cur=0;const y=window.scrollY+140;
+    secs.forEach((s,i)=>{if(s&&s.offsetTop<=y)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+</script>
+
+</body>
+</html>
